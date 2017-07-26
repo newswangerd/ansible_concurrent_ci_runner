@@ -64,9 +64,9 @@ func compile_report_card(tests []test){
       passed = passed + "* [" + tst.name + "](#" + tst.name + ")\n"
       report_card = report_card + "*All tests passed!*" + "\n\n"
     } else {
-      failed = failed + "* " + tst.name + "\n"
+      failed = "* [" + tst.name + "](#" + tst.name + ")\n"
       report_card = report_card + "*The following tests have failed:* \n"
-      report_card = report_card + "[_See the .log files for details_](./" + tst.name + ".err) \n"
+      report_card = report_card + "[_See the .log files for details_](./" + tst.name + ".log) \n"
       report_card = report_card + "```\n"
       report_card = report_card + string(dat)
       report_card = report_card + "```\n"

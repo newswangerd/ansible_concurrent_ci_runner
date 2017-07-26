@@ -5,16 +5,12 @@
 * [eos](#eos)
 
 ### Failed: 
-* vyos
-* junos
-* ios
-* iosxr
-* nxos
+* [nxos](#nxos)
 
 # Results 
 ## vyos
 *The following tests have failed:* 
-[_See the .log files for details_](./vyos.err) 
+[_See the .log files for details_](./vyos.log) 
 ```
 ############ FAILURE ############
 vyos_l3_interface : Set IPv6 address/Users/dnewswan/code/ansible/test/integration/targets/vyos_l3_interface/tests/cli/basic.yaml:33
@@ -77,7 +73,7 @@ Has any previous test failed?/Users/dnewswan/code/ansible/test/integration/vyos.
 # Results 
 ## junos
 *The following tests have failed:* 
-[_See the .log files for details_](./junos.err) 
+[_See the .log files for details_](./junos.log) 
 ```
 ############ FAILURE ############
 [junos_command : test contains operator with xml encoding] 
@@ -327,7 +323,7 @@ could not set log-rotate-frequency
 # Results 
 ## ios
 *The following tests have failed:* 
-[_See the .log files for details_](./ios.err) 
+[_See the .log files for details_](./ios.log) 
 ```
 ############ FAILURE ############
 prepare_ios_tests : Ensure we have loopback 888 for testing/Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
@@ -487,7 +483,7 @@ Has any previous test failed?/Users/dnewswan/code/ansible/test/integration/ios.y
 # Results 
 ## iosxr
 *The following tests have failed:* 
-[_See the .log files for details_](./iosxr.err) 
+[_See the .log files for details_](./iosxr.log) 
 ```
 ############ FAILURE ############
 iosxr_config : assert/Users/dnewswan/code/ansible/test/integration/targets/iosxr_config/tests/cli/toplevel_nonidempotent.yaml:26
@@ -566,7 +562,7 @@ Has any previous test failed?/Users/dnewswan/code/ansible/test/integration/iosxr
 # Results 
 ## nxos
 *The following tests have failed:* 
-[_See the .log files for details_](./nxos.err) 
+[_See the .log files for details_](./nxos.log) 
 ```
 ############ FAILURE ############
 nxos_command : Run show running-config bgp - should pass/Users/dnewswan/code/ansible/test/integration/targets/nxos_command/tests/nxapi/sanity.yaml:42
