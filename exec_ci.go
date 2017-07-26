@@ -85,7 +85,7 @@ func main() {
   // CONFIGURE FILE PATHS
   integration_dir := "/Users/dnewswan/code/concurrent_ci/ansible/test/integration/"
 	exec_ci_dir := "/Users/dnewswan/code/concurrent_ci/"
-  // inv  := "#inventory.with_pass"
+  inv  := "#inventory.with_pass"
 
 	// Configure environment (this shouldn't have to be updated on an individual basis)
   os.Setenv("ANSIBLE_ROLES_PATH", integration_dir + "targets/")
@@ -97,6 +97,7 @@ func main() {
 	os.Setenv("ANSIBLE_CONNECT_TIMEOUT", "60")
 	os.Setenv("ANSIBLE_TIMEOUT", "60")
   os.Setenv("ANSIBLE_HOST_KEY_CHECKING", "false")
+  // os.Setenv("ANSIBLE_LOG_PATH", "./log")
 
   tests := []test{
     test {
@@ -130,12 +131,12 @@ func main() {
       user: "admin",
     },
   }
-  //
-  // wg.Add(len(tests))
-  // for _, tst := range tests{
-  //   go exec_net_ci(tst, integration_dir, inv)
-  // }
-  // wg.Wait()
+
+  wg.Add(len(tests))
+  for _, tst := range tests{
+    go exec_net_ci(tst, integration_dir, inv)
+  }
+  wg.Wait()
 
   compile_report_card(tests)
 }
