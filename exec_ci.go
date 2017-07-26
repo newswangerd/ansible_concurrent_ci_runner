@@ -82,9 +82,9 @@ func compile_report_card(tests []test){
 
 func main() {
   // CONFIGURE FILE PATHS
-  integration_dir := "/Users/dnewswan/code/ansible/test/integration/"
+  integration_dir := "/Users/dnewswan/code/concurrent_ci/ansible/test/integration/"
 	exec_ci_dir := "/Users/dnewswan/code/concurrent_ci/"
-  inv  := "inventory.network"
+  inv  := "#inventory.with_pass"
 
 	// Configure environment (this shouldn't have to be updated on an individual basis)
   os.Setenv("ANSIBLE_ROLES_PATH", integration_dir + "targets/")

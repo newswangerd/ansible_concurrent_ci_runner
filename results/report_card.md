@@ -477,11 +477,11 @@ iosxr_logging : Set up host logging/Users/dnewswan/code/ansible/test/integration
 [_ansible_parsed]=> False
 [_ansible_no_log]=> False
 [module_stderr]=> Traceback (most recent call last):
-  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_Dd_q8L/ansible_module_iosxr_logging.py", line 358, in <module>
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_gGC5A3/ansible_module_iosxr_logging.py", line 358, in <module>
     main()
-  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_Dd_q8L/ansible_module_iosxr_logging.py", line 344, in main
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_gGC5A3/ansible_module_iosxr_logging.py", line 344, in main
     have = map_config_to_obj(module)
-  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_Dd_q8L/ansible_module_iosxr_logging.py", line 240, in map_config_to_obj
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_gGC5A3/ansible_module_iosxr_logging.py", line 240, in map_config_to_obj
     if match.group(1) in dest_group:
 AttributeError: 'NoneType' object has no attribute 'group'
 
@@ -523,20 +523,6 @@ nxos_command : Run show running-config bgp - should pass/Users/dnewswan/code/ans
 
 
 ############ FAILURE ############
-nxos_command : Disable feature bgp/Users/dnewswan/code/ansible/test/integration/targets/nxos_command/tests/nxapi/sanity.yaml:68
-
-[status]=> -1
-[_ansible_parsed]=> True
-[_ansible_no_log]=> False
-[url]=> http://nxos01:80/ins
-[changed]=> False
-[failed]=> True
-[invocation]=> {u'module_args': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'url_password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'ssh_keyfile': None, u'url_username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True, u'feature': u'bgp', u'include_defaults': None, u'state': u'disabled', u'timeout': 10, u'provider': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'ssh_keyfile': None, u'host': u'nxos01', u'timeout': 60, u'use_ssl': False, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True, u'port': 80, u'transport': u'nxapi'}, u'host': u'nxos01', u'use_ssl': False, u'save': None, u'config': None, u'port': 80, u'transport': u'nxapi'}}
-[msg]=> Connection failure: timed out
-
-
-
-############ FAILURE ############
 nxos_config : assert/Users/dnewswan/code/ansible/test/integration/targets/nxos_config/tests/cli/defaults.yaml:37
 
 [_ansible_no_log]=> False
@@ -545,20 +531,6 @@ nxos_config : assert/Users/dnewswan/code/ansible/test/integration/targets/nxos_c
 [_ansible_verbose_always]=> True
 [failed]=> True
 [evaluated_to]=> False
-
-
-
-############ FAILURE ############
-nxos_feature : enable vn-segment-vlan-based/Users/dnewswan/code/ansible/test/integration/targets/nxos_feature/tests/nxapi/configure.yaml:10
-
-[status]=> -1
-[_ansible_parsed]=> True
-[_ansible_no_log]=> False
-[url]=> http://nxos01:80/ins
-[changed]=> False
-[failed]=> True
-[invocation]=> {u'module_args': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'url_password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'ssh_keyfile': None, u'url_username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True, u'feature': u'vn-segment-vlan-based', u'include_defaults': None, u'state': u'enabled', u'timeout': 10, u'provider': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'ssh_keyfile': None, u'host': u'nxos01', u'timeout': 60, u'use_ssl': False, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True, u'port': 80, u'transport': u'nxapi'}, u'host': u'nxos01', u'use_ssl': False, u'save': None, u'config': None, u'port': 80, u'transport': u'nxapi'}}
-[msg]=> Connection failure: timed out
 
 
 
@@ -609,7 +581,7 @@ nxos_user : Create user/Users/dnewswan/code/ansible/test/integration/targets/nxo
 [changed]=> False
 [failed]=> True
 [invocation]=> {u'module_args': {u'authorize': True, u'name': u'netend', u'roles': u'network-operator', u'state': u'present', u'provider': None, u'transport': u'cli'}}
-[msg]=> Unsupported parameters for (nxos_user) module: authorize. Supported parameters include: host,name,password,port,provider,purge,roles,ssh_keyfile,sshkey,state,timeout,transport,update_password,use_ssl,username,users,validate_certs
+[msg]=> Unsupported parameters for (nxos_user) module: authorize. Supported parameters include: aggregate,host,name,password,port,provider,purge,roles,ssh_keyfile,sshkey,state,timeout,transport,update_password,use_ssl,username,validate_certs
 
 
 

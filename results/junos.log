@@ -1,4 +1,4 @@
-ansible-playbook 2.4.0 (devel 3a3bdde869) last updated 2017/07/25 11:24:04 (GMT -400)
+ansible-playbook 2.4.0 (devel 119c9e5d6e) last updated 2017/07/26 10:41:22 (GMT -400)
   config file = /etc/ansible/ansible.cfg
   configured module search path = [u'/Users/dnewswan/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
   ansible python module location = /Users/dnewswan/code/ansible/lib/ansible
@@ -6,7 +6,7 @@ ansible-playbook 2.4.0 (devel 3a3bdde869) last updated 2017/07/25 11:24:04 (GMT 
   python version = 2.7.13 (default, Apr  4 2017, 08:47:57) [GCC 4.2.1 Compatible Apple LLVM 8.1.0 (clang-802.0.38)]
 Using /etc/ansible/ansible.cfg as config file
 setting up inventory plugins
-Parsed /Users/dnewswan/code/ansible/test/integration/inventory.network inventory source with ini plugin
+Parsed /Users/dnewswan/code/ansible/test/integration/#inventory.with_pass inventory source with ini plugin
 [DEPRECATION WARNING]: The use of 'include' for tasks has been deprecated. Use 
 'import_tasks' for static inclusions or 'include_tasks' for dynamic inclusions.
 
@@ -60,21 +60,20 @@ Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/pa
 Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/parsing/__init__.py
 Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/pycompat24.py
 Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/six/__init__.py
-Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/six/_six.py
 Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
 <vsrx01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
 <vsrx01> EXEC /bin/sh -c 'echo ~ && sleep 0'
-<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076001.15-57096334151235 `" && echo ansible-tmp-1501076001.15-57096334151235="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076001.15-57096334151235 `" ) && sleep 0'
-<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpFufOS3 TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076001.15-57096334151235/find.py
-<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076001.15-57096334151235/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076001.15-57096334151235/find.py && sleep 0'
-<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076001.15-57096334151235/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501076001.15-57096334151235/" > /dev/null 2>&1 && sleep 0'
+<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080286.58-165128431934840 `" && echo ansible-tmp-1501080286.58-165128431934840="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080286.58-165128431934840 `" ) && sleep 0'
+<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpbafv0w TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080286.58-165128431934840/find.py
+<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080286.58-165128431934840/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080286.58-165128431934840/find.py && sleep 0'
+<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080286.58-165128431934840/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501080286.58-165128431934840/" > /dev/null 2>&1 && sleep 0'
 ok: [vsrx01] => {
     "changed": false, 
     "examined": 11, 
     "failed": false, 
     "files": [
         {
-            "atime": 1501075817.0, 
+            "atime": 1501076002.0, 
             "ctime": 1496844014.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -105,7 +104,7 @@ ok: [vsrx01] => {
             "xusr": false
         }, 
         {
-            "atime": 1501075817.0, 
+            "atime": 1501076002.0, 
             "ctime": 1496844014.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -136,7 +135,7 @@ ok: [vsrx01] => {
             "xusr": false
         }, 
         {
-            "atime": 1501075818.0, 
+            "atime": 1501076003.0, 
             "ctime": 1496844014.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -167,7 +166,7 @@ ok: [vsrx01] => {
             "xusr": false
         }, 
         {
-            "atime": 1501075818.0, 
+            "atime": 1501076003.0, 
             "ctime": 1496844014.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -198,7 +197,7 @@ ok: [vsrx01] => {
             "xusr": false
         }, 
         {
-            "atime": 1501075818.0, 
+            "atime": 1501076003.0, 
             "ctime": 1496844014.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -229,7 +228,7 @@ ok: [vsrx01] => {
             "xusr": false
         }, 
         {
-            "atime": 1501075818.0, 
+            "atime": 1501076003.0, 
             "ctime": 1496844014.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -260,7 +259,7 @@ ok: [vsrx01] => {
             "xusr": false
         }, 
         {
-            "atime": 1501075818.0, 
+            "atime": 1501076003.0, 
             "ctime": 1496844014.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -291,7 +290,7 @@ ok: [vsrx01] => {
             "xusr": false
         }, 
         {
-            "atime": 1501075818.0, 
+            "atime": 1501076003.0, 
             "ctime": 1496844014.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -322,7 +321,7 @@ ok: [vsrx01] => {
             "xusr": false
         }, 
         {
-            "atime": 1501075818.0, 
+            "atime": 1501076003.0, 
             "ctime": 1496844014.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -353,7 +352,7 @@ ok: [vsrx01] => {
             "xusr": false
         }, 
         {
-            "atime": 1501075818.0, 
+            "atime": 1501076003.0, 
             "ctime": 1496844014.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -384,7 +383,7 @@ ok: [vsrx01] => {
             "xusr": false
         }, 
         {
-            "atime": 1501075818.0, 
+            "atime": 1501076003.0, 
             "ctime": 1496844014.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -540,17 +539,17 @@ task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_config/ta
 Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
 <vsrx01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
 <vsrx01> EXEC /bin/sh -c 'echo ~ && sleep 0'
-<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076128.77-211707702790111 `" && echo ansible-tmp-1501076128.77-211707702790111="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076128.77-211707702790111 `" ) && sleep 0'
-<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmp_gRPn4 TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076128.77-211707702790111/find.py
-<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076128.77-211707702790111/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076128.77-211707702790111/find.py && sleep 0'
-<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076128.77-211707702790111/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501076128.77-211707702790111/" > /dev/null 2>&1 && sleep 0'
+<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080415.84-31306178665037 `" && echo ansible-tmp-1501080415.84-31306178665037="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080415.84-31306178665037 `" ) && sleep 0'
+<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpSKUNmS TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080415.84-31306178665037/find.py
+<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080415.84-31306178665037/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080415.84-31306178665037/find.py && sleep 0'
+<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080415.84-31306178665037/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501080415.84-31306178665037/" > /dev/null 2>&1 && sleep 0'
 ok: [vsrx01] => {
     "changed": false, 
     "examined": 7, 
     "failed": false, 
     "files": [
         {
-            "atime": 1501072906.0, 
+            "atime": 1501076130.0, 
             "ctime": 1496844014.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -581,7 +580,7 @@ ok: [vsrx01] => {
             "xusr": false
         }, 
         {
-            "atime": 1501072906.0, 
+            "atime": 1501076130.0, 
             "ctime": 1496844014.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -612,7 +611,7 @@ ok: [vsrx01] => {
             "xusr": false
         }, 
         {
-            "atime": 1501072906.0, 
+            "atime": 1501076130.0, 
             "ctime": 1496844014.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -643,7 +642,7 @@ ok: [vsrx01] => {
             "xusr": false
         }, 
         {
-            "atime": 1501072906.0, 
+            "atime": 1501076130.0, 
             "ctime": 1496844014.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -674,7 +673,7 @@ ok: [vsrx01] => {
             "xusr": false
         }, 
         {
-            "atime": 1501072906.0, 
+            "atime": 1501076130.0, 
             "ctime": 1500908935.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -705,7 +704,7 @@ ok: [vsrx01] => {
             "xusr": false
         }, 
         {
-            "atime": 1501072906.0, 
+            "atime": 1501076130.0, 
             "ctime": 1500555692.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -736,7 +735,7 @@ ok: [vsrx01] => {
             "xusr": false
         }, 
         {
-            "atime": 1501072907.0, 
+            "atime": 1501076130.0, 
             "ctime": 1496844014.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -854,17 +853,17 @@ task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_facts/tas
 Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
 <vsrx01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
 <vsrx01> EXEC /bin/sh -c 'echo ~ && sleep 0'
-<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076193.11-139680215362470 `" && echo ansible-tmp-1501076193.11-139680215362470="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076193.11-139680215362470 `" ) && sleep 0'
-<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpj6X51O TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076193.11-139680215362470/find.py
-<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076193.11-139680215362470/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076193.11-139680215362470/find.py && sleep 0'
-<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076193.11-139680215362470/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501076193.11-139680215362470/" > /dev/null 2>&1 && sleep 0'
+<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080481.06-181899675800927 `" && echo ansible-tmp-1501080481.06-181899675800927="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080481.06-181899675800927 `" ) && sleep 0'
+<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpc3fV6i TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080481.06-181899675800927/find.py
+<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080481.06-181899675800927/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080481.06-181899675800927/find.py && sleep 0'
+<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080481.06-181899675800927/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501080481.06-181899675800927/" > /dev/null 2>&1 && sleep 0'
 ok: [vsrx01] => {
     "changed": false, 
     "examined": 1, 
     "failed": false, 
     "files": [
         {
-            "atime": 1501072970.0, 
+            "atime": 1501076194.0, 
             "ctime": 1500555692.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -971,17 +970,17 @@ task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_netconf/t
 Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
 <vsrx01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
 <vsrx01> EXEC /bin/sh -c 'echo ~ && sleep 0'
-<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076257.06-156403289529290 `" && echo ansible-tmp-1501076257.06-156403289529290="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076257.06-156403289529290 `" ) && sleep 0'
-<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpU4Niq3 TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076257.06-156403289529290/find.py
-<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076257.06-156403289529290/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076257.06-156403289529290/find.py && sleep 0'
-<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076257.06-156403289529290/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501076257.06-156403289529290/" > /dev/null 2>&1 && sleep 0'
+<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080544.85-234746618751597 `" && echo ansible-tmp-1501080544.85-234746618751597="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080544.85-234746618751597 `" ) && sleep 0'
+<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpMACGAv TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080544.85-234746618751597/find.py
+<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080544.85-234746618751597/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080544.85-234746618751597/find.py && sleep 0'
+<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080544.85-234746618751597/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501080544.85-234746618751597/" > /dev/null 2>&1 && sleep 0'
 ok: [vsrx01] => {
     "changed": false, 
     "examined": 2, 
     "failed": false, 
     "files": [
         {
-            "atime": 1501029091.0, 
+            "atime": 1501076258.0, 
             "ctime": 1496844014.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -1012,7 +1011,7 @@ ok: [vsrx01] => {
             "xusr": false
         }, 
         {
-            "atime": 1501029091.0, 
+            "atime": 1501076258.0, 
             "ctime": 1496844014.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -1122,17 +1121,17 @@ task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_rpc/tasks
 Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
 <vsrx01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
 <vsrx01> EXEC /bin/sh -c 'echo ~ && sleep 0'
-<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076321.33-271379075789768 `" && echo ansible-tmp-1501076321.33-271379075789768="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076321.33-271379075789768 `" ) && sleep 0'
-<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpDvTcsI TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076321.33-271379075789768/find.py
-<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076321.33-271379075789768/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076321.33-271379075789768/find.py && sleep 0'
-<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076321.33-271379075789768/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501076321.33-271379075789768/" > /dev/null 2>&1 && sleep 0'
+<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080609.07-7073744723082 `" && echo ansible-tmp-1501080609.07-7073744723082="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080609.07-7073744723082 `" ) && sleep 0'
+<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpYSx5fL TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080609.07-7073744723082/find.py
+<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080609.07-7073744723082/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080609.07-7073744723082/find.py && sleep 0'
+<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080609.07-7073744723082/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501080609.07-7073744723082/" > /dev/null 2>&1 && sleep 0'
 ok: [vsrx01] => {
     "changed": false, 
     "examined": 1, 
     "failed": false, 
     "files": [
         {
-            "atime": 1501029106.0, 
+            "atime": 1501076322.0, 
             "ctime": 1500555692.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -1241,17 +1240,17 @@ task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_template/
 Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
 <vsrx01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
 <vsrx01> EXEC /bin/sh -c 'echo ~ && sleep 0'
-<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076384.98-53772122836621 `" && echo ansible-tmp-1501076384.98-53772122836621="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076384.98-53772122836621 `" ) && sleep 0'
-<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpgl5HGs TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076384.98-53772122836621/find.py
-<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076384.98-53772122836621/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076384.98-53772122836621/find.py && sleep 0'
-<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076384.98-53772122836621/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501076384.98-53772122836621/" > /dev/null 2>&1 && sleep 0'
+<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080672.99-126352795782323 `" && echo ansible-tmp-1501080672.99-126352795782323="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080672.99-126352795782323 `" ) && sleep 0'
+<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmp4FcwT9 TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080672.99-126352795782323/find.py
+<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080672.99-126352795782323/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080672.99-126352795782323/find.py && sleep 0'
+<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080672.99-126352795782323/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501080672.99-126352795782323/" > /dev/null 2>&1 && sleep 0'
 ok: [vsrx01] => {
     "changed": false, 
     "examined": 3, 
     "failed": false, 
     "files": [
         {
-            "atime": 1501029120.0, 
+            "atime": 1501076386.0, 
             "ctime": 1500917323.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -1282,7 +1281,7 @@ ok: [vsrx01] => {
             "xusr": false
         }, 
         {
-            "atime": 1501029120.0, 
+            "atime": 1501076386.0, 
             "ctime": 1500917323.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -1400,17 +1399,17 @@ task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_vlan/task
 Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
 <vsrx01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
 <vsrx01> EXEC /bin/sh -c 'echo ~ && sleep 0'
-<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076448.76-101963274919703 `" && echo ansible-tmp-1501076448.76-101963274919703="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076448.76-101963274919703 `" ) && sleep 0'
-<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpck74BU TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076448.76-101963274919703/find.py
-<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076448.76-101963274919703/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076448.76-101963274919703/find.py && sleep 0'
-<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076448.76-101963274919703/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501076448.76-101963274919703/" > /dev/null 2>&1 && sleep 0'
+<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080736.76-154042999871362 `" && echo ansible-tmp-1501080736.76-154042999871362="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080736.76-154042999871362 `" ) && sleep 0'
+<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmptC3BUm TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080736.76-154042999871362/find.py
+<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080736.76-154042999871362/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080736.76-154042999871362/find.py && sleep 0'
+<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080736.76-154042999871362/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501080736.76-154042999871362/" > /dev/null 2>&1 && sleep 0'
 ok: [vsrx01] => {
     "changed": false, 
     "examined": 1, 
     "failed": false, 
     "files": [
         {
-            "atime": 1501029135.0, 
+            "atime": 1501076450.0, 
             "ctime": 1500555692.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -1521,17 +1520,17 @@ task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_interface
 Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
 <localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
 <localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076512.83-65117582417749 `" && echo ansible-tmp-1501076512.83-65117582417749="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076512.83-65117582417749 `" ) && sleep 0'
-<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpDUIcSL TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076512.83-65117582417749/find.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076512.83-65117582417749/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076512.83-65117582417749/find.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076512.83-65117582417749/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501076512.83-65117582417749/" > /dev/null 2>&1 && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080800.39-261513951778453 `" && echo ansible-tmp-1501080800.39-261513951778453="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080800.39-261513951778453 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpt7ucka TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080800.39-261513951778453/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080800.39-261513951778453/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080800.39-261513951778453/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080800.39-261513951778453/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501080800.39-261513951778453/" > /dev/null 2>&1 && sleep 0'
 ok: [vsrx01 -> localhost] => {
     "changed": false, 
     "examined": 1, 
     "failed": false, 
     "files": [
         {
-            "atime": 1501029148.0, 
+            "atime": 1501076514.0, 
             "ctime": 1500908935.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -1643,17 +1642,17 @@ task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_banner/ta
 Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
 <vsrx01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
 <vsrx01> EXEC /bin/sh -c 'echo ~ && sleep 0'
-<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076577.5-234363686842405 `" && echo ansible-tmp-1501076577.5-234363686842405="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076577.5-234363686842405 `" ) && sleep 0'
-<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpMR4WEg TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076577.5-234363686842405/find.py
-<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076577.5-234363686842405/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076577.5-234363686842405/find.py && sleep 0'
-<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076577.5-234363686842405/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501076577.5-234363686842405/" > /dev/null 2>&1 && sleep 0'
+<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080864.55-270120626365831 `" && echo ansible-tmp-1501080864.55-270120626365831="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080864.55-270120626365831 `" ) && sleep 0'
+<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmphzPURa TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080864.55-270120626365831/find.py
+<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080864.55-270120626365831/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080864.55-270120626365831/find.py && sleep 0'
+<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080864.55-270120626365831/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501080864.55-270120626365831/" > /dev/null 2>&1 && sleep 0'
 ok: [vsrx01] => {
     "changed": false, 
     "examined": 1, 
     "failed": false, 
     "files": [
         {
-            "atime": 1501029162.0, 
+            "atime": 1501076578.0, 
             "ctime": 1500555692.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -1766,17 +1765,17 @@ task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_system/ta
 Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
 <localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
 <localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076642.11-240799205728296 `" && echo ansible-tmp-1501076642.11-240799205728296="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076642.11-240799205728296 `" ) && sleep 0'
-<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmprzPbxA TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076642.11-240799205728296/find.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076642.11-240799205728296/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076642.11-240799205728296/find.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076642.11-240799205728296/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501076642.11-240799205728296/" > /dev/null 2>&1 && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080929.09-159921724666353 `" && echo ansible-tmp-1501080929.09-159921724666353="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080929.09-159921724666353 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmp4dsbcA TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080929.09-159921724666353/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080929.09-159921724666353/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080929.09-159921724666353/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080929.09-159921724666353/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501080929.09-159921724666353/" > /dev/null 2>&1 && sleep 0'
 ok: [vsrx01 -> localhost] => {
     "changed": false, 
     "examined": 1, 
     "failed": false, 
     "files": [
         {
-            "atime": 1501029176.0, 
+            "atime": 1501076643.0, 
             "ctime": 1500555692.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -1890,17 +1889,17 @@ task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_logging/t
 Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
 <localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
 <localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076706.23-150098833264783 `" && echo ansible-tmp-1501076706.23-150098833264783="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076706.23-150098833264783 `" ) && sleep 0'
-<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpYopSQk TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076706.23-150098833264783/find.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076706.23-150098833264783/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076706.23-150098833264783/find.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076706.23-150098833264783/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501076706.23-150098833264783/" > /dev/null 2>&1 && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080993.75-163683265769186 `" && echo ansible-tmp-1501080993.75-163683265769186="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080993.75-163683265769186 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpovo0U_ TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080993.75-163683265769186/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080993.75-163683265769186/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080993.75-163683265769186/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501080993.75-163683265769186/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501080993.75-163683265769186/" > /dev/null 2>&1 && sleep 0'
 ok: [vsrx01 -> localhost] => {
     "changed": false, 
     "examined": 1, 
     "failed": false, 
     "files": [
         {
-            "atime": 1501029190.0, 
+            "atime": 1501076707.0, 
             "ctime": 1500555692.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -2015,21 +2014,21 @@ task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_user/task
 Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
 <vsrx01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
 <vsrx01> EXEC /bin/sh -c 'echo ~ && sleep 0'
-<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076770.15-276248761633475 `" && echo ansible-tmp-1501076770.15-276248761633475="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076770.15-276248761633475 `" ) && sleep 0'
-<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpoTqjJv TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076770.15-276248761633475/find.py
-<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076770.15-276248761633475/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076770.15-276248761633475/find.py && sleep 0'
-<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076770.15-276248761633475/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501076770.15-276248761633475/" > /dev/null 2>&1 && sleep 0'
+<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081057.65-25882419313133 `" && echo ansible-tmp-1501081057.65-25882419313133="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081057.65-25882419313133 `" ) && sleep 0'
+<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmp4_YYx3 TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081057.65-25882419313133/find.py
+<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081057.65-25882419313133/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081057.65-25882419313133/find.py && sleep 0'
+<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081057.65-25882419313133/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501081057.65-25882419313133/" > /dev/null 2>&1 && sleep 0'
 ok: [vsrx01] => {
     "changed": false, 
     "examined": 1, 
     "failed": false, 
     "files": [
         {
-            "atime": 1501029205.0, 
-            "ctime": 1500913007.0, 
+            "atime": 1501080219.0, 
+            "ctime": 1501080082.0, 
             "dev": 16777220, 
             "gid": 20, 
-            "inode": 2606055, 
+            "inode": 2680487, 
             "isblk": false, 
             "ischr": false, 
             "isdir": false, 
@@ -2040,13 +2039,13 @@ ok: [vsrx01] => {
             "issock": false, 
             "isuid": false, 
             "mode": "0644", 
-            "mtime": 1500913007.0, 
+            "mtime": 1501080082.0, 
             "nlink": 1, 
             "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_user/tests/netconf/basic.yaml", 
             "rgrp": true, 
             "roth": true, 
             "rusr": true, 
-            "size": 3916, 
+            "size": 3913, 
             "uid": 501, 
             "wgrp": false, 
             "woth": false, 
@@ -2141,17 +2140,17 @@ task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_static_ro
 Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
 <localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
 <localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076834.06-270442659313629 `" && echo ansible-tmp-1501076834.06-270442659313629="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076834.06-270442659313629 `" ) && sleep 0'
-<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpIDGIDl TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076834.06-270442659313629/find.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076834.06-270442659313629/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076834.06-270442659313629/find.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076834.06-270442659313629/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501076834.06-270442659313629/" > /dev/null 2>&1 && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081121.24-199845558037638 `" && echo ansible-tmp-1501081121.24-199845558037638="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081121.24-199845558037638 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpQHFQTQ TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081121.24-199845558037638/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081121.24-199845558037638/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081121.24-199845558037638/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081121.24-199845558037638/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501081121.24-199845558037638/" > /dev/null 2>&1 && sleep 0'
 ok: [vsrx01 -> localhost] => {
     "changed": false, 
     "examined": 1, 
     "failed": false, 
     "files": [
         {
-            "atime": 1501029219.0, 
+            "atime": 1501076835.0, 
             "ctime": 1500908935.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -2268,17 +2267,17 @@ task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_linkagg/t
 Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
 <localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
 <localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076897.59-251859696694674 `" && echo ansible-tmp-1501076897.59-251859696694674="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076897.59-251859696694674 `" ) && sleep 0'
-<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpA7Y4Rf TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076897.59-251859696694674/find.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076897.59-251859696694674/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076897.59-251859696694674/find.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076897.59-251859696694674/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501076897.59-251859696694674/" > /dev/null 2>&1 && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081184.75-44936088463473 `" && echo ansible-tmp-1501081184.75-44936088463473="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081184.75-44936088463473 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpfC6c4g TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081184.75-44936088463473/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081184.75-44936088463473/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081184.75-44936088463473/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081184.75-44936088463473/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501081184.75-44936088463473/" > /dev/null 2>&1 && sleep 0'
 ok: [vsrx01 -> localhost] => {
     "changed": false, 
     "examined": 1, 
     "failed": false, 
     "files": [
         {
-            "atime": 1501029233.0, 
+            "atime": 1501076898.0, 
             "ctime": 1500908935.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -2396,17 +2395,17 @@ task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_l3_interf
 Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
 <localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
 <localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076961.47-133726041602100 `" && echo ansible-tmp-1501076961.47-133726041602100="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076961.47-133726041602100 `" ) && sleep 0'
-<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpxNsHsN TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076961.47-133726041602100/find.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076961.47-133726041602100/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076961.47-133726041602100/find.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501076961.47-133726041602100/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501076961.47-133726041602100/" > /dev/null 2>&1 && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081249.03-122657288618049 `" && echo ansible-tmp-1501081249.03-122657288618049="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081249.03-122657288618049 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpIMc6Dg TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081249.03-122657288618049/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081249.03-122657288618049/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081249.03-122657288618049/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081249.03-122657288618049/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501081249.03-122657288618049/" > /dev/null 2>&1 && sleep 0'
 ok: [vsrx01 -> localhost] => {
     "changed": false, 
     "examined": 1, 
     "failed": false, 
     "files": [
         {
-            "atime": 1501029248.0, 
+            "atime": 1501076962.0, 
             "ctime": 1500908935.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -2525,17 +2524,17 @@ task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_lldp/task
 Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
 <localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
 <localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501077025.2-65597122225439 `" && echo ansible-tmp-1501077025.2-65597122225439="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501077025.2-65597122225439 `" ) && sleep 0'
-<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpf04_TW TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501077025.2-65597122225439/find.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501077025.2-65597122225439/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501077025.2-65597122225439/find.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501077025.2-65597122225439/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501077025.2-65597122225439/" > /dev/null 2>&1 && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081312.97-68897576693517 `" && echo ansible-tmp-1501081312.97-68897576693517="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081312.97-68897576693517 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpxxCAFi TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081312.97-68897576693517/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081312.97-68897576693517/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081312.97-68897576693517/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081312.97-68897576693517/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501081312.97-68897576693517/" > /dev/null 2>&1 && sleep 0'
 ok: [vsrx01 -> localhost] => {
     "changed": false, 
     "examined": 1, 
     "failed": false, 
     "files": [
         {
-            "atime": 1501029262.0, 
+            "atime": 1501077026.0, 
             "ctime": 1500908935.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -2655,17 +2654,17 @@ task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_lldp_inte
 Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
 <localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
 <localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501077089.16-270184360547421 `" && echo ansible-tmp-1501077089.16-270184360547421="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501077089.16-270184360547421 `" ) && sleep 0'
-<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpzu_eFi TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501077089.16-270184360547421/find.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501077089.16-270184360547421/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501077089.16-270184360547421/find.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501077089.16-270184360547421/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501077089.16-270184360547421/" > /dev/null 2>&1 && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081376.64-53730593847599 `" && echo ansible-tmp-1501081376.64-53730593847599="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081376.64-53730593847599 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpiPwrGB TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081376.64-53730593847599/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081376.64-53730593847599/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081376.64-53730593847599/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081376.64-53730593847599/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501081376.64-53730593847599/" > /dev/null 2>&1 && sleep 0'
 ok: [vsrx01 -> localhost] => {
     "changed": false, 
     "examined": 1, 
     "failed": false, 
     "files": [
         {
-            "atime": 1501029276.0, 
+            "atime": 1501077090.0, 
             "ctime": 1500908935.0, 
             "dev": 16777220, 
             "gid": 20, 
@@ -2786,17 +2785,17 @@ task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_vrf/tasks
 Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
 <vsrx01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
 <vsrx01> EXEC /bin/sh -c 'echo ~ && sleep 0'
-<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501077153.03-264885818803994 `" && echo ansible-tmp-1501077153.03-264885818803994="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501077153.03-264885818803994 `" ) && sleep 0'
-<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpLMaKR3 TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501077153.03-264885818803994/find.py
-<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501077153.03-264885818803994/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501077153.03-264885818803994/find.py && sleep 0'
-<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501077153.03-264885818803994/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501077153.03-264885818803994/" > /dev/null 2>&1 && sleep 0'
+<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081440.12-219382543178380 `" && echo ansible-tmp-1501081440.12-219382543178380="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081440.12-219382543178380 `" ) && sleep 0'
+<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmphieiyl TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081440.12-219382543178380/find.py
+<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081440.12-219382543178380/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081440.12-219382543178380/find.py && sleep 0'
+<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501081440.12-219382543178380/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501081440.12-219382543178380/" > /dev/null 2>&1 && sleep 0'
 ok: [vsrx01] => {
     "changed": false, 
     "examined": 1, 
     "failed": false, 
     "files": [
         {
-            "atime": 1501029290.0, 
+            "atime": 1501077154.0, 
             "ctime": 1500908935.0, 
             "dev": 16777220, 
             "gid": 20, 
