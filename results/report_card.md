@@ -5,6 +5,10 @@
 * [eos](#eos)
 
 ### Failed: 
+* [vyos](#vyos)
+* [junos](#junos)
+* [ios](#ios)
+* [iosxr](#iosxr)
 * [nxos](#nxos)
 
 # Results 
