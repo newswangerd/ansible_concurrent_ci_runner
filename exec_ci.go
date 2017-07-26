@@ -29,7 +29,7 @@ func exec_net_ci(tst_data test, integration_dir string, inv string) {
 
   command := strings.Split(cmd_str, " ")
   cmd := exec.Command(command[0], command[1:]...)
-	out, err := cmd.CombinedOutput()
+  out, err := cmd.CombinedOutput()
 
   elapsed := time.Since(start)
 
@@ -52,10 +52,10 @@ func exec_net_ci(tst_data test, integration_dir string, inv string) {
 }
 
 func main() {
-	// CONFIG FIXME with more dynamic paths
+  // CONFIG FIXME with more dynamic paths
   integration_dir := "/Users/dnewswan/code/ansible/test/integration/"
   inv  := integration_dir + "inventory.network"
-	os.Setenv("ANSIBLE_ROLES_PATH", integration_dir + "targets/")
+  os.Setenv("ANSIBLE_ROLES_PATH", integration_dir + "targets/")
   os.Setenv("ANSIBLE_CALLBACK_PLUGINS", "/Users/dnewswan/code/concurrent_ci/ansible_plugins")
   os.Setenv("ANSIBLE_CALLBACK_WHITELIST", "test_plug")
   os.Setenv("TASK_ERROR_DIR", "/Users/dnewswan/code/concurrent_ci/results/")
