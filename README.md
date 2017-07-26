@@ -21,3 +21,27 @@ Failed tasks in results/_platform_.err are logged using a custom Ansible callbac
 5. Run with `go run exec_ci.go`. Tests will probably take around half an hour to complete.
 
 Note, re running the tests reset all of the files in `results/`.
+
+Some tinkering is still required to fix the "unable to open shell" errors.
+
+Sample output:
+```
+Starting test for: eos
+Starting test for: vyos
+Starting test for: nxos
+Starting test for: iosxr
+Starting test for: ios
+Starting test for: junos
+iosxr failed after 4m11.067241604s
+    with command: ansible-playbook -i /Users/dnewswan/code/ansible/test/integration/inventory.network -vvvv -u root /Users/dnewswan/code/ansible/test/integration/ios.yaml
+junos failed after 4m34.909657518s
+    with command: ansible-playbook -i /Users/dnewswan/code/ansible/test/integration/inventory.network -vvvv -u root /Users/dnewswan/code/ansible/test/integration/junos.yaml
+ios failed after 5m16.944068975s
+    with command: ansible-playbook -i /Users/dnewswan/code/ansible/test/integration/inventory.network -vvvv -u cisco /Users/dnewswan/code/ansible/test/integration/ios.yaml
+vyos failed after 11m29.55132583s
+    with command: ansible-playbook -i /Users/dnewswan/code/ansible/test/integration/inventory.network -vvvv -u vyos /Users/dnewswan/code/ansible/test/integration/vyos.yaml
+eos failed after 22m51.937052768s
+    with command: ansible-playbook -i /Users/dnewswan/code/ansible/test/integration/inventory.network -vvvv -u admin /Users/dnewswan/code/ansible/test/integration/eos.yaml
+nxos failed after 25m17.384572714s
+    with command: ansible-playbook -i /Users/dnewswan/code/ansible/test/integration/inventory.network -vvvv -u admin /Users/dnewswan/code/ansible/test/integration/nxos.yaml
+```
