@@ -26,7 +26,7 @@ class CallbackModule(CallbackBase):
 
             message += "############ FAILURE ############"
             message += "\n"
-            message += self._current_task.get_name().strip()
+            message += "[" + self._current_task.get_name().strip() + "] \n"
             message += self._current_task.get_path()
             message += "\n\n"
             message += error

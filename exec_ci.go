@@ -58,14 +58,15 @@ func compile_report_card(tests []test){
 
   for _, tst := range tests{
     dat, _ := ioutil.ReadFile("results/" + tst.name + ".err")
-    report_card = report_card + "## Results for " + tst.name + "\n"
+    report_card = report_card + "# Results \n"
+    report_card = report_card + "## " + tst.name + "\n"
     if len(string(dat)) < 2 {
-      passed = passed + "* " + tst.name + "\n"
+      passed = passed + "* [" + tst.name + "](#" + tst.name + ")\n"
       report_card = report_card + "*All tests passed!*" + "\n\n"
     } else {
       failed = failed + "* " + tst.name + "\n"
       report_card = report_card + "*The following tests have failed:* \n"
-      report_card = report_card + "_See the .log files for details_ \n"
+      report_card = report_card + "[_See the .log files for details_](./" + tst.name + ".err) \n"
       report_card = report_card + "```\n"
       report_card = report_card + string(dat)
       report_card = report_card + "```\n"
@@ -84,15 +85,18 @@ func main() {
   // CONFIGURE FILE PATHS
   integration_dir := "/Users/dnewswan/code/concurrent_ci/ansible/test/integration/"
 	exec_ci_dir := "/Users/dnewswan/code/concurrent_ci/"
-  inv  := "#inventory.with_pass"
+  // inv  := "#inventory.with_pass"
 
 	// Configure environment (this shouldn't have to be updated on an individual basis)
   os.Setenv("ANSIBLE_ROLES_PATH", integration_dir + "targets/")
   os.Setenv("ANSIBLE_CALLBACK_PLUGINS", exec_ci_dir + "ansible_plugins")
   os.Setenv("ANSIBLE_CALLBACK_WHITELIST", "test_plug")
   os.Setenv("TASK_ERROR_DIR", exec_ci_dir+"/results/")
+
+  // These should help avoid most 'unable to open shell problems'
 	os.Setenv("ANSIBLE_CONNECT_TIMEOUT", "60")
 	os.Setenv("ANSIBLE_TIMEOUT", "60")
+  os.Setenv("ANSIBLE_HOST_KEY_CHECKING", "false")
 
   tests := []test{
     test {
@@ -108,7 +112,7 @@ func main() {
     test {
       name: "junos",
       playbook: "junos.yaml",
-      user: "root",
+      user: "ansible",
     },
     test {
       name: "ios",
@@ -126,12 +130,12 @@ func main() {
       user: "admin",
     },
   }
-
-  wg.Add(len(tests))
-  for _, tst := range tests{
-    go exec_net_ci(tst, integration_dir, inv)
-  }
-  wg.Wait()
+  //
+  // wg.Add(len(tests))
+  // for _, tst := range tests{
+  //   go exec_net_ci(tst, integration_dir, inv)
+  // }
+  // wg.Wait()
 
   compile_report_card(tests)
 }
