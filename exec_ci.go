@@ -24,11 +24,11 @@ func exec_net_ci(tst_data test, integration_dir string, inv string) {
   fmt.Println("Starting test for: " + tst_data.name)
 
   start := time.Now()
-  playbook :=integration_dir + tst_data.playbook
-  cmd_str := fmt.Sprintf("ansible-playbook -i %s -vvvv -u %s %s", inv, tst_data.user, playbook)
+  cmd_str := fmt.Sprintf("ansible-playbook -i %s -vvvv -u %s %s", inv, tst_data.user, tst_data.playbook)
 
   command := strings.Split(cmd_str, " ")
   cmd := exec.Command(command[0], command[1:]...)
+	cmd.Dir = integration_dir
   out, err := cmd.CombinedOutput()
 
   elapsed := time.Since(start)
@@ -38,13 +38,12 @@ func exec_net_ci(tst_data test, integration_dir string, inv string) {
   if err != nil {
     msg = msg + tst_data.name + " failed "
     msg = msg + "after " + elapsed.String()
-    msg = msg + "\n    with command: " + cmd_str
+    msg = msg + "\n    with command:  " + cmd_str
+    msg = msg + "\n    executed from: " + integration_dir
   } else {
     msg = msg + tst_data.name + " succeeded "
     msg = msg + "after " + elapsed.String()
   }
-
-
 
   fmt.Println(msg)
 
@@ -52,50 +51,51 @@ func exec_net_ci(tst_data test, integration_dir string, inv string) {
 }
 
 func main() {
-  // CONFIG FIXME with more dynamic paths
+  // CONFIGURE FILE PATHS
   integration_dir := "/Users/dnewswan/code/ansible/test/integration/"
-  inv  := integration_dir + "inventory.network"
+	exec_ci_dir := "/Users/dnewswan/code/concurrent_ci/"
+  inv  := "inventory.network"
+
+	// Configure environment (this shouldn't have to be updated on an individual basis)
   os.Setenv("ANSIBLE_ROLES_PATH", integration_dir + "targets/")
-  os.Setenv("ANSIBLE_CALLBACK_PLUGINS", "/Users/dnewswan/code/concurrent_ci/ansible_plugins")
+  os.Setenv("ANSIBLE_CALLBACK_PLUGINS", exec_ci_dir + "ansible_plugins")
   os.Setenv("ANSIBLE_CALLBACK_WHITELIST", "test_plug")
-  os.Setenv("TASK_ERROR_DIR", "/Users/dnewswan/code/concurrent_ci/results/")
+  os.Setenv("TASK_ERROR_DIR", exec_ci_dir+"/results/")
+	os.Setenv("ANSIBLE_CONNECT_TIMEOUT", "60")
+	os.Setenv("ANSIBLE_TIMEOUT", "60")
 
   tests := []test{
-    test {
-      name: "vyos",
-      playbook: "vyos.yaml",
-      user: "vyos",
-    },
+    // test {
+    //   name: "vyos",
+    //   playbook: "vyos.yaml",
+    //   user: "vyos",
+    // },
     test {
       name: "eos",
       playbook: "eos.yaml",
       user: "admin",
     },
-    test {
-      name: "junos",
-      playbook: "junos.yaml",
-      user: "root",
-    },
-    test {
-      name: "ios",
-      playbook: "ios.yaml",
-      user: "cisco",
-    },
-    test {
-      name: "iosxr",
-      playbook: "ios.yaml",
-      user: "root",
-    },
-    test {
-      name: "nxos",
-      playbook: "nxos.yaml",
-      user: "admin",
-    },
+    // test {
+    //   name: "junos",
+    //   playbook: "junos.yaml",
+    //   user: "root",
+    // },
+    // test {
+    //   name: "ios",
+    //   playbook: "ios.yaml",
+    //   user: "cisco",
+    // },
+    // test {
+    //   name: "iosxr",
+    //   playbook: "iosxr.yaml",
+    //   user: "root",
+    // },
+    // test {
+    //   name: "nxos",
+    //   playbook: "nxos.yaml",
+    //   user: "admin",
+    // },
   }
-
-
-  commands := [][]string{}
-  commands = append(commands, )
 
   wg.Add(len(tests))
   for _, tst := range tests{

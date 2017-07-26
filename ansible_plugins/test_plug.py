@@ -33,12 +33,12 @@ class CallbackModule(CallbackBase):
             message += "\n\n\n"
 
 
-        else:
-            message += "############ IGNORED ############"
-            message += "\n"
-            message += "See %s if you think this is a problem \n\n\n" % self._current_task.get_path()
+        # else:
+        #     message += "############ IGNORED ############"
+        #     message += "\n"
+        #     message += "See %s if you think this is a problem \n\n\n" % self._current_task.get_path()
 
-        self.failed_tasks.write(message)
+            self.failed_tasks.write(message)
 
 
     def v2_playbook_on_task_start(self, task, is_conditional):

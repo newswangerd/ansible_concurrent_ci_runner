@@ -1,7 +1,3 @@
-############ IGNORED ############
-See /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/bad_operator.yaml:4 if you think this is a problem 
-
-
 ############ FAILURE ############
 junos_command : test contains operator with xml encoding/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/contains.yaml:4
 
