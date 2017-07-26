@@ -50,6 +50,36 @@ func exec_net_ci(tst_data test, integration_dir string, inv string) {
   ioutil.WriteFile("results/" + tst_data.name + ".log", out, 0777)
 }
 
+func compile_report_card(tests []test){
+  fmt.Println("Compiling Report Card")
+  report_card := ""
+  failed := ""
+  passed := ""
+
+  for _, tst := range tests{
+    dat, _ := ioutil.ReadFile("results/" + tst.name + ".err")
+    report_card = report_card + "## Results for " + tst.name + "\n"
+    if len(string(dat)) < 2 {
+      passed = passed + "* " + tst.name + "\n"
+      report_card = report_card + "*All tests passed!*" + "\n\n"
+    } else {
+      failed = failed + "* " + tst.name + "\n"
+      report_card = report_card + "*The following tests have failed:* \n"
+      report_card = report_card + "_See the .log files for details_ \n"
+      report_card = report_card + "```\n"
+      report_card = report_card + string(dat)
+      report_card = report_card + "```\n"
+    }
+  }
+
+  title := "# CI Test Report Card \n\n"
+  summary := "## Test Summary \n"
+  summary = summary + "### Passed: \n" + passed + "\n"
+  summary = summary + "### Failed: \n" + failed + "\n"
+
+  ioutil.WriteFile("results/report_card.md", []byte(title + summary + report_card), 0777)
+}
+
 func main() {
   // CONFIGURE FILE PATHS
   integration_dir := "/Users/dnewswan/code/ansible/test/integration/"
@@ -65,36 +95,36 @@ func main() {
 	os.Setenv("ANSIBLE_TIMEOUT", "60")
 
   tests := []test{
-    // test {
-    //   name: "vyos",
-    //   playbook: "vyos.yaml",
-    //   user: "vyos",
-    // },
+    test {
+      name: "vyos",
+      playbook: "vyos.yaml",
+      user: "vyos",
+    },
     test {
       name: "eos",
       playbook: "eos.yaml",
       user: "admin",
     },
-    // test {
-    //   name: "junos",
-    //   playbook: "junos.yaml",
-    //   user: "root",
-    // },
-    // test {
-    //   name: "ios",
-    //   playbook: "ios.yaml",
-    //   user: "cisco",
-    // },
-    // test {
-    //   name: "iosxr",
-    //   playbook: "iosxr.yaml",
-    //   user: "root",
-    // },
-    // test {
-    //   name: "nxos",
-    //   playbook: "nxos.yaml",
-    //   user: "admin",
-    // },
+    test {
+      name: "junos",
+      playbook: "junos.yaml",
+      user: "root",
+    },
+    test {
+      name: "ios",
+      playbook: "ios.yaml",
+      user: "cisco",
+    },
+    test {
+      name: "iosxr",
+      playbook: "iosxr.yaml",
+      user: "root",
+    },
+    test {
+      name: "nxos",
+      playbook: "nxos.yaml",
+      user: "admin",
+    },
   }
 
   wg.Add(len(tests))
@@ -102,4 +132,6 @@ func main() {
     go exec_net_ci(tst, integration_dir, inv)
   }
   wg.Wait()
+
+  compile_report_card(tests)
 }
