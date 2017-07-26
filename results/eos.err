@@ -1,0 +1,111 @@
+############ FAILURE ############
+prepare_eos_tests : Enable Ethernet1 interface and disable switchport/Users/dnewswan/code/ansible/test/integration/targets/prepare_eos_tests/tasks/main.yml:1
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+prepare_eos_tests : Enable Ethernet1 interface and disable switchport/Users/dnewswan/code/ansible/test/integration/targets/prepare_eos_tests/tasks/main.yml:1
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ IGNORED ############
+See /Users/dnewswan/code/ansible/test/integration/targets/eos_config/tests/cli/src_invalid.yaml:6 if you think this is a problem 
+
+
+############ IGNORED ############
+See /Users/dnewswan/code/ansible/test/integration/targets/eos_config/tests/eapi/src_invalid.yaml:6 if you think this is a problem 
+
+
+############ FAILURE ############
+eos_config : teardown/Users/dnewswan/code/ansible/test/integration/targets/eos_config/tests/eapi/sublevel.yaml:35
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+prepare_eos_tests : Enable Ethernet1 interface and disable switchport/Users/dnewswan/code/ansible/test/integration/targets/prepare_eos_tests/tasks/main.yml:1
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ IGNORED ############
+See /Users/dnewswan/code/ansible/test/integration/targets/eos_facts/tests/cli/invalid_subset.yaml:5 if you think this is a problem 
+
+
+############ IGNORED ############
+See /Users/dnewswan/code/ansible/test/integration/targets/eos_facts/tests/cli/invalid_subset.yaml:36 if you think this is a problem 
+
+
+############ IGNORED ############
+See /Users/dnewswan/code/ansible/test/integration/targets/eos_facts/tests/eapi/invalid_subset.yaml:5 if you think this is a problem 
+
+
+############ IGNORED ############
+See /Users/dnewswan/code/ansible/test/integration/targets/eos_facts/tests/eapi/invalid_subset.yaml:36 if you think this is a problem 
+
+
+############ IGNORED ############
+See /Users/dnewswan/code/ansible/test/integration/targets/eos_eapi/tests/cli/badtransport.yaml:3 if you think this is a problem 
+
+
+############ IGNORED ############
+See /Users/dnewswan/code/ansible/test/integration/targets/eos_eapi/tests/cli/vrf.yaml:5 if you think this is a problem 
+
+
+############ FAILURE ############
+eos_system : disable eapi/Users/dnewswan/code/ansible/test/integration/targets/eos_system/tasks/eapi.yaml:25
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+prepare_eos_tests : Enable Ethernet1 interface and disable switchport/Users/dnewswan/code/ansible/test/integration/targets/prepare_eos_tests/tasks/main.yml:1
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+eos_vrf : Modify rd/Users/dnewswan/code/ansible/test/integration/targets/eos_vrf/tests/cli/basic.yaml:43
+
+[msg]=> Unexpected failure during module execution.
+[failed]=> True
+[stdout]=> 
+
+
+
+############ FAILURE ############
+Has any previous test failed?/Users/dnewswan/code/ansible/test/integration/eos.yaml:121
+
+[msg]=> One or more tests failed, check log for details
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+

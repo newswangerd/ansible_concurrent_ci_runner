@@ -1,0 +1,194 @@
+############ IGNORED ############
+See /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/bad_operator.yaml:4 if you think this is a problem 
+
+
+############ FAILURE ############
+junos_command : test contains operator with xml encoding/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/contains.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+junos_config : setup/Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/backup.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+junos_facts : Collect default facts from device/Users/dnewswan/code/ansible/test/integration/targets/junos_facts/tests/netconf/facts.yaml:5
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+junos_netconf : Setup/Users/dnewswan/code/ansible/test/integration/targets/junos_netconf/tests/cli/changeport.yaml:5
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+junos_rpc : Execute RPC on device/Users/dnewswan/code/ansible/test/integration/targets/junos_rpc/tests/netconf/rpc.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+junos_template : setup/Users/dnewswan/code/ansible/test/integration/targets/junos_template/tests/netconf/backup.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+junos_vlan : setup - remove vlan/Users/dnewswan/code/ansible/test/integration/targets/junos_vlan/tests/netconf/basic.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+junos_interface : setup - remove interface/Users/dnewswan/code/ansible/test/integration/targets/junos_interface/tests/netconf/basic.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+junos_banner : setup - remove login banner/Users/dnewswan/code/ansible/test/integration/targets/junos_banner/tests/netconf/basic.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+junos_system : setup - remove hostname/Users/dnewswan/code/ansible/test/integration/targets/junos_system/tests/netconf/basic.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+junos_logging : setup - remove file logging/Users/dnewswan/code/ansible/test/integration/targets/junos_logging/tests/netconf/basic.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+junos_user : setup - remove user/Users/dnewswan/code/ansible/test/integration/targets/junos_user/tests/netconf/basic.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+junos_static_route : setup - remove static route/Users/dnewswan/code/ansible/test/integration/targets/junos_static_route/tests/netconf/basic.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+junos_linkagg : setup - remove linkagg/Users/dnewswan/code/ansible/test/integration/targets/junos_linkagg/tests/netconf/basic.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+junos_l3_interface : setup - remove interface address/Users/dnewswan/code/ansible/test/integration/targets/junos_l3_interface/tests/netconf/basic.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+junos_lldp : setup - Disable lldp and remove it's configuration/Users/dnewswan/code/ansible/test/integration/targets/junos_lldp/tests/netconf/basic.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+junos_lldp_interface : setup - Remove lldp interface configuration/Users/dnewswan/code/ansible/test/integration/targets/junos_lldp_interface/tests/netconf/basic.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+junos_vrf : setup - remove vrf/Users/dnewswan/code/ansible/test/integration/targets/junos_vrf/tests/netconf/basic.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+Has any previous test failed?/Users/dnewswan/code/ansible/test/integration/junos.yaml:182
+
+[msg]=> One or more tests failed, check log for details
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+

@@ -1,0 +1,69 @@
+############ IGNORED ############
+See /Users/dnewswan/code/ansible/test/integration/targets/vyos_command/tests/cli/bad_operator.yaml:4 if you think this is a problem 
+
+
+############ IGNORED ############
+See /Users/dnewswan/code/ansible/test/integration/targets/vyos_command/tests/cli/invalid.yaml:4 if you think this is a problem 
+
+
+############ IGNORED ############
+See /Users/dnewswan/code/ansible/test/integration/targets/vyos_command/tests/cli/invalid.yaml:13 if you think this is a problem 
+
+
+############ IGNORED ############
+See /Users/dnewswan/code/ansible/test/integration/targets/vyos_command/tests/cli/timeout.yaml:4 if you think this is a problem 
+
+
+############ FAILURE ############
+vyos_l3_interface : Set IPv6 address/Users/dnewswan/code/ansible/test/integration/targets/vyos_l3_interface/tests/cli/basic.yaml:33
+
+[_ansible_parsed]=> True
+[_ansible_no_log]=> False
+[changed]=> False
+[failed]=> True
+[invocation]=> {u'module_args': {u'username': None, u'ssh_keyfile': None, u'name': u'eth1', u'provider': None, u'state': u'present', u'purge': False, u'host': None, u'ipv4': None, u'timeout': None, u'ipv6': u'fd5d:12c9:2201:1::1/64', u'aggregate': None, u'password': None, u'port': None}}
+[msg]=> commit failed: commit
+[ interfaces ethernet eth1 address fd5d:12c9:2201:1::1/64 ]
+RTNETLINK answers: No buffer space available
+
+[[interfaces ethernet eth1]] failed
+Commit failed
+[edit]
+vyos@vyos02# 
+
+
+
+############ FAILURE ############
+vyos_logging : assert/Users/dnewswan/code/ansible/test/integration/targets/vyos_logging/tests/cli/basic.yaml:11
+
+[_ansible_no_log]=> False
+[changed]=> False
+[assertion]=> result.changed == true
+[_ansible_verbose_always]=> True
+[failed]=> True
+[evaluated_to]=> False
+
+
+
+############ FAILURE ############
+vyos_interface : assert/Users/dnewswan/code/ansible/test/integration/targets/vyos_interface/tests/cli/basic.yaml:141
+
+[_ansible_no_log]=> False
+[changed]=> False
+[assertion]=> "set interfaces ethernet eth1 description test-interface-1" in result.commands
+[_ansible_verbose_always]=> True
+[failed]=> True
+[evaluated_to]=> False
+
+
+
+############ FAILURE ############
+Has any previous test failed?/Users/dnewswan/code/ansible/test/integration/vyos.yaml:121
+
+[msg]=> One or more tests failed, check log for details
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+

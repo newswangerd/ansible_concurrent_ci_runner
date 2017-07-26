@@ -1,0 +1,2711 @@
+ansible-playbook 2.4.0 (devel 3a3bdde869) last updated 2017/07/25 11:24:04 (GMT -400)
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/Users/dnewswan/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /Users/dnewswan/code/ansible/lib/ansible
+  executable location = /Users/dnewswan/code/ansible/bin/ansible-playbook
+  python version = 2.7.13 (default, Apr  4 2017, 08:47:57) [GCC 4.2.1 Compatible Apple LLVM 8.1.0 (clang-802.0.38)]
+Using /etc/ansible/ansible.cfg as config file
+setting up inventory plugins
+Parsed /Users/dnewswan/code/ansible/test/integration/inventory.network inventory source with ini plugin
+[DEPRECATION WARNING]: The use of 'include' for tasks has been deprecated. Use 
+'import_tasks' for static inclusions or 'include_tasks' for dynamic inclusions.
+
+This feature will be removed in a future release. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/ios_banner/tasks/cli.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/ios_command/tasks/cli.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/ios_config/tasks/cli.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/ios_facts/tasks/cli.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/ios_template/tasks/cli.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/ios_system/tasks/cli.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/ios_user/tasks/cli.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/ios_static_route/tasks/cli.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/ios_logging/tasks/cli.yaml
+Loading callback plugin default of type stdout, v2.0 from /Users/dnewswan/code/ansible/lib/ansible/plugins/callback/__init__.pyc
+Loading callback plugin test_plug of type notification, v2.0 from /Users/dnewswan/code/ansible/lib/ansible/plugins/callback/__init__.pyc
+
+PLAYBOOK: ios.yaml *************************************************************
+1 plays in /Users/dnewswan/code/ansible/test/integration/ios.yaml
+
+PLAY [ios] *********************************************************************
+META: ran handlers
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/ios.yaml:14
+ok: [ios01] => {
+    "ansible_facts": {
+        "failed_modules": [], 
+        "test_failed": false
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [prepare_ios_tests : Ensure we have loopback 888 for testing] *************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+<ios01> using connection plugin network_cli
+<ios01> socket_path: /Users/dnewswan/.ansible/pc/e9c21a7b4c
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/basic.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/netcfg.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/netcli.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/six/__init__.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/ios.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/_text.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/parsing/convert_bool.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/parsing/__init__.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/pycompat24.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/network_common.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/six/_six.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/connection.py
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/network/ios/ios_config.py
+<ios01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<ios01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<ios01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029039.44-256341007719347 `" && echo ansible-tmp-1501029039.44-256341007719347="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029039.44-256341007719347 `" ) && sleep 0'
+<ios01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpJL9wiv TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029039.44-256341007719347/ios_config.py
+<ios01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029039.44-256341007719347/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029039.44-256341007719347/ios_config.py && sleep 0'
+<ios01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029039.44-256341007719347/ios_config.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029039.44-256341007719347/" > /dev/null 2>&1 && sleep 0'
+ok: [ios01] => {
+    "changed": false, 
+    "failed": false, 
+    "invocation": {
+        "module_args": {
+            "after": null, 
+            "auth_pass": null, 
+            "authorize": null, 
+            "backup": false, 
+            "before": null, 
+            "defaults": false, 
+            "diff_against": null, 
+            "diff_ignore_lines": null, 
+            "force": false, 
+            "host": null, 
+            "intended_config": null, 
+            "lines": null, 
+            "match": "line", 
+            "multiline_delimiter": "@", 
+            "parents": null, 
+            "password": null, 
+            "port": null, 
+            "provider": {
+                "auth_pass": null, 
+                "authorize": null, 
+                "host": "ios01", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "port": null, 
+                "ssh_keyfile": null, 
+                "timeout": null, 
+                "transport": "cli", 
+                "username": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+            }, 
+            "replace": "line", 
+            "running_config": null, 
+            "save": false, 
+            "save_when": "never", 
+            "src": "interface Loopback888\n description test for ansible\n shutdown\n\n", 
+            "ssh_keyfile": null, 
+            "timeout": null, 
+            "username": null
+        }
+    }
+}
+
+TASK [prepare_ios_tests : set_fact] ********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:12
+ok: [ios01] => {
+    "ansible_facts": {
+        "shorter_hostname": "ios01"
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [ios_banner : collect all cli test cases] *********************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_banner/tasks/cli.yaml:2
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/basic.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/_text.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/parsing/convert_bool.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/parsing/__init__.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/pycompat24.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/six/__init__.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/six/_six.py
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<ios01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<ios01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<ios01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029043.31-254532717132721 `" && echo ansible-tmp-1501029043.31-254532717132721="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029043.31-254532717132721 `" ) && sleep 0'
+<ios01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpk8V0QL TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029043.31-254532717132721/find.py
+<ios01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029043.31-254532717132721/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029043.31-254532717132721/find.py && sleep 0'
+<ios01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029043.31-254532717132721/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029043.31-254532717132721/" > /dev/null 2>&1 && sleep 0'
+ok: [ios01] => {
+    "changed": false, 
+    "examined": 3, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500921159.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797032, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_banner/tests/cli/basic-login.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 1012, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500921159.0, 
+            "ctime": 1500501764.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2473653, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500501764.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_banner/tests/cli/basic-motd.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 1002, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500921159.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797034, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_banner/tests/cli/basic-no-login.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 873, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/ios_banner/tests/cli"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 3, 
+    "msg": ""
+}
+
+TASK [ios_banner : set test_items] *********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_banner/tasks/cli.yaml:8
+ok: [ios01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_banner/tests/cli/basic-login.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_banner/tests/cli/basic-motd.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_banner/tests/cli/basic-no-login.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [ios_banner : run test case] **********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_banner/tasks/cli.yaml:11
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_banner/tests/cli/basic-login.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_banner/tests/cli/basic-motd.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_banner/tests/cli/basic-no-login.yaml for ios01
+
+TASK [ios_banner : setup - remove login] ***************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_banner/tests/cli/basic-login.yaml:3
+<ios01> using connection plugin network_cli
+<ios01> socket_path: /Users/dnewswan/.ansible/pc/e9c21a7b4c
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/basic.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/connection.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/ios.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/_text.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/parsing/convert_bool.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/parsing/__init__.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/pycompat24.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/six/__init__.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/six/_six.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/network_common.py
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/network/ios/ios_banner.py
+<ios01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<ios01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<ios01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029050.79-212007504563130 `" && echo ansible-tmp-1501029050.79-212007504563130="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029050.79-212007504563130 `" ) && sleep 0'
+<ios01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpObTAzX TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029050.79-212007504563130/ios_banner.py
+<ios01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029050.79-212007504563130/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029050.79-212007504563130/ios_banner.py && sleep 0'
+<ios01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029050.79-212007504563130/ios_banner.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029050.79-212007504563130/" > /dev/null 2>&1 && sleep 0'
+ok: [ios01] => {
+    "changed": false, 
+    "commands": [], 
+    "failed": false, 
+    "invocation": {
+        "module_args": {
+            "auth_pass": null, 
+            "authorize": true, 
+            "banner": "login", 
+            "host": null, 
+            "password": null, 
+            "port": null, 
+            "provider": {
+                "auth_pass": null, 
+                "authorize": true, 
+                "host": "ios01", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "port": null, 
+                "ssh_keyfile": null, 
+                "timeout": null, 
+                "transport": "cli", 
+                "username": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+            }, 
+            "ssh_keyfile": null, 
+            "state": "absent", 
+            "text": null, 
+            "timeout": null, 
+            "username": null
+        }
+    }
+}
+
+TASK [ios_banner : Set login] **************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_banner/tests/cli/basic-login.yaml:10
+<ios01> using connection plugin network_cli
+<ios01> socket_path: /Users/dnewswan/.ansible/pc/e9c21a7b4c
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/network/ios/ios_banner.py
+<ios01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<ios01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<ios01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029056.5-2895135789405 `" && echo ansible-tmp-1501029056.5-2895135789405="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029056.5-2895135789405 `" ) && sleep 0'
+<ios01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpZJ5DxE TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029056.5-2895135789405/ios_banner.py
+<ios01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029056.5-2895135789405/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029056.5-2895135789405/ios_banner.py && sleep 0'
+<ios01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029056.5-2895135789405/ios_banner.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029056.5-2895135789405/" > /dev/null 2>&1 && sleep 0'
+changed: [ios01] => {
+    "changed": true, 
+    "commands": [
+        "banner login @\nthis is my login banner\nthat has a multiline\nstring\n@"
+    ], 
+    "failed": false, 
+    "invocation": {
+        "module_args": {
+            "auth_pass": null, 
+            "authorize": true, 
+            "banner": "login", 
+            "host": null, 
+            "password": null, 
+            "port": null, 
+            "provider": {
+                "auth_pass": null, 
+                "authorize": true, 
+                "host": "ios01", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "port": null, 
+                "ssh_keyfile": null, 
+                "timeout": null, 
+                "transport": "cli", 
+                "username": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+            }, 
+            "ssh_keyfile": null, 
+            "state": "present", 
+            "text": "this is my login banner\nthat has a multiline\nstring\n", 
+            "timeout": null, 
+            "username": null
+        }
+    }
+}
+
+TASK [ios_banner : debug] ******************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_banner/tests/cli/basic-login.yaml:22
+ok: [ios01] => {
+    "msg": {
+        "changed": true, 
+        "commands": [
+            "banner login @\nthis is my login banner\nthat has a multiline\nstring\n@"
+        ], 
+        "failed": false
+    }
+}
+
+TASK [ios_banner : assert] *****************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_banner/tests/cli/basic-login.yaml:25
+ok: [ios01] => {
+    "changed": false, 
+    "failed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [ios_banner : Set login again (idempotent)] *******************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_banner/tests/cli/basic-login.yaml:30
+<ios01> using connection plugin network_cli
+<ios01> socket_path: /Users/dnewswan/.ansible/pc/e9c21a7b4c
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/network/ios/ios_banner.py
+<ios01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<ios01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<ios01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029072.88-221810974277130 `" && echo ansible-tmp-1501029072.88-221810974277130="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029072.88-221810974277130 `" ) && sleep 0'
+<ios01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpzoHUEl TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029072.88-221810974277130/ios_banner.py
+<ios01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029072.88-221810974277130/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029072.88-221810974277130/ios_banner.py && sleep 0'
+<ios01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029072.88-221810974277130/ios_banner.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029072.88-221810974277130/" > /dev/null 2>&1 && sleep 0'
+The full traceback is:
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_iRtSni/ansible_modlib.zip/ansible/module_utils/connection.py", line 67, in exec_command
+    sf.connect(module._socket_path)
+  File "/usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+fatal: [ios01]: FAILED! => {
+    "changed": false, 
+    "err": "[Errno 2] No such file or directory", 
+    "failed": true, 
+    "invocation": {
+        "module_args": {
+            "auth_pass": null, 
+            "authorize": true, 
+            "banner": "login", 
+            "host": null, 
+            "password": null, 
+            "port": null, 
+            "provider": {
+                "auth_pass": null, 
+                "authorize": true, 
+                "host": "ios01", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "port": null, 
+                "ssh_keyfile": null, 
+                "timeout": null, 
+                "transport": "cli", 
+                "username": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+            }, 
+            "ssh_keyfile": null, 
+            "state": "present", 
+            "text": "this is my login banner\nthat has a multiline\nstring\n", 
+            "timeout": null, 
+            "username": null
+        }
+    }, 
+    "msg": "unable to connect to socket"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/ios.yaml:22
+ok: [ios01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "ios_banner"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [prepare_ios_tests : Ensure we have loopback 888 for testing] *************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+<ios01> using connection plugin network_cli
+<ios01> socket_path: /Users/dnewswan/.ansible/pc/e9c21a7b4c
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/network/ios/ios_config.py
+<ios01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<ios01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<ios01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029080.98-98430962316738 `" && echo ansible-tmp-1501029080.98-98430962316738="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029080.98-98430962316738 `" ) && sleep 0'
+<ios01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmp0EZtm5 TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029080.98-98430962316738/ios_config.py
+<ios01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029080.98-98430962316738/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029080.98-98430962316738/ios_config.py && sleep 0'
+<ios01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029080.98-98430962316738/ios_config.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029080.98-98430962316738/" > /dev/null 2>&1 && sleep 0'
+ok: [ios01] => {
+    "changed": false, 
+    "failed": false, 
+    "invocation": {
+        "module_args": {
+            "after": null, 
+            "auth_pass": null, 
+            "authorize": null, 
+            "backup": false, 
+            "before": null, 
+            "defaults": false, 
+            "diff_against": null, 
+            "diff_ignore_lines": null, 
+            "force": false, 
+            "host": null, 
+            "intended_config": null, 
+            "lines": null, 
+            "match": "line", 
+            "multiline_delimiter": "@", 
+            "parents": null, 
+            "password": null, 
+            "port": null, 
+            "provider": {
+                "auth_pass": null, 
+                "authorize": null, 
+                "host": "ios01", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "port": null, 
+                "ssh_keyfile": null, 
+                "timeout": null, 
+                "transport": "cli", 
+                "username": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+            }, 
+            "replace": "line", 
+            "running_config": null, 
+            "save": false, 
+            "save_when": "never", 
+            "src": "interface Loopback888\n description test for ansible\n shutdown\n\n", 
+            "ssh_keyfile": null, 
+            "timeout": null, 
+            "username": null
+        }
+    }
+}
+
+TASK [prepare_ios_tests : set_fact] ********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:12
+ok: [ios01] => {
+    "ansible_facts": {
+        "shorter_hostname": "ios01"
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [ios_command : collect all cli test cases] ********************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_command/tasks/cli.yaml:2
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029088.49-71455900235887 `" && echo ansible-tmp-1501029088.49-71455900235887="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029088.49-71455900235887 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpG5pt3K TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029088.49-71455900235887/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029088.49-71455900235887/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029088.49-71455900235887/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029088.49-71455900235887/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029088.49-71455900235887/" > /dev/null 2>&1 && sleep 0'
+ok: [ios01 -> localhost] => {
+    "changed": false, 
+    "examined": 5, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500921159.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797046, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/bad_operator.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 397, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500921159.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797047, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/contains.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 398, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500921159.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797048, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/invalid.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 434, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500921159.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797049, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/output.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 538, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500921159.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797050, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/timeout.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 342, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 5, 
+    "msg": ""
+}
+
+TASK [ios_command : set test_items] ********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_command/tasks/cli.yaml:9
+ok: [ios01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/bad_operator.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/contains.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/invalid.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/output.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/timeout.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [ios_command : run test case] *********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_command/tasks/cli.yaml:12
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/bad_operator.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/contains.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/invalid.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/output.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/timeout.yaml for ios01
+
+TASK [ios_command : debug] *****************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/bad_operator.yaml:2
+ok: [ios01] => {
+    "msg": "START cli/bad_operator.yaml"
+}
+
+TASK [ios_command : test bad operator] *****************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/bad_operator.yaml:4
+<ios01> using connection plugin network_cli
+<ios01> socket_path: 
+fatal: [ios01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+...ignoring
+
+TASK [ios_command : assert] ****************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/bad_operator.yaml:14
+ok: [ios01] => {
+    "changed": false, 
+    "failed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [ios_command : debug] *****************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/bad_operator.yaml:19
+ok: [ios01] => {
+    "msg": "END cli/bad_operator.yaml"
+}
+
+TASK [ios_command : debug] *****************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/contains.yaml:2
+ok: [ios01] => {
+    "msg": "START cli/contains.yaml"
+}
+
+TASK [ios_command : test contains operator] ************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_command/tests/cli/contains.yaml:4
+<ios01> using connection plugin network_cli
+<ios01> socket_path: 
+fatal: [ios01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/ios.yaml:30
+ok: [ios01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "ios_banner", 
+            "ios_command"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [prepare_ios_tests : Ensure we have loopback 888 for testing] *************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+<ios01> using connection plugin network_cli
+<ios01> socket_path: /Users/dnewswan/.ansible/pc/e9c21a7b4c
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/network/ios/ios_config.py
+<ios01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<ios01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<ios01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029123.03-140415648373825 `" && echo ansible-tmp-1501029123.03-140415648373825="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029123.03-140415648373825 `" ) && sleep 0'
+<ios01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpoyFoUY TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029123.03-140415648373825/ios_config.py
+<ios01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029123.03-140415648373825/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029123.03-140415648373825/ios_config.py && sleep 0'
+<ios01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029123.03-140415648373825/ios_config.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029123.03-140415648373825/" > /dev/null 2>&1 && sleep 0'
+ok: [ios01] => {
+    "changed": false, 
+    "failed": false, 
+    "invocation": {
+        "module_args": {
+            "after": null, 
+            "auth_pass": null, 
+            "authorize": null, 
+            "backup": false, 
+            "before": null, 
+            "defaults": false, 
+            "diff_against": null, 
+            "diff_ignore_lines": null, 
+            "force": false, 
+            "host": null, 
+            "intended_config": null, 
+            "lines": null, 
+            "match": "line", 
+            "multiline_delimiter": "@", 
+            "parents": null, 
+            "password": null, 
+            "port": null, 
+            "provider": {
+                "auth_pass": null, 
+                "authorize": null, 
+                "host": "ios01", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "port": null, 
+                "ssh_keyfile": null, 
+                "timeout": null, 
+                "transport": "cli", 
+                "username": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+            }, 
+            "replace": "line", 
+            "running_config": null, 
+            "save": false, 
+            "save_when": "never", 
+            "src": "interface Loopback888\n description test for ansible\n shutdown\n\n", 
+            "ssh_keyfile": null, 
+            "timeout": null, 
+            "username": null
+        }
+    }
+}
+
+TASK [prepare_ios_tests : set_fact] ********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:12
+ok: [ios01] => {
+    "ansible_facts": {
+        "shorter_hostname": "ios01"
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [ios_config : collect all cli test cases] *********************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_config/tasks/cli.yaml:2
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029128.7-116691274228273 `" && echo ansible-tmp-1501029128.7-116691274228273="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029128.7-116691274228273 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmp2MMa9X TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029128.7-116691274228273/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029128.7-116691274228273/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029128.7-116691274228273/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029128.7-116691274228273/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029128.7-116691274228273/" > /dev/null 2>&1 && sleep 0'
+ok: [ios01 -> localhost] => {
+    "changed": false, 
+    "examined": 14, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1501029086.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797067, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/backup.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 1048, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1501029086.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797068, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/defaults.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 765, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1501029086.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797069, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/save.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 836, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1501029086.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797070, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/src_basic.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 909, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1501029086.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797071, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/src_invalid.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 417, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1501029086.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797072, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/src_match_none.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 839, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1501029086.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797073, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/sublevel.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 870, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1501029087.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797074, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/sublevel_block.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 1572, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1501029087.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797075, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/sublevel_exact.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 1706, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1501029087.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797076, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/sublevel_strict.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 1613, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1501029087.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797077, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/toplevel.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 633, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1501029087.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797078, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/toplevel_after.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 884, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1501029087.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797079, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/toplevel_before.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 888, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1501029087.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797080, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/toplevel_nonidempotent.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 696, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 14, 
+    "msg": ""
+}
+
+TASK [ios_config : set test_items] *********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_config/tasks/cli.yaml:9
+ok: [ios01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/backup.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/defaults.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/save.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/src_basic.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/src_invalid.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/src_match_none.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/sublevel.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/sublevel_block.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/sublevel_exact.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/sublevel_strict.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/toplevel.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/toplevel_after.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/toplevel_before.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/toplevel_nonidempotent.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [ios_config : run test case] **********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_config/tasks/cli.yaml:12
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/backup.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/defaults.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/save.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/src_basic.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/src_invalid.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/src_match_none.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/sublevel.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/sublevel_block.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/sublevel_exact.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/sublevel_strict.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/toplevel.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/toplevel_after.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/toplevel_before.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/toplevel_nonidempotent.yaml for ios01
+
+TASK [ios_config : debug] ******************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/backup.yaml:2
+ok: [ios01] => {
+    "msg": "START cli/backup.yaml"
+}
+
+TASK [ios_config : setup] ******************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_config/tests/cli/backup.yaml:4
+<ios01> using connection plugin network_cli
+<ios01> socket_path: 
+fatal: [ios01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/ios.yaml:39
+ok: [ios01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "ios_banner", 
+            "ios_command", 
+            "ios_config"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [prepare_ios_tests : Ensure we have loopback 888 for testing] *************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+<ios01> using connection plugin network_cli
+<ios01> socket_path: /Users/dnewswan/.ansible/pc/e9c21a7b4c
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/network/ios/ios_config.py
+<ios01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<ios01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<ios01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029147.89-196014419448202 `" && echo ansible-tmp-1501029147.89-196014419448202="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029147.89-196014419448202 `" ) && sleep 0'
+<ios01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpPMwwgb TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029147.89-196014419448202/ios_config.py
+<ios01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029147.89-196014419448202/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029147.89-196014419448202/ios_config.py && sleep 0'
+<ios01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029147.89-196014419448202/ios_config.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029147.89-196014419448202/" > /dev/null 2>&1 && sleep 0'
+ok: [ios01] => {
+    "changed": false, 
+    "failed": false, 
+    "invocation": {
+        "module_args": {
+            "after": null, 
+            "auth_pass": null, 
+            "authorize": null, 
+            "backup": false, 
+            "before": null, 
+            "defaults": false, 
+            "diff_against": null, 
+            "diff_ignore_lines": null, 
+            "force": false, 
+            "host": null, 
+            "intended_config": null, 
+            "lines": null, 
+            "match": "line", 
+            "multiline_delimiter": "@", 
+            "parents": null, 
+            "password": null, 
+            "port": null, 
+            "provider": {
+                "auth_pass": null, 
+                "authorize": null, 
+                "host": "ios01", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "port": null, 
+                "ssh_keyfile": null, 
+                "timeout": null, 
+                "transport": "cli", 
+                "username": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+            }, 
+            "replace": "line", 
+            "running_config": null, 
+            "save": false, 
+            "save_when": "never", 
+            "src": "interface Loopback888\n description test for ansible\n shutdown\n\n", 
+            "ssh_keyfile": null, 
+            "timeout": null, 
+            "username": null
+        }
+    }
+}
+
+TASK [prepare_ios_tests : set_fact] ********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:12
+ok: [ios01] => {
+    "ansible_facts": {
+        "shorter_hostname": "ios01"
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [ios_facts : collect all cli test cases] **********************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_facts/tasks/cli.yaml:2
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029151.78-124182806581111 `" && echo ansible-tmp-1501029151.78-124182806581111="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029151.78-124182806581111 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpQkCLqH TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029151.78-124182806581111/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029151.78-124182806581111/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029151.78-124182806581111/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029151.78-124182806581111/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029151.78-124182806581111/" > /dev/null 2>&1 && sleep 0'
+ok: [ios01 -> localhost] => {
+    "changed": false, 
+    "examined": 4, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500921159.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797092, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_facts/tests/cli/all_facts.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 924, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500921159.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797093, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_facts/tests/cli/default_facts.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 1064, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500921159.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797094, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_facts/tests/cli/invalid_subset.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 927, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500921159.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797095, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_facts/tests/cli/not_hardware.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 906, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/ios_facts/tests/cli"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 4, 
+    "msg": ""
+}
+
+TASK [ios_facts : set test_items] **********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_facts/tasks/cli.yaml:9
+ok: [ios01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_facts/tests/cli/all_facts.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_facts/tests/cli/default_facts.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_facts/tests/cli/invalid_subset.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_facts/tests/cli/not_hardware.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [ios_facts : run test case] ***********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_facts/tasks/cli.yaml:12
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_facts/tests/cli/all_facts.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_facts/tests/cli/default_facts.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_facts/tests/cli/invalid_subset.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_facts/tests/cli/not_hardware.yaml for ios01
+
+TASK [ios_facts : debug] *******************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_facts/tests/cli/all_facts.yaml:2
+ok: [ios01] => {
+    "msg": "START cli/all_facts.yaml"
+}
+
+TASK [ios_facts : test getting all facts] **************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_facts/tests/cli/all_facts.yaml:5
+<ios01> using connection plugin network_cli
+<ios01> socket_path: 
+fatal: [ios01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/ios.yaml:48
+ok: [ios01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "ios_banner", 
+            "ios_command", 
+            "ios_config", 
+            "ios_facts"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [prepare_ios_tests : Ensure we have loopback 888 for testing] *************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+<ios01> using connection plugin network_cli
+<ios01> socket_path: /Users/dnewswan/.ansible/pc/e9c21a7b4c
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/network/ios/ios_config.py
+<ios01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<ios01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<ios01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029172.52-106890026755600 `" && echo ansible-tmp-1501029172.52-106890026755600="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029172.52-106890026755600 `" ) && sleep 0'
+<ios01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmporCUPk TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029172.52-106890026755600/ios_config.py
+<ios01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029172.52-106890026755600/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029172.52-106890026755600/ios_config.py && sleep 0'
+<ios01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029172.52-106890026755600/ios_config.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029172.52-106890026755600/" > /dev/null 2>&1 && sleep 0'
+ok: [ios01] => {
+    "changed": false, 
+    "failed": false, 
+    "invocation": {
+        "module_args": {
+            "after": null, 
+            "auth_pass": null, 
+            "authorize": null, 
+            "backup": false, 
+            "before": null, 
+            "defaults": false, 
+            "diff_against": null, 
+            "diff_ignore_lines": null, 
+            "force": false, 
+            "host": null, 
+            "intended_config": null, 
+            "lines": null, 
+            "match": "line", 
+            "multiline_delimiter": "@", 
+            "parents": null, 
+            "password": null, 
+            "port": null, 
+            "provider": {
+                "auth_pass": null, 
+                "authorize": null, 
+                "host": "ios01", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "port": null, 
+                "ssh_keyfile": null, 
+                "timeout": null, 
+                "transport": "cli", 
+                "username": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+            }, 
+            "replace": "line", 
+            "running_config": null, 
+            "save": false, 
+            "save_when": "never", 
+            "src": "interface Loopback888\n description test for ansible\n shutdown\n\n", 
+            "ssh_keyfile": null, 
+            "timeout": null, 
+            "username": null
+        }
+    }
+}
+
+TASK [prepare_ios_tests : set_fact] ********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:12
+ok: [ios01] => {
+    "ansible_facts": {
+        "shorter_hostname": "ios01"
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [ios_template : collect all cli test cases] *******************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_template/tasks/cli.yaml:2
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029176.25-60789456179814 `" && echo ansible-tmp-1501029176.25-60789456179814="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029176.25-60789456179814 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpMM3rpl TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029176.25-60789456179814/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029176.25-60789456179814/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029176.25-60789456179814/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029176.25-60789456179814/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029176.25-60789456179814/" > /dev/null 2>&1 && sleep 0'
+ok: [ios01 -> localhost] => {
+    "changed": false, 
+    "examined": 4, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500921159.0, 
+            "ctime": 1500917323.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2608893, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500917323.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_template/tests/cli/backup.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 1048, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500921159.0, 
+            "ctime": 1500917323.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2608894, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500917323.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_template/tests/cli/basic.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 656, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500921159.0, 
+            "ctime": 1500917323.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2608895, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500917323.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_template/tests/cli/defaults.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 726, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500921159.0, 
+            "ctime": 1500917323.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2608896, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500917323.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_template/tests/cli/force.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 685, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/ios_template/tests/cli"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 4, 
+    "msg": ""
+}
+
+TASK [ios_template : set test_items] *******************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_template/tasks/cli.yaml:9
+ok: [ios01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_template/tests/cli/backup.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_template/tests/cli/basic.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_template/tests/cli/defaults.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_template/tests/cli/force.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [ios_template : run test case] ********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_template/tasks/cli.yaml:12
+[DEPRECATION WARNING]: ios_template is kept for backwards compatibility but 
+usage is discouraged. The module documentation details page may explain more 
+about this rationale..
+This feature will be removed in a future release. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_template/tests/cli/backup.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_template/tests/cli/basic.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_template/tests/cli/defaults.yaml for ios01
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_template/tests/cli/force.yaml for ios01
+
+TASK [ios_template : debug] ****************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_template/tests/cli/backup.yaml:2
+ok: [ios01] => {
+    "msg": "START cli/backup.yaml"
+}
+
+TASK [ios_template : setup] ****************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_template/tests/cli/backup.yaml:4
+<ios01> using connection plugin network_cli
+<ios01> socket_path: 
+fatal: [ios01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+...ignoring
+
+TASK [ios_template : collect any backup files] *********************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_template/tests/cli/backup.yaml:11
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029189.97-7500534384701 `" && echo ansible-tmp-1501029189.97-7500534384701="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029189.97-7500534384701 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmp7MZVdY TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029189.97-7500534384701/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029189.97-7500534384701/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029189.97-7500534384701/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029189.97-7500534384701/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029189.97-7500534384701/" > /dev/null 2>&1 && sleep 0'
+ok: [ios01 -> localhost] => {
+    "changed": false, 
+    "examined": 0, 
+    "failed": false, 
+    "files": [], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/ios_template/backup"
+            ], 
+            "pattern": "ios01_config*", 
+            "patterns": [
+                "ios01_config*"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 0, 
+    "msg": "/Users/dnewswan/code/ansible/test/integration/targets/ios_template/backup was skipped as it does not seem to be a valid directory or it cannot be accessed\n"
+}
+
+TASK [ios_template : delete backup files] **************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_template/tests/cli/backup.yaml:18
+
+TASK [ios_template : configure device with config] *****************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_template/tests/cli/backup.yaml:24
+<ios01> using connection plugin network_cli
+<ios01> socket_path: 
+fatal: [ios01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/ios.yaml:57
+ok: [ios01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "ios_banner", 
+            "ios_command", 
+            "ios_config", 
+            "ios_facts", 
+            "ios_template"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [prepare_ios_tests : Ensure we have loopback 888 for testing] *************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+<ios01> using connection plugin network_cli
+<ios01> socket_path: /Users/dnewswan/.ansible/pc/e9c21a7b4c
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/network/ios/ios_config.py
+<ios01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<ios01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<ios01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029209.24-170449879408865 `" && echo ansible-tmp-1501029209.24-170449879408865="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029209.24-170449879408865 `" ) && sleep 0'
+<ios01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpgPRTp7 TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029209.24-170449879408865/ios_config.py
+<ios01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029209.24-170449879408865/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029209.24-170449879408865/ios_config.py && sleep 0'
+<ios01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029209.24-170449879408865/ios_config.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029209.24-170449879408865/" > /dev/null 2>&1 && sleep 0'
+The full traceback is:
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_ZZjONp/ansible_modlib.zip/ansible/module_utils/ios.py", line 89, in get_config
+    return _DEVICE_CONFIGS[cmd]
+fatal: [ios01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "invocation": {
+        "module_args": {
+            "after": null, 
+            "auth_pass": null, 
+            "authorize": null, 
+            "backup": false, 
+            "before": null, 
+            "defaults": false, 
+            "diff_against": null, 
+            "diff_ignore_lines": null, 
+            "force": false, 
+            "host": null, 
+            "intended_config": null, 
+            "lines": null, 
+            "match": "line", 
+            "multiline_delimiter": "@", 
+            "parents": null, 
+            "password": null, 
+            "port": null, 
+            "provider": {
+                "auth_pass": null, 
+                "authorize": null, 
+                "host": "ios01", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "port": null, 
+                "ssh_keyfile": null, 
+                "timeout": null, 
+                "transport": "cli", 
+                "username": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+            }, 
+            "replace": "line", 
+            "running_config": null, 
+            "save": false, 
+            "save_when": "never", 
+            "src": "interface Loopback888\n description test for ansible\n shutdown\n\n", 
+            "ssh_keyfile": null, 
+            "timeout": null, 
+            "username": null
+        }
+    }, 
+    "msg": "unable to retrieve current config", 
+    "stderr": "show running-config\r\n                ^\r\n% Invalid input detected at '^' marker.\r\n\r\nios01(config)#", 
+    "stderr_lines": [
+        "show running-config", 
+        "                ^", 
+        "% Invalid input detected at '^' marker.", 
+        "", 
+        "ios01(config)#"
+    ]
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/ios.yaml:66
+ok: [ios01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "ios_banner", 
+            "ios_command", 
+            "ios_config", 
+            "ios_facts", 
+            "ios_template", 
+            "ios_system"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [prepare_ios_tests : Ensure we have loopback 888 for testing] *************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+<ios01> using connection plugin network_cli
+<ios01> socket_path: /Users/dnewswan/.ansible/pc/e9c21a7b4c
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/network/ios/ios_config.py
+<ios01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<ios01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<ios01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029216.91-209908863261000 `" && echo ansible-tmp-1501029216.91-209908863261000="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029216.91-209908863261000 `" ) && sleep 0'
+<ios01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpqObP_s TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029216.91-209908863261000/ios_config.py
+<ios01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029216.91-209908863261000/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029216.91-209908863261000/ios_config.py && sleep 0'
+<ios01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029216.91-209908863261000/ios_config.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029216.91-209908863261000/" > /dev/null 2>&1 && sleep 0'
+ok: [ios01] => {
+    "changed": false, 
+    "failed": false, 
+    "invocation": {
+        "module_args": {
+            "after": null, 
+            "auth_pass": null, 
+            "authorize": null, 
+            "backup": false, 
+            "before": null, 
+            "defaults": false, 
+            "diff_against": null, 
+            "diff_ignore_lines": null, 
+            "force": false, 
+            "host": null, 
+            "intended_config": null, 
+            "lines": null, 
+            "match": "line", 
+            "multiline_delimiter": "@", 
+            "parents": null, 
+            "password": null, 
+            "port": null, 
+            "provider": {
+                "auth_pass": null, 
+                "authorize": null, 
+                "host": "ios01", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "port": null, 
+                "ssh_keyfile": null, 
+                "timeout": null, 
+                "transport": "cli", 
+                "username": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+            }, 
+            "replace": "line", 
+            "running_config": null, 
+            "save": false, 
+            "save_when": "never", 
+            "src": "interface Loopback888\n description test for ansible\n shutdown\n\n", 
+            "ssh_keyfile": null, 
+            "timeout": null, 
+            "username": null
+        }
+    }
+}
+
+TASK [prepare_ios_tests : set_fact] ********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:12
+ok: [ios01] => {
+    "ansible_facts": {
+        "shorter_hostname": "ios01"
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [ios_user : collect all cli test cases] ***********************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_user/tasks/cli.yaml:2
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<ios01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<ios01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<ios01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029223.0-54943911359644 `" && echo ansible-tmp-1501029223.0-54943911359644="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029223.0-54943911359644 `" ) && sleep 0'
+<ios01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpdl_cWC TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029223.0-54943911359644/find.py
+<ios01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029223.0-54943911359644/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029223.0-54943911359644/find.py && sleep 0'
+<ios01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029223.0-54943911359644/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029223.0-54943911359644/" > /dev/null 2>&1 && sleep 0'
+ok: [ios01] => {
+    "changed": false, 
+    "examined": 1, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500921863.0, 
+            "ctime": 1500921559.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2606053, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500921559.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_user/tests/cli/basic.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 1755, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/ios_user/tests/cli"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 1, 
+    "msg": ""
+}
+
+TASK [ios_user : set test_items] ***********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_user/tasks/cli.yaml:8
+ok: [ios01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_user/tests/cli/basic.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [ios_user : run test case] ************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_user/tasks/cli.yaml:11
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_user/tests/cli/basic.yaml for ios01
+
+TASK [ios_user : Create user (SetUp)] ******************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_user/tests/cli/basic.yaml:2
+<ios01> using connection plugin network_cli
+<ios01> socket_path: /Users/dnewswan/.ansible/pc/e9c21a7b4c
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/basic.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/six/__init__.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/ios.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/_text.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/parsing/convert_bool.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/parsing/__init__.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/pycompat24.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/six/_six.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/connection.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/network_common.py
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/network/ios/ios_user.py
+<ios01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<ios01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<ios01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029239.71-104965365805986 `" && echo ansible-tmp-1501029239.71-104965365805986="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029239.71-104965365805986 `" ) && sleep 0'
+<ios01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpqGIVKW TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029239.71-104965365805986/ios_user.py
+<ios01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029239.71-104965365805986/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029239.71-104965365805986/ios_user.py && sleep 0'
+<ios01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029239.71-104965365805986/ios_user.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029239.71-104965365805986/" > /dev/null 2>&1 && sleep 0'
+The full traceback is:
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_7hTUiT/ansible_modlib.zip/ansible/module_utils/connection.py", line 67, in exec_command
+    sf.connect(module._socket_path)
+  File "/usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+fatal: [ios01]: FAILED! => {
+    "changed": false, 
+    "err": "[Errno 2] No such file or directory", 
+    "failed": true, 
+    "invocation": {
+        "module_args": {
+            "auth_pass": null, 
+            "authorize": true, 
+            "host": null, 
+            "name": "ansibletest1", 
+            "nopassword": null, 
+            "password": null, 
+            "port": null, 
+            "privilege": 15, 
+            "provider": {
+                "auth_pass": null, 
+                "authorize": true, 
+                "host": "ios01", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "port": null, 
+                "ssh_keyfile": null, 
+                "timeout": null, 
+                "transport": "cli", 
+                "username": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+            }, 
+            "purge": false, 
+            "role": "network-operator", 
+            "ssh_keyfile": null, 
+            "state": "present", 
+            "timeout": null, 
+            "update_password": "always", 
+            "username": null, 
+            "users": null, 
+            "view": "network-operator"
+        }
+    }, 
+    "msg": "unable to connect to socket"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/ios.yaml:75
+ok: [ios01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "ios_banner", 
+            "ios_command", 
+            "ios_config", 
+            "ios_facts", 
+            "ios_template", 
+            "ios_system", 
+            "ios_user"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [prepare_ios_tests : Ensure we have loopback 888 for testing] *************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+<ios01> using connection plugin network_cli
+<ios01> socket_path: /Users/dnewswan/.ansible/pc/e9c21a7b4c
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/network/ios/ios_config.py
+<ios01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<ios01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<ios01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029245.49-161478343372935 `" && echo ansible-tmp-1501029245.49-161478343372935="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029245.49-161478343372935 `" ) && sleep 0'
+<ios01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpmNMpic TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029245.49-161478343372935/ios_config.py
+<ios01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029245.49-161478343372935/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029245.49-161478343372935/ios_config.py && sleep 0'
+<ios01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029245.49-161478343372935/ios_config.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029245.49-161478343372935/" > /dev/null 2>&1 && sleep 0'
+ok: [ios01] => {
+    "changed": false, 
+    "failed": false, 
+    "invocation": {
+        "module_args": {
+            "after": null, 
+            "auth_pass": null, 
+            "authorize": null, 
+            "backup": false, 
+            "before": null, 
+            "defaults": false, 
+            "diff_against": null, 
+            "diff_ignore_lines": null, 
+            "force": false, 
+            "host": null, 
+            "intended_config": null, 
+            "lines": null, 
+            "match": "line", 
+            "multiline_delimiter": "@", 
+            "parents": null, 
+            "password": null, 
+            "port": null, 
+            "provider": {
+                "auth_pass": null, 
+                "authorize": null, 
+                "host": "ios01", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "port": null, 
+                "ssh_keyfile": null, 
+                "timeout": null, 
+                "transport": "cli", 
+                "username": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+            }, 
+            "replace": "line", 
+            "running_config": null, 
+            "save": false, 
+            "save_when": "never", 
+            "src": "interface Loopback888\n description test for ansible\n shutdown\n\n", 
+            "ssh_keyfile": null, 
+            "timeout": null, 
+            "username": null
+        }
+    }
+}
+
+TASK [prepare_ios_tests : set_fact] ********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:12
+ok: [ios01] => {
+    "ansible_facts": {
+        "shorter_hostname": "ios01"
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [ios_static_route : collect all cli test cases] ***************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_static_route/tasks/cli.yaml:2
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<ios01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<ios01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<ios01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029252.21-25251186939223 `" && echo ansible-tmp-1501029252.21-25251186939223="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029252.21-25251186939223 `" ) && sleep 0'
+<ios01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpepAXFh TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029252.21-25251186939223/find.py
+<ios01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029252.21-25251186939223/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029252.21-25251186939223/find.py && sleep 0'
+<ios01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029252.21-25251186939223/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029252.21-25251186939223/" > /dev/null 2>&1 && sleep 0'
+ok: [ios01] => {
+    "changed": false, 
+    "examined": 1, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500921159.0, 
+            "ctime": 1500913007.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2606052, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500913007.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/ios_static_route/tests/cli/basic.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 3612, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/ios_static_route/tests/cli"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 1, 
+    "msg": ""
+}
+
+TASK [ios_static_route : set test_items] ***************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_static_route/tasks/cli.yaml:8
+ok: [ios01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/ios_static_route/tests/cli/basic.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [ios_static_route : run test case] ****************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_static_route/tasks/cli.yaml:11
+included: /Users/dnewswan/code/ansible/test/integration/targets/ios_static_route/tests/cli/basic.yaml for ios01
+
+TASK [ios_static_route : create static route] **********************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/ios_static_route/tests/cli/basic.yaml:2
+<ios01> using connection plugin network_cli
+<ios01> socket_path: /Users/dnewswan/.ansible/pc/e9c21a7b4c
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/_text.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/connection.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/basic.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/ios.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/six/__init__.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/six/_six.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/parsing/convert_bool.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/parsing/__init__.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/pycompat24.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/network_common.py
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/network/ios/ios_static_route.py
+<ios01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<ios01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<ios01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029261.11-211470686122487 `" && echo ansible-tmp-1501029261.11-211470686122487="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029261.11-211470686122487 `" ) && sleep 0'
+<ios01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpNGRN6F TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029261.11-211470686122487/ios_static_route.py
+<ios01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029261.11-211470686122487/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029261.11-211470686122487/ios_static_route.py && sleep 0'
+<ios01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029261.11-211470686122487/ios_static_route.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029261.11-211470686122487/" > /dev/null 2>&1 && sleep 0'
+The full traceback is:
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_bOzyLG/ansible_modlib.zip/ansible/module_utils/connection.py", line 67, in exec_command
+    sf.connect(module._socket_path)
+  File "/usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+fatal: [ios01]: FAILED! => {
+    "changed": false, 
+    "err": "[Errno 61] Connection refused", 
+    "failed": true, 
+    "invocation": {
+        "module_args": {
+            "admin_distance": 1, 
+            "auth_pass": null, 
+            "authorize": true, 
+            "collection": null, 
+            "host": null, 
+            "mask": "255.255.255.0", 
+            "next_hop": "10.0.0.8", 
+            "password": null, 
+            "port": null, 
+            "prefix": "172.16.31.0", 
+            "provider": {
+                "auth_pass": null, 
+                "authorize": true, 
+                "host": "ios01", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "port": null, 
+                "ssh_keyfile": null, 
+                "timeout": null, 
+                "transport": "cli", 
+                "username": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+            }, 
+            "purge": null, 
+            "ssh_keyfile": null, 
+            "state": "present", 
+            "timeout": null, 
+            "username": null
+        }
+    }, 
+    "msg": "unable to connect to socket"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/ios.yaml:84
+ok: [ios01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "ios_banner", 
+            "ios_command", 
+            "ios_config", 
+            "ios_facts", 
+            "ios_template", 
+            "ios_system", 
+            "ios_user", 
+            "ios_static_route"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [prepare_ios_tests : Ensure we have loopback 888 for testing] *************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+<ios01> using connection plugin network_cli
+<ios01> socket_path: /Users/dnewswan/.ansible/pc/e9c21a7b4c
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/network/ios/ios_config.py
+<ios01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<ios01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<ios01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029277.79-124885963543984 `" && echo ansible-tmp-1501029277.79-124885963543984="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029277.79-124885963543984 `" ) && sleep 0'
+<ios01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpH7XsD9 TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029277.79-124885963543984/ios_config.py
+<ios01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029277.79-124885963543984/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029277.79-124885963543984/ios_config.py && sleep 0'
+<ios01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029277.79-124885963543984/ios_config.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029277.79-124885963543984/" > /dev/null 2>&1 && sleep 0'
+The full traceback is:
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_9jww4i/ansible_modlib.zip/ansible/module_utils/connection.py", line 67, in exec_command
+    sf.connect(module._socket_path)
+  File "/usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+fatal: [ios01]: FAILED! => {
+    "changed": false, 
+    "err": "[Errno 2] No such file or directory", 
+    "failed": true, 
+    "invocation": {
+        "module_args": {
+            "after": null, 
+            "auth_pass": null, 
+            "authorize": null, 
+            "backup": false, 
+            "before": null, 
+            "defaults": false, 
+            "diff_against": null, 
+            "diff_ignore_lines": null, 
+            "force": false, 
+            "host": null, 
+            "intended_config": null, 
+            "lines": null, 
+            "match": "line", 
+            "multiline_delimiter": "@", 
+            "parents": null, 
+            "password": null, 
+            "port": null, 
+            "provider": {
+                "auth_pass": null, 
+                "authorize": null, 
+                "host": "ios01", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "port": null, 
+                "ssh_keyfile": null, 
+                "timeout": null, 
+                "transport": "cli", 
+                "username": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+            }, 
+            "replace": "line", 
+            "running_config": null, 
+            "save": false, 
+            "save_when": "never", 
+            "src": "interface Loopback888\n description test for ansible\n shutdown\n\n", 
+            "ssh_keyfile": null, 
+            "timeout": null, 
+            "username": null
+        }
+    }, 
+    "msg": "unable to connect to socket"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/ios.yaml:93
+ok: [ios01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "ios_banner", 
+            "ios_command", 
+            "ios_config", 
+            "ios_facts", 
+            "ios_template", 
+            "ios_system", 
+            "ios_user", 
+            "ios_static_route", 
+            "ios_logging"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [debug] *******************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/ios.yaml:99
+ok: [ios01] => {
+    "failed_modules": [
+        "ios_banner", 
+        "ios_command", 
+        "ios_config", 
+        "ios_facts", 
+        "ios_template", 
+        "ios_system", 
+        "ios_user", 
+        "ios_static_route", 
+        "ios_logging"
+    ]
+}
+
+TASK [Has any previous test failed?] *******************************************
+task path: /Users/dnewswan/code/ansible/test/integration/ios.yaml:102
+fatal: [ios01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "One or more tests failed, check log for details"
+}
+
+PLAY RECAP *********************************************************************
+ios01                      : ok=85   changed=1    unreachable=0    failed=10  
+

@@ -1,0 +1,2951 @@
+ansible-playbook 2.4.0 (devel 3a3bdde869) last updated 2017/07/25 11:24:04 (GMT -400)
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/Users/dnewswan/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /Users/dnewswan/code/ansible/lib/ansible
+  executable location = /Users/dnewswan/code/ansible/bin/ansible-playbook
+  python version = 2.7.13 (default, Apr  4 2017, 08:47:57) [GCC 4.2.1 Compatible Apple LLVM 8.1.0 (clang-802.0.38)]
+Using /etc/ansible/ansible.cfg as config file
+setting up inventory plugins
+Parsed /Users/dnewswan/code/ansible/test/integration/inventory.network inventory source with ini plugin
+[DEPRECATION WARNING]: The use of 'include' for tasks has been deprecated. Use 
+'import_tasks' for static inclusions or 'include_tasks' for dynamic inclusions.
+
+This feature will be removed in a future release. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tasks/netconf_xml.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tasks/netconf_text.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tasks/netconf_json.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/junos_config/tasks/netconf.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/junos_facts/tasks/netconf.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/junos_netconf/tasks/cli.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/junos_rpc/tasks/netconf.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/junos_template/tasks/netconf.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/junos_vlan/tasks/netconf.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/junos_interface/tasks/netconf.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/junos_banner/tasks/netconf.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/junos_system/tasks/netconf.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/junos_logging/tasks/netconf.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/junos_user/tasks/netconf.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/junos_static_route/tasks/netconf.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/junos_linkagg/tasks/netconf.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/junos_l3_interface/tasks/netconf.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/junos_lldp/tasks/netconf.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/junos_lldp_interface/tasks/netconf.yaml
+statically imported: /Users/dnewswan/code/ansible/test/integration/targets/junos_vrf/tasks/netconf.yaml
+Loading callback plugin default of type stdout, v2.0 from /Users/dnewswan/code/ansible/lib/ansible/plugins/callback/__init__.pyc
+Loading callback plugin test_plug of type notification, v2.0 from /Users/dnewswan/code/ansible/lib/ansible/plugins/callback/__init__.pyc
+
+PLAYBOOK: junos.yaml ***********************************************************
+1 plays in /Users/dnewswan/code/ansible/test/integration/junos.yaml
+
+PLAY [junos] *******************************************************************
+META: ran handlers
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:16
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "failed_modules": [], 
+        "test_failed": false
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_command : collect netconf_xml test cases with xml encoding] ********
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tasks/netconf_xml.yaml:2
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/basic.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/_text.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/parsing/convert_bool.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/parsing/__init__.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/pycompat24.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/six/__init__.py
+Using module_utils file /Users/dnewswan/code/ansible/lib/ansible/module_utils/six/_six.py
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<vsrx01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<vsrx01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029032.67-264739948781066 `" && echo ansible-tmp-1501029032.67-264739948781066="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029032.67-264739948781066 `" ) && sleep 0'
+<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmprA0NUS TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029032.67-264739948781066/find.py
+<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029032.67-264739948781066/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029032.67-264739948781066/find.py && sleep 0'
+<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029032.67-264739948781066/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029032.67-264739948781066/" > /dev/null 2>&1 && sleep 0'
+ok: [vsrx01] => {
+    "changed": false, 
+    "examined": 11, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500997219.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797245, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/bad_operator.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 515, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500997219.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797246, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/contains.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 629, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500997219.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797247, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/equal.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 1120, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500997219.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797248, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/greaterthan.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 901, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500997219.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797249, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/greaterthanorequal.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 917, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500997219.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797250, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/invalid.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 618, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500997219.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797251, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/lessthan.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 896, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500997219.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797252, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/lessthanorequal.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 911, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500997219.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797253, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/notequal.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 881, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500997219.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797254, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/output.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 685, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500997219.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797255, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/timeout.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 390, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 11, 
+    "msg": ""
+}
+
+TASK [junos_command : set test_items] ******************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tasks/netconf_xml.yaml:8
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/bad_operator.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/contains.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/equal.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/greaterthan.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/greaterthanorequal.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/invalid.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/lessthan.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/lessthanorequal.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/notequal.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/output.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/timeout.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_command : run test case] *******************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tasks/netconf_xml.yaml:11
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/bad_operator.yaml for vsrx01
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/contains.yaml for vsrx01
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/equal.yaml for vsrx01
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/greaterthan.yaml for vsrx01
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/greaterthanorequal.yaml for vsrx01
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/invalid.yaml for vsrx01
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/lessthan.yaml for vsrx01
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/lessthanorequal.yaml for vsrx01
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/notequal.yaml for vsrx01
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/output.yaml for vsrx01
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/timeout.yaml for vsrx01
+
+TASK [junos_command : debug] ***************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/bad_operator.yaml:2
+ok: [vsrx01] => {
+    "msg": "START netconf_xml/bad_operator.yaml"
+}
+
+TASK [junos_command : test bad operator with xml encoding] *********************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/bad_operator.yaml:4
+<vsrx01> using connection plugin netconf
+<vsrx01> socket_path: 
+fatal: [vsrx01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+...ignoring
+
+TASK [junos_command : assert] **************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/bad_operator.yaml:16
+ok: [vsrx01] => {
+    "changed": false, 
+    "failed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [junos_command : debug] ***************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/bad_operator.yaml:21
+ok: [vsrx01] => {
+    "msg": "END netconf_xml/bad_operator.yaml"
+}
+
+TASK [junos_command : debug] ***************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/contains.yaml:2
+ok: [vsrx01] => {
+    "msg": "START netconf_xml/contains.yaml"
+}
+
+TASK [junos_command : test contains operator with xml encoding] ****************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_command/tests/netconf_xml/contains.yaml:4
+<vsrx01> using connection plugin netconf
+<vsrx01> socket_path: 
+fatal: [vsrx01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:24
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "junos_command"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_config : collect netconf test cases] *******************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_config/tasks/netconf.yaml:2
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<vsrx01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<vsrx01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029060.1-52642948539740 `" && echo ansible-tmp-1501029060.1-52642948539740="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029060.1-52642948539740 `" ) && sleep 0'
+<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpFkjpev TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029060.1-52642948539740/find.py
+<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029060.1-52642948539740/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029060.1-52642948539740/find.py && sleep 0'
+<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029060.1-52642948539740/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029060.1-52642948539740/" > /dev/null 2>&1 && sleep 0'
+ok: [vsrx01] => {
+    "changed": false, 
+    "examined": 7, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500996941.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797267, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/backup.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 1044, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500996941.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797268, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/bad_action.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 317, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500996941.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797269, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/invalid.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 585, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500996941.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797270, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/multiple.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 1292, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500996941.0, 
+            "ctime": 1500908935.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2601819, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500908935.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/single.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 1078, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500996941.0, 
+            "ctime": 1500555692.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2503202, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500555692.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/src_basic.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 1995, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500996941.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797273, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/src_invalid.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 457, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 7, 
+    "msg": ""
+}
+
+TASK [junos_config : set test_items] *******************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_config/tasks/netconf.yaml:8
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/backup.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/bad_action.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/invalid.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/multiple.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/single.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/src_basic.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/src_invalid.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_config : run test case] ********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_config/tasks/netconf.yaml:11
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/backup.yaml for vsrx01
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/bad_action.yaml for vsrx01
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/invalid.yaml for vsrx01
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/multiple.yaml for vsrx01
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/single.yaml for vsrx01
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/src_basic.yaml for vsrx01
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/src_invalid.yaml for vsrx01
+
+TASK [junos_config : debug] ****************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/backup.yaml:2
+ok: [vsrx01] => {
+    "msg": "START netconf/backup.yaml"
+}
+
+TASK [junos_config : setup] ****************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_config/tests/netconf/backup.yaml:4
+<vsrx01> using connection plugin netconf
+<vsrx01> socket_path: 
+fatal: [vsrx01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:33
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "junos_command", 
+            "junos_config"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_facts : collect netconf test cases] ********************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_facts/tasks/netconf.yaml:1
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<vsrx01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<vsrx01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029074.96-219418929583694 `" && echo ansible-tmp-1501029074.96-219418929583694="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029074.96-219418929583694 `" ) && sleep 0'
+<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmplmFFdf TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029074.96-219418929583694/find.py
+<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029074.96-219418929583694/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029074.96-219418929583694/find.py && sleep 0'
+<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029074.96-219418929583694/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029074.96-219418929583694/" > /dev/null 2>&1 && sleep 0'
+ok: [vsrx01] => {
+    "changed": false, 
+    "examined": 1, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500996954.0, 
+            "ctime": 1500555692.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2503211, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500555692.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_facts/tests/netconf/facts.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 2846, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/junos_facts/tests/netconf"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 1, 
+    "msg": ""
+}
+
+TASK [junos_facts : set test_items] ********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_facts/tasks/netconf.yaml:7
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_facts/tests/netconf/facts.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_facts : run test case] *********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_facts/tasks/netconf.yaml:10
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_facts/tests/netconf/facts.yaml for vsrx01
+
+TASK [junos_facts : debug] *****************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_facts/tests/netconf/facts.yaml:2
+ok: [vsrx01] => {
+    "msg": "START netconf/facts.yaml"
+}
+
+TASK [junos_facts : Collect default facts from device] *************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_facts/tests/netconf/facts.yaml:5
+<vsrx01> using connection plugin netconf
+<vsrx01> socket_path: 
+fatal: [vsrx01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:42
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "junos_command", 
+            "junos_config", 
+            "junos_facts"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_netconf : collect all cli test cases] ******************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_netconf/tasks/cli.yaml:2
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<vsrx01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<vsrx01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029089.33-48736831523367 `" && echo ansible-tmp-1501029089.33-48736831523367="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029089.33-48736831523367 `" ) && sleep 0'
+<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpKp51yp TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029089.33-48736831523367/find.py
+<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029089.33-48736831523367/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029089.33-48736831523367/find.py && sleep 0'
+<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029089.33-48736831523367/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029089.33-48736831523367/" > /dev/null 2>&1 && sleep 0'
+ok: [vsrx01] => {
+    "changed": false, 
+    "examined": 2, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500996968.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797282, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_netconf/tests/cli/changeport.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 1360, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500996968.0, 
+            "ctime": 1496844014.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 797283, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1496844014.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_netconf/tests/cli/netconf.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 1321, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/junos_netconf/tests/cli"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 2, 
+    "msg": ""
+}
+
+TASK [junos_netconf : set test_items] ******************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_netconf/tasks/cli.yaml:8
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_netconf/tests/cli/changeport.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_netconf/tests/cli/netconf.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_netconf : run test case] *******************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_netconf/tasks/cli.yaml:11
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_netconf/tests/cli/changeport.yaml for vsrx01
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_netconf/tests/cli/netconf.yaml for vsrx01
+
+TASK [junos_netconf : debug] ***************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_netconf/tests/cli/changeport.yaml:2
+ok: [vsrx01] => {
+    "msg": "START netconf/changeport.yaml"
+}
+
+TASK [junos_netconf : Setup] ***************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_netconf/tests/cli/changeport.yaml:5
+<vsrx01> using connection plugin network_cli
+<vsrx01> socket_path: 
+fatal: [vsrx01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:51
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "junos_command", 
+            "junos_config", 
+            "junos_facts", 
+            "junos_netconf"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_rpc : collect netconf test cases] **********************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_rpc/tasks/netconf.yaml:1
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<vsrx01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<vsrx01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029104.37-229933732764287 `" && echo ansible-tmp-1501029104.37-229933732764287="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029104.37-229933732764287 `" ) && sleep 0'
+<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpZ59Rjn TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029104.37-229933732764287/find.py
+<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029104.37-229933732764287/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029104.37-229933732764287/find.py && sleep 0'
+<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029104.37-229933732764287/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029104.37-229933732764287/" > /dev/null 2>&1 && sleep 0'
+ok: [vsrx01] => {
+    "changed": false, 
+    "examined": 1, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500996981.0, 
+            "ctime": 1500555692.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2503276, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500555692.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_rpc/tests/netconf/rpc.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 1690, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/junos_rpc/tests/netconf"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 1, 
+    "msg": ""
+}
+
+TASK [junos_rpc : set test_items] **********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_rpc/tasks/netconf.yaml:7
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_rpc/tests/netconf/rpc.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_rpc : run test case] ***********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_rpc/tasks/netconf.yaml:10
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_rpc/tests/netconf/rpc.yaml for vsrx01
+
+TASK [junos_rpc : debug] *******************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_rpc/tests/netconf/rpc.yaml:2
+ok: [vsrx01] => {
+    "msg": "START netconf/rpc.yaml"
+}
+
+TASK [junos_rpc : Execute RPC on device] ***************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_rpc/tests/netconf/rpc.yaml:4
+<vsrx01> using connection plugin netconf
+<vsrx01> socket_path: 
+fatal: [vsrx01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:60
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "junos_command", 
+            "junos_config", 
+            "junos_facts", 
+            "junos_netconf", 
+            "junos_rpc"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_template : collect netconf test cases] *****************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_template/tasks/netconf.yaml:2
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<vsrx01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<vsrx01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029119.16-39559159869455 `" && echo ansible-tmp-1501029119.16-39559159869455="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029119.16-39559159869455 `" ) && sleep 0'
+<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpUhcsEF TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029119.16-39559159869455/find.py
+<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029119.16-39559159869455/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029119.16-39559159869455/find.py && sleep 0'
+<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029119.16-39559159869455/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029119.16-39559159869455/" > /dev/null 2>&1 && sleep 0'
+ok: [vsrx01] => {
+    "changed": false, 
+    "examined": 3, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500996995.0, 
+            "ctime": 1500917323.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2608927, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500917323.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_template/tests/netconf/backup.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 1226, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }, 
+        {
+            "atime": 1500996995.0, 
+            "ctime": 1500917323.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2608928, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500917323.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_template/tests/netconf/basic.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 839, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/junos_template/tests/netconf"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 2, 
+    "msg": ""
+}
+
+TASK [junos_template : set test_items] *****************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_template/tasks/netconf.yaml:8
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_template/tests/netconf/backup.yaml", 
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_template/tests/netconf/basic.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_template : run test case] ******************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_template/tasks/netconf.yaml:11
+[DEPRECATION WARNING]: junos_template is kept for backwards compatibility but 
+usage is discouraged. The module documentation details page may explain more 
+about this rationale..
+This feature will be removed in a future release. 
+Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_template/tests/netconf/backup.yaml for vsrx01
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_template/tests/netconf/basic.yaml for vsrx01
+
+TASK [junos_template : debug] **************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_template/tests/netconf/backup.yaml:2
+ok: [vsrx01] => {
+    "msg": "START netconf/backup.yaml"
+}
+
+TASK [junos_template : setup] **************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_template/tests/netconf/backup.yaml:4
+<vsrx01> using connection plugin netconf
+<vsrx01> socket_path: 
+fatal: [vsrx01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:69
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "junos_command", 
+            "junos_config", 
+            "junos_facts", 
+            "junos_netconf", 
+            "junos_rpc", 
+            "junos_template"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_vlan : collect netconf test cases] *********************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_vlan/tasks/netconf.yaml:1
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<vsrx01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<vsrx01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029133.41-34151376972533 `" && echo ansible-tmp-1501029133.41-34151376972533="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029133.41-34151376972533 `" ) && sleep 0'
+<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpWxrKZM TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029133.41-34151376972533/find.py
+<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029133.41-34151376972533/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029133.41-34151376972533/find.py && sleep 0'
+<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029133.41-34151376972533/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029133.41-34151376972533/" > /dev/null 2>&1 && sleep 0'
+ok: [vsrx01] => {
+    "changed": false, 
+    "examined": 1, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500997008.0, 
+            "ctime": 1500555692.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2503313, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500555692.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_vlan/tests/netconf/basic.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 2094, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/junos_vlan/tests/netconf"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 1, 
+    "msg": ""
+}
+
+TASK [junos_vlan : set test_items] *********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_vlan/tasks/netconf.yaml:7
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_vlan/tests/netconf/basic.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_vlan : run test case] **********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_vlan/tasks/netconf.yaml:10
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_vlan/tests/netconf/basic.yaml for vsrx01
+
+TASK [junos_vlan : debug] ******************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_vlan/tests/netconf/basic.yaml:2
+ok: [vsrx01] => {
+    "msg": "START junos_vlan netconf/basic.yaml"
+}
+
+TASK [junos_vlan : setup - remove vlan] ****************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_vlan/tests/netconf/basic.yaml:4
+<vsrx01> using connection plugin netconf
+<vsrx01> socket_path: 
+fatal: [vsrx01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:77
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "junos_command", 
+            "junos_config", 
+            "junos_facts", 
+            "junos_netconf", 
+            "junos_rpc", 
+            "junos_template", 
+            "junos_vlan"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_interface : collect all netconf test cases] ************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_interface/tasks/netconf.yaml:2
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029147.67-235395943879129 `" && echo ansible-tmp-1501029147.67-235395943879129="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029147.67-235395943879129 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpVS4uWJ TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029147.67-235395943879129/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029147.67-235395943879129/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029147.67-235395943879129/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029147.67-235395943879129/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029147.67-235395943879129/" > /dev/null 2>&1 && sleep 0'
+ok: [vsrx01 -> localhost] => {
+    "changed": false, 
+    "examined": 1, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500997022.0, 
+            "ctime": 1500908935.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2601820, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500908935.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_interface/tests/netconf/basic.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 3915, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/junos_interface/tests/netconf"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 1, 
+    "msg": ""
+}
+
+TASK [junos_interface : set test_items] ****************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_interface/tasks/netconf.yaml:9
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_interface/tests/netconf/basic.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_interface : run test case] *****************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_interface/tasks/netconf.yaml:12
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_interface/tests/netconf/basic.yaml for vsrx01
+
+TASK [junos_interface : debug] *************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_interface/tests/netconf/basic.yaml:2
+ok: [vsrx01] => {
+    "msg": "START junos_interface netconf/basic.yaml"
+}
+
+TASK [junos_interface : setup - remove interface] ******************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_interface/tests/netconf/basic.yaml:4
+<vsrx01> using connection plugin netconf
+<vsrx01> socket_path: 
+fatal: [vsrx01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:86
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "junos_command", 
+            "junos_config", 
+            "junos_facts", 
+            "junos_netconf", 
+            "junos_rpc", 
+            "junos_template", 
+            "junos_vlan", 
+            "junos_interface"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_banner : collect netconf test cases] *******************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_banner/tasks/netconf.yaml:1
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<vsrx01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<vsrx01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029161.4-262771067950474 `" && echo ansible-tmp-1501029161.4-262771067950474="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029161.4-262771067950474 `" ) && sleep 0'
+<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpAadTMl TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029161.4-262771067950474/find.py
+<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029161.4-262771067950474/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029161.4-262771067950474/find.py && sleep 0'
+<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029161.4-262771067950474/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029161.4-262771067950474/" > /dev/null 2>&1 && sleep 0'
+ok: [vsrx01] => {
+    "changed": false, 
+    "examined": 1, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500997317.0, 
+            "ctime": 1500555692.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2503179, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500555692.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_banner/tests/netconf/basic.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 4141, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/junos_banner/tests/netconf"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 1, 
+    "msg": ""
+}
+
+TASK [junos_banner : set test_items] *******************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_banner/tasks/netconf.yaml:7
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_banner/tests/netconf/basic.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_banner : run test case] ********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_banner/tasks/netconf.yaml:10
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_banner/tests/netconf/basic.yaml for vsrx01
+
+TASK [junos_banner : debug] ****************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_banner/tests/netconf/basic.yaml:2
+ok: [vsrx01] => {
+    "msg": "START junos_banner netconf/basic.yaml"
+}
+
+TASK [junos_banner : setup - remove login banner] ******************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_banner/tests/netconf/basic.yaml:4
+<vsrx01> using connection plugin netconf
+<vsrx01> socket_path: 
+fatal: [vsrx01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:94
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "junos_command", 
+            "junos_config", 
+            "junos_facts", 
+            "junos_netconf", 
+            "junos_rpc", 
+            "junos_template", 
+            "junos_vlan", 
+            "junos_interface", 
+            "junos_banner"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_system : collect all netconf test cases] ***************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_system/tasks/netconf.yaml:2
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029175.15-202164121440731 `" && echo ansible-tmp-1501029175.15-202164121440731="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029175.15-202164121440731 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpnTYiS1 TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029175.15-202164121440731/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029175.15-202164121440731/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029175.15-202164121440731/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029175.15-202164121440731/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029175.15-202164121440731/" > /dev/null 2>&1 && sleep 0'
+ok: [vsrx01 -> localhost] => {
+    "changed": false, 
+    "examined": 1, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500997048.0, 
+            "ctime": 1500555692.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2503295, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500555692.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_system/tests/netconf/basic.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 8518, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/junos_system/tests/netconf"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 1, 
+    "msg": ""
+}
+
+TASK [junos_system : set test_items] *******************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_system/tasks/netconf.yaml:9
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_system/tests/netconf/basic.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_system : run test case] ********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_system/tasks/netconf.yaml:12
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_system/tests/netconf/basic.yaml for vsrx01
+
+TASK [junos_system : debug] ****************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_system/tests/netconf/basic.yaml:2
+ok: [vsrx01] => {
+    "msg": "START junos_system netconf/basic.yaml"
+}
+
+TASK [junos_system : setup - remove hostname] **********************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_system/tests/netconf/basic.yaml:4
+<vsrx01> using connection plugin netconf
+<vsrx01> socket_path: 
+fatal: [vsrx01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:103
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "junos_command", 
+            "junos_config", 
+            "junos_facts", 
+            "junos_netconf", 
+            "junos_rpc", 
+            "junos_template", 
+            "junos_vlan", 
+            "junos_interface", 
+            "junos_banner", 
+            "junos_system"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_logging : collect all netconf test cases] **************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_logging/tasks/netconf.yaml:2
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029189.28-203721062150375 `" && echo ansible-tmp-1501029189.28-203721062150375="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029189.28-203721062150375 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpEgQ0RS TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029189.28-203721062150375/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029189.28-203721062150375/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029189.28-203721062150375/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029189.28-203721062150375/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029189.28-203721062150375/" > /dev/null 2>&1 && sleep 0'
+ok: [vsrx01 -> localhost] => {
+    "changed": false, 
+    "examined": 1, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500997062.0, 
+            "ctime": 1500555692.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2503267, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500555692.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_logging/tests/netconf/basic.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 6437, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/junos_logging/tests/netconf"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 1, 
+    "msg": ""
+}
+
+TASK [junos_logging : set test_items] ******************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_logging/tasks/netconf.yaml:9
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_logging/tests/netconf/basic.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_logging : run test case] *******************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_logging/tasks/netconf.yaml:12
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_logging/tests/netconf/basic.yaml for vsrx01
+
+TASK [junos_logging : debug] ***************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_logging/tests/netconf/basic.yaml:2
+ok: [vsrx01] => {
+    "msg": "START junos_logging netconf/basic.yaml"
+}
+
+TASK [junos_logging : setup - remove file logging] *****************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_logging/tests/netconf/basic.yaml:4
+<vsrx01> using connection plugin netconf
+<vsrx01> socket_path: 
+fatal: [vsrx01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:111
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "junos_command", 
+            "junos_config", 
+            "junos_facts", 
+            "junos_netconf", 
+            "junos_rpc", 
+            "junos_template", 
+            "junos_vlan", 
+            "junos_interface", 
+            "junos_banner", 
+            "junos_system", 
+            "junos_logging"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_user : collect netconf test cases] *********************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_user/tasks/netconf.yaml:2
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<vsrx01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<vsrx01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029203.96-155089259651239 `" && echo ansible-tmp-1501029203.96-155089259651239="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029203.96-155089259651239 `" ) && sleep 0'
+<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpxhrtgm TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029203.96-155089259651239/find.py
+<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029203.96-155089259651239/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029203.96-155089259651239/find.py && sleep 0'
+<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029203.96-155089259651239/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029203.96-155089259651239/" > /dev/null 2>&1 && sleep 0'
+ok: [vsrx01] => {
+    "changed": false, 
+    "examined": 1, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500997075.0, 
+            "ctime": 1500913007.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2606055, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500913007.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_user/tests/netconf/basic.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 3916, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/junos_user/tests/netconf"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 1, 
+    "msg": ""
+}
+
+TASK [junos_user : set test_items] *********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_user/tasks/netconf.yaml:8
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_user/tests/netconf/basic.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_user : run test case] **********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_user/tasks/netconf.yaml:11
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_user/tests/netconf/basic.yaml for vsrx01
+
+TASK [junos_user : debug] ******************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_user/tests/netconf/basic.yaml:2
+ok: [vsrx01] => {
+    "msg": "START junos_user netconf/basic.yaml"
+}
+
+TASK [junos_user : setup - remove user] ****************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_user/tests/netconf/basic.yaml:4
+<vsrx01> using connection plugin netconf
+<vsrx01> socket_path: 
+fatal: [vsrx01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:120
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "junos_command", 
+            "junos_config", 
+            "junos_facts", 
+            "junos_netconf", 
+            "junos_rpc", 
+            "junos_template", 
+            "junos_vlan", 
+            "junos_interface", 
+            "junos_banner", 
+            "junos_system", 
+            "junos_logging", 
+            "junos_user"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_static_route : collect all netconf test cases] *********************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_static_route/tasks/netconf.yaml:2
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029218.34-73478916870883 `" && echo ansible-tmp-1501029218.34-73478916870883="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029218.34-73478916870883 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpAM7cRH TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029218.34-73478916870883/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029218.34-73478916870883/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029218.34-73478916870883/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029218.34-73478916870883/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029218.34-73478916870883/" > /dev/null 2>&1 && sleep 0'
+ok: [vsrx01 -> localhost] => {
+    "changed": false, 
+    "examined": 1, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500997089.0, 
+            "ctime": 1500908935.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2601857, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500908935.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_static_route/tests/netconf/basic.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 3444, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/junos_static_route/tests/netconf"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 1, 
+    "msg": ""
+}
+
+TASK [junos_static_route : set test_items] *************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_static_route/tasks/netconf.yaml:9
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_static_route/tests/netconf/basic.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_static_route : run test case] **************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_static_route/tasks/netconf.yaml:12
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_static_route/tests/netconf/basic.yaml for vsrx01
+
+TASK [junos_static_route : debug] **********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_static_route/tests/netconf/basic.yaml:2
+ok: [vsrx01] => {
+    "msg": "START junos_static_route netconf/basic.yaml"
+}
+
+TASK [junos_static_route : setup - remove static route] ************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_static_route/tests/netconf/basic.yaml:4
+<vsrx01> using connection plugin netconf
+<vsrx01> socket_path: 
+fatal: [vsrx01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:129
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "junos_command", 
+            "junos_config", 
+            "junos_facts", 
+            "junos_netconf", 
+            "junos_rpc", 
+            "junos_template", 
+            "junos_vlan", 
+            "junos_interface", 
+            "junos_banner", 
+            "junos_system", 
+            "junos_logging", 
+            "junos_user", 
+            "junos_static_route"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_linkagg : collect all netconf test cases] **************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_linkagg/tasks/netconf.yaml:2
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029231.84-217595720391031 `" && echo ansible-tmp-1501029231.84-217595720391031="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029231.84-217595720391031 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpPdLQic TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029231.84-217595720391031/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029231.84-217595720391031/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029231.84-217595720391031/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029231.84-217595720391031/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029231.84-217595720391031/" > /dev/null 2>&1 && sleep 0'
+ok: [vsrx01 -> localhost] => {
+    "changed": false, 
+    "examined": 1, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500997102.0, 
+            "ctime": 1500908935.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2601838, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500908935.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_linkagg/tests/netconf/basic.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 5196, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/junos_linkagg/tests/netconf"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 1, 
+    "msg": ""
+}
+
+TASK [junos_linkagg : set test_items] ******************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_linkagg/tasks/netconf.yaml:9
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_linkagg/tests/netconf/basic.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_linkagg : run test case] *******************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_linkagg/tasks/netconf.yaml:12
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_linkagg/tests/netconf/basic.yaml for vsrx01
+
+TASK [junos_linkagg : debug] ***************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_linkagg/tests/netconf/basic.yaml:2
+ok: [vsrx01] => {
+    "msg": "START junos_linkagg netconf/basic.yaml"
+}
+
+TASK [junos_linkagg : setup - remove linkagg] **********************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_linkagg/tests/netconf/basic.yaml:4
+<vsrx01> using connection plugin netconf
+<vsrx01> socket_path: 
+fatal: [vsrx01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:138
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "junos_command", 
+            "junos_config", 
+            "junos_facts", 
+            "junos_netconf", 
+            "junos_rpc", 
+            "junos_template", 
+            "junos_vlan", 
+            "junos_interface", 
+            "junos_banner", 
+            "junos_system", 
+            "junos_logging", 
+            "junos_user", 
+            "junos_static_route", 
+            "junos_linkagg"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_l3_interface : collect all netconf test cases] *********************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_l3_interface/tasks/netconf.yaml:2
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029246.75-123903564173943 `" && echo ansible-tmp-1501029246.75-123903564173943="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029246.75-123903564173943 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmp28iNgn TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029246.75-123903564173943/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029246.75-123903564173943/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029246.75-123903564173943/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029246.75-123903564173943/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029246.75-123903564173943/" > /dev/null 2>&1 && sleep 0'
+ok: [vsrx01 -> localhost] => {
+    "changed": false, 
+    "examined": 1, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500997116.0, 
+            "ctime": 1500908935.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2601829, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500908935.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_l3_interface/tests/netconf/basic.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 3286, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/junos_l3_interface/tests/netconf"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 1, 
+    "msg": ""
+}
+
+TASK [junos_l3_interface : set test_items] *************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_l3_interface/tasks/netconf.yaml:9
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_l3_interface/tests/netconf/basic.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_l3_interface : run test case] **************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_l3_interface/tasks/netconf.yaml:12
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_l3_interface/tests/netconf/basic.yaml for vsrx01
+
+TASK [junos_l3_interface : debug] **********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_l3_interface/tests/netconf/basic.yaml:2
+ok: [vsrx01] => {
+    "msg": "START junos_l3_interface netconf/basic.yaml"
+}
+
+TASK [junos_l3_interface : setup - remove interface address] *******************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_l3_interface/tests/netconf/basic.yaml:4
+<vsrx01> using connection plugin netconf
+<vsrx01> socket_path: 
+fatal: [vsrx01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:147
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "junos_command", 
+            "junos_config", 
+            "junos_facts", 
+            "junos_netconf", 
+            "junos_rpc", 
+            "junos_template", 
+            "junos_vlan", 
+            "junos_interface", 
+            "junos_banner", 
+            "junos_system", 
+            "junos_logging", 
+            "junos_user", 
+            "junos_static_route", 
+            "junos_linkagg", 
+            "junos_l3_interface"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_lldp : collect all netconf test cases] *****************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_lldp/tasks/netconf.yaml:2
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029260.82-133731508525749 `" && echo ansible-tmp-1501029260.82-133731508525749="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029260.82-133731508525749 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpEZS9yD TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029260.82-133731508525749/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029260.82-133731508525749/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029260.82-133731508525749/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029260.82-133731508525749/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029260.82-133731508525749/" > /dev/null 2>&1 && sleep 0'
+ok: [vsrx01 -> localhost] => {
+    "changed": false, 
+    "examined": 1, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500997129.0, 
+            "ctime": 1500908935.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2601847, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500908935.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_lldp/tests/netconf/basic.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 2826, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/junos_lldp/tests/netconf"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 1, 
+    "msg": ""
+}
+
+TASK [junos_lldp : set test_items] *********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_lldp/tasks/netconf.yaml:9
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_lldp/tests/netconf/basic.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_lldp : run test case] **********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_lldp/tasks/netconf.yaml:12
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_lldp/tests/netconf/basic.yaml for vsrx01
+
+TASK [junos_lldp : debug] ******************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_lldp/tests/netconf/basic.yaml:2
+ok: [vsrx01] => {
+    "msg": "START junos_lldp netconf/basic.yaml"
+}
+
+TASK [junos_lldp : setup - Disable lldp and remove it's configuration] *********
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_lldp/tests/netconf/basic.yaml:4
+<vsrx01> using connection plugin netconf
+<vsrx01> socket_path: 
+fatal: [vsrx01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:156
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "junos_command", 
+            "junos_config", 
+            "junos_facts", 
+            "junos_netconf", 
+            "junos_rpc", 
+            "junos_template", 
+            "junos_vlan", 
+            "junos_interface", 
+            "junos_banner", 
+            "junos_system", 
+            "junos_logging", 
+            "junos_user", 
+            "junos_static_route", 
+            "junos_linkagg", 
+            "junos_l3_interface", 
+            "junos_lldp"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_lldp_interface : collect all netconf test cases] *******************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_lldp_interface/tasks/netconf.yaml:2
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<localhost> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029275.42-254483050801407 `" && echo ansible-tmp-1501029275.42-254483050801407="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029275.42-254483050801407 `" ) && sleep 0'
+<localhost> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpElmj4s TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029275.42-254483050801407/find.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029275.42-254483050801407/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029275.42-254483050801407/find.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029275.42-254483050801407/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029275.42-254483050801407/" > /dev/null 2>&1 && sleep 0'
+ok: [vsrx01 -> localhost] => {
+    "changed": false, 
+    "examined": 1, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500997143.0, 
+            "ctime": 1500908935.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2601856, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500908935.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_lldp_interface/tests/netconf/basic.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 2413, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/junos_lldp_interface/tests/netconf"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 1, 
+    "msg": ""
+}
+
+TASK [junos_lldp_interface : set test_items] ***********************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_lldp_interface/tasks/netconf.yaml:9
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_lldp_interface/tests/netconf/basic.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_lldp_interface : run test case] ************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_lldp_interface/tasks/netconf.yaml:12
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_lldp_interface/tests/netconf/basic.yaml for vsrx01
+
+TASK [junos_lldp_interface : debug] ********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_lldp_interface/tests/netconf/basic.yaml:2
+ok: [vsrx01] => {
+    "msg": "START junos_lldp_interface netconf/basic.yaml"
+}
+
+TASK [junos_lldp_interface : setup - Remove lldp interface configuration] ******
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_lldp_interface/tests/netconf/basic.yaml:4
+<vsrx01> using connection plugin netconf
+<vsrx01> socket_path: 
+fatal: [vsrx01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:165
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "junos_command", 
+            "junos_config", 
+            "junos_facts", 
+            "junos_netconf", 
+            "junos_rpc", 
+            "junos_template", 
+            "junos_vlan", 
+            "junos_interface", 
+            "junos_banner", 
+            "junos_system", 
+            "junos_logging", 
+            "junos_user", 
+            "junos_static_route", 
+            "junos_linkagg", 
+            "junos_l3_interface", 
+            "junos_lldp", 
+            "junos_lldp_interface"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_vrf : collect netconf test cases] **********************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_vrf/tasks/netconf.yaml:1
+Using module file /Users/dnewswan/code/ansible/lib/ansible/modules/files/find.py
+<vsrx01> ESTABLISH LOCAL CONNECTION FOR USER: dnewswan
+<vsrx01> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<vsrx01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029289.29-75619906585713 `" && echo ansible-tmp-1501029289.29-75619906585713="` echo /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029289.29-75619906585713 `" ) && sleep 0'
+<vsrx01> PUT /var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/tmpIJ_Tov TO /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029289.29-75619906585713/find.py
+<vsrx01> EXEC /bin/sh -c 'chmod u+x /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029289.29-75619906585713/ /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029289.29-75619906585713/find.py && sleep 0'
+<vsrx01> EXEC /bin/sh -c 'python /Users/dnewswan/.ansible/tmp/ansible-tmp-1501029289.29-75619906585713/find.py; rm -rf "/Users/dnewswan/.ansible/tmp/ansible-tmp-1501029289.29-75619906585713/" > /dev/null 2>&1 && sleep 0'
+ok: [vsrx01] => {
+    "changed": false, 
+    "examined": 1, 
+    "failed": false, 
+    "files": [
+        {
+            "atime": 1500997157.0, 
+            "ctime": 1500908935.0, 
+            "dev": 16777220, 
+            "gid": 20, 
+            "inode": 2601866, 
+            "isblk": false, 
+            "ischr": false, 
+            "isdir": false, 
+            "isfifo": false, 
+            "isgid": false, 
+            "islnk": false, 
+            "isreg": true, 
+            "issock": false, 
+            "isuid": false, 
+            "mode": "0644", 
+            "mtime": 1500908935.0, 
+            "nlink": 1, 
+            "path": "/Users/dnewswan/code/ansible/test/integration/targets/junos_vrf/tests/netconf/basic.yaml", 
+            "rgrp": true, 
+            "roth": true, 
+            "rusr": true, 
+            "size": 5137, 
+            "uid": 501, 
+            "wgrp": false, 
+            "woth": false, 
+            "wusr": true, 
+            "xgrp": false, 
+            "xoth": false, 
+            "xusr": false
+        }
+    ], 
+    "invocation": {
+        "module_args": {
+            "age": null, 
+            "age_stamp": "mtime", 
+            "contains": null, 
+            "file_type": "file", 
+            "follow": false, 
+            "get_checksum": false, 
+            "hidden": false, 
+            "paths": [
+                "/Users/dnewswan/code/ansible/test/integration/targets/junos_vrf/tests/netconf"
+            ], 
+            "patterns": [
+                "*.yaml"
+            ], 
+            "recurse": false, 
+            "size": null, 
+            "use_regex": false
+        }
+    }, 
+    "matched": 1, 
+    "msg": ""
+}
+
+TASK [junos_vrf : set test_items] **********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_vrf/tasks/netconf.yaml:7
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "test_items": [
+            "/Users/dnewswan/code/ansible/test/integration/targets/junos_vrf/tests/netconf/basic.yaml"
+        ]
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [junos_vrf : run test case] ***********************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_vrf/tasks/netconf.yaml:10
+included: /Users/dnewswan/code/ansible/test/integration/targets/junos_vrf/tests/netconf/basic.yaml for vsrx01
+
+TASK [junos_vrf : debug] *******************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_vrf/tests/netconf/basic.yaml:2
+ok: [vsrx01] => {
+    "msg": "START junos_vrf netconf/basic.yaml"
+}
+
+TASK [junos_vrf : setup - remove vrf] ******************************************
+task path: /Users/dnewswan/code/ansible/test/integration/targets/junos_vrf/tests/netconf/basic.yaml:4
+<vsrx01> using connection plugin netconf
+<vsrx01> socket_path: 
+fatal: [vsrx01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+
+TASK [set_fact] ****************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:174
+ok: [vsrx01] => {
+    "ansible_facts": {
+        "failed_modules": [
+            "junos_command", 
+            "junos_config", 
+            "junos_facts", 
+            "junos_netconf", 
+            "junos_rpc", 
+            "junos_template", 
+            "junos_vlan", 
+            "junos_interface", 
+            "junos_banner", 
+            "junos_system", 
+            "junos_logging", 
+            "junos_user", 
+            "junos_static_route", 
+            "junos_linkagg", 
+            "junos_l3_interface", 
+            "junos_lldp", 
+            "junos_lldp_interface", 
+            "junos_vrf"
+        ], 
+        "test_failed": true
+    }, 
+    "changed": false, 
+    "failed": false
+}
+
+TASK [debug] *******************************************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:179
+ok: [vsrx01] => {
+    "failed_modules": [
+        "junos_command", 
+        "junos_config", 
+        "junos_facts", 
+        "junos_netconf", 
+        "junos_rpc", 
+        "junos_template", 
+        "junos_vlan", 
+        "junos_interface", 
+        "junos_banner", 
+        "junos_system", 
+        "junos_logging", 
+        "junos_user", 
+        "junos_static_route", 
+        "junos_linkagg", 
+        "junos_l3_interface", 
+        "junos_lldp", 
+        "junos_lldp_interface", 
+        "junos_vrf"
+    ]
+}
+
+TASK [Has any previous test failed?] *******************************************
+task path: /Users/dnewswan/code/ansible/test/integration/junos.yaml:182
+fatal: [vsrx01]: FAILED! => {
+    "changed": false, 
+    "failed": true, 
+    "msg": "One or more tests failed, check log for details"
+}
+
+PLAY RECAP *********************************************************************
+vsrx01                     : ok=114  changed=0    unreachable=0    failed=19  
+
