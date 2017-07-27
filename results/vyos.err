@@ -1,5 +1,6 @@
 ############ FAILURE ############
-vyos_l3_interface : Set IPv6 address/Users/dnewswan/code/ansible/test/integration/targets/vyos_l3_interface/tests/cli/basic.yaml:33
+[vyos_l3_interface : Set IPv6 address] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/vyos_l3_interface/tests/cli/basic.yaml:33
 
 [_ansible_parsed]=> True
 [_ansible_no_log]=> False
@@ -18,7 +19,8 @@ vyos@vyos02#
 
 
 ############ FAILURE ############
-vyos_logging : assert/Users/dnewswan/code/ansible/test/integration/targets/vyos_logging/tests/cli/basic.yaml:11
+[vyos_logging : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/vyos_logging/tests/cli/basic.yaml:11
 
 [_ansible_no_log]=> False
 [changed]=> False
@@ -30,7 +32,8 @@ vyos_logging : assert/Users/dnewswan/code/ansible/test/integration/targets/vyos_
 
 
 ############ FAILURE ############
-vyos_interface : assert/Users/dnewswan/code/ansible/test/integration/targets/vyos_interface/tests/cli/basic.yaml:141
+[vyos_interface : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/vyos_interface/tests/cli/basic.yaml:141
 
 [_ansible_no_log]=> False
 [changed]=> False
@@ -42,7 +45,8 @@ vyos_interface : assert/Users/dnewswan/code/ansible/test/integration/targets/vyo
 
 
 ############ FAILURE ############
-Has any previous test failed?/Users/dnewswan/code/ansible/test/integration/vyos.yaml:121
+[Has any previous test failed?] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/vyos.yaml:121
 
 [msg]=> One or more tests failed, check log for details
 [failed]=> True

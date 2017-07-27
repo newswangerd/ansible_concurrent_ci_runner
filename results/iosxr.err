@@ -1,5 +1,6 @@
 ############ FAILURE ############
-iosxr_config : assert/Users/dnewswan/code/ansible/test/integration/targets/iosxr_config/tests/cli/toplevel_nonidempotent.yaml:26
+[iosxr_config : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/iosxr_config/tests/cli/toplevel_nonidempotent.yaml:26
 
 [_ansible_no_log]=> False
 [changed]=> False
@@ -11,7 +12,8 @@ iosxr_config : assert/Users/dnewswan/code/ansible/test/integration/targets/iosxr
 
 
 ############ FAILURE ############
-iosxr_template : configure device with config/Users/dnewswan/code/ansible/test/integration/targets/iosxr_template/tests/cli/backup.yaml:24
+[iosxr_template : configure device with config] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/iosxr_template/tests/cli/backup.yaml:24
 
 [msg]=> Unexpected failure during module execution.
 [failed]=> True
@@ -20,7 +22,8 @@ iosxr_template : configure device with config/Users/dnewswan/code/ansible/test/i
 
 
 ############ FAILURE ############
-iosxr_banner : Set login/Users/dnewswan/code/ansible/test/integration/targets/iosxr_banner/tests/cli/basic-login.yaml:8
+[iosxr_banner : Set login] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/iosxr_banner/tests/cli/basic-login.yaml:8
 
 [_ansible_parsed]=> True
 [commands]=> [u'banner login this is my login banner\nthat has a multiline\nstring']
@@ -40,18 +43,19 @@ RP/0/0/CPU0:iosxr01(config)#
 
 
 ############ FAILURE ############
-iosxr_logging : Set up host logging/Users/dnewswan/code/ansible/test/integration/targets/iosxr_logging/tests/cli/basic.yaml:2
+[iosxr_logging : Set up host logging] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/iosxr_logging/tests/cli/basic.yaml:2
 
 [_ansible_parsed]=> False
 [_ansible_no_log]=> False
 [module_stderr]=> Traceback (most recent call last):
-  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_gGC5A3/ansible_module_iosxr_logging.py", line 358, in <module>
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_jSbTeE/ansible_module_iosxr_logging.py", line 358, in <module>
     main()
-  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_gGC5A3/ansible_module_iosxr_logging.py", line 344, in main
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_jSbTeE/ansible_module_iosxr_logging.py", line 344, in main
     have = map_config_to_obj(module)
-  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_gGC5A3/ansible_module_iosxr_logging.py", line 240, in map_config_to_obj
-    if match.group(1) in dest_group:
-AttributeError: 'NoneType' object has no attribute 'group'
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_jSbTeE/ansible_module_iosxr_logging.py", line 245, in map_config_to_obj
+    obj.append({'dest': dest,
+UnboundLocalError: local variable 'dest' referenced before assignment
 
 [changed]=> False
 [module_stdout]=> 
@@ -62,7 +66,8 @@ AttributeError: 'NoneType' object has no attribute 'group'
 
 
 ############ FAILURE ############
-Has any previous test failed?/Users/dnewswan/code/ansible/test/integration/iosxr.yaml:94
+[Has any previous test failed?] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/iosxr.yaml:94
 
 [msg]=> One or more tests failed, check log for details
 [failed]=> True

@@ -17,7 +17,8 @@
 [_See the .log files for details_](./vyos.log) 
 ```
 ############ FAILURE ############
-vyos_l3_interface : Set IPv6 address/Users/dnewswan/code/ansible/test/integration/targets/vyos_l3_interface/tests/cli/basic.yaml:33
+[vyos_l3_interface : Set IPv6 address] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/vyos_l3_interface/tests/cli/basic.yaml:33
 
 [_ansible_parsed]=> True
 [_ansible_no_log]=> False
@@ -36,7 +37,8 @@ vyos@vyos02#
 
 
 ############ FAILURE ############
-vyos_logging : assert/Users/dnewswan/code/ansible/test/integration/targets/vyos_logging/tests/cli/basic.yaml:11
+[vyos_logging : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/vyos_logging/tests/cli/basic.yaml:11
 
 [_ansible_no_log]=> False
 [changed]=> False
@@ -48,7 +50,8 @@ vyos_logging : assert/Users/dnewswan/code/ansible/test/integration/targets/vyos_
 
 
 ############ FAILURE ############
-vyos_interface : assert/Users/dnewswan/code/ansible/test/integration/targets/vyos_interface/tests/cli/basic.yaml:141
+[vyos_interface : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/vyos_interface/tests/cli/basic.yaml:141
 
 [_ansible_no_log]=> False
 [changed]=> False
@@ -60,7 +63,8 @@ vyos_interface : assert/Users/dnewswan/code/ansible/test/integration/targets/vyo
 
 
 ############ FAILURE ############
-Has any previous test failed?/Users/dnewswan/code/ansible/test/integration/vyos.yaml:121
+[Has any previous test failed?] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/vyos.yaml:121
 
 [msg]=> One or more tests failed, check log for details
 [failed]=> True
@@ -95,21 +99,21 @@ Has any previous test failed?/Users/dnewswan/code/ansible/test/integration/vyos.
 [_ansible_parsed]=> False
 [_ansible_no_log]=> False
 [module_stderr]=> Traceback (most recent call last):
-  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_5rzZiB/ansible_module_junos_netconf.py", line 214, in <module>
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_E6TTtP/ansible_module_junos_netconf.py", line 214, in <module>
     main()
-  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_5rzZiB/ansible_module_junos_netconf.py", line 202, in main
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_E6TTtP/ansible_module_junos_netconf.py", line 202, in main
     commit_configuration(module)
-  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_5rzZiB/ansible_modlib.zip/ansible/module_utils/junos.py", line 158, in commit_configuration
-  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_5rzZiB/ansible_modlib.zip/ansible/module_utils/netconf.py", line 62, in send_request
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_E6TTtP/ansible_modlib.zip/ansible/module_utils/junos.py", line 158, in commit_configuration
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_E6TTtP/ansible_modlib.zip/ansible/module_utils/netconf.py", line 44, in send_request
   File "src/lxml/lxml.etree.pyx", line 3228, in lxml.etree.fromstring (src/lxml/lxml.etree.c:79594)
   File "src/lxml/parser.pxi", line 1848, in lxml.etree._parseMemoryDocument (src/lxml/lxml.etree.c:119113)
   File "src/lxml/parser.pxi", line 1736, in lxml.etree._parseDoc (src/lxml/lxml.etree.c:117793)
   File "src/lxml/parser.pxi", line 1102, in lxml.etree._BaseParser._parseDoc (src/lxml/lxml.etree.c:112037)
   File "src/lxml/parser.pxi", line 595, in lxml.etree._ParserContext._handleParseResultDoc (src/lxml/lxml.etree.c:105881)
   File "src/lxml/parser.pxi", line 706, in lxml.etree._handleParseResult (src/lxml/lxml.etree.c:107589)
-  File "src/lxml/parser.pxi", line 646, in lxml.etree._raiseParseError (src/lxml/lxml.etree.c:106735)
-  File "<string>", line 0
-lxml.etree.XMLSyntaxError
+  File "src/lxml/parser.pxi", line 635, in lxml.etree._raiseParseError (src/lxml/lxml.etree.c:106443)
+  File "<string>", line 2
+lxml.etree.XMLSyntaxError: Extra content at the end of the document, line 2, column 17
 
 [changed]=> False
 [module_stdout]=> 
@@ -148,7 +152,7 @@ lxml.etree.XMLSyntaxError
 [changed]=> False
 [failed]=> True
 [invocation]=> {u'module_args': {u'username': None, u'files': 40, u'ssh_keyfile': None, u'src_addr': None, u'name': None, u'facility': None, u'dest': None, u'level': None, u'host': None, u'purge': False, u'aggregate': None, u'state': u'present', u'timeout': 10, u'provider': {u'username': u'ansible', u'ssh_keyfile': None, u'host': u'vsrx01', u'timeout': None, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'port': None, u'transport': u'netconf'}, u'active': True, u'rotate_frequency': 20, u'password': None, u'port': None, u'transport': None, u'size': 65536}}
-[msg]=> <?xml version="1.0" encoding="UTF-8"?><rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:junos="http://xml.juniper.net/junos/15.1X49/junos" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:cb0e689f-dde9-485c-8948-ffe385dff692">
+[msg]=> <?xml version="1.0" encoding="UTF-8"?><rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:junos="http://xml.juniper.net/junos/15.1X49/junos" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:2bd276b4-7637-45db-ac94-d2aacf54ac8b">
 <load-configuration-results>
 <rpc-error>
 <error-type>protocol</error-type>
@@ -229,7 +233,7 @@ could not set log-rotate-frequency
 [changed]=> False
 [failed]=> True
 [invocation]=> {u'module_args': {u'username': None, u'ssh_keyfile': None, u'interval': None, u'state': u'absent', u'purge': False, u'host': None, u'disable': True, u'transport': None, u'timeout': 10, u'provider': {u'username': u'ansible', u'ssh_keyfile': None, u'host': u'vsrx01', u'timeout': None, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'port': None, u'transport': u'netconf'}, u'active': True, u'password': None, u'hold_multiplier': None, u'port': None, u'transmit_delay': None}}
-[msg]=> <?xml version="1.0" encoding="UTF-8"?><rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:junos="http://xml.juniper.net/junos/15.1X49/junos" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:0c344c22-f443-449d-b173-09951aa4d4d8">
+[msg]=> <?xml version="1.0" encoding="UTF-8"?><rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:junos="http://xml.juniper.net/junos/15.1X49/junos" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:5d92866b-f26b-474e-92ac-acd3199172e5">
 <load-configuration-results>
 <rpc-error>
 <error-type>protocol</error-type>
@@ -264,7 +268,7 @@ could not set log-rotate-frequency
 [changed]=> False
 [failed]=> True
 [invocation]=> {u'module_args': {u'username': None, u'ssh_keyfile': None, u'name': u'ge-0/0/5', u'state': u'absent', u'purge': False, u'active': True, u'host': None, u'disable': True, u'timeout': 10, u'provider': {u'username': u'ansible', u'ssh_keyfile': None, u'host': u'vsrx01', u'timeout': None, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'port': None, u'transport': u'netconf'}, u'aggregate': None, u'password': None, u'port': None, u'transport': None}}
-[msg]=> <?xml version="1.0" encoding="UTF-8"?><rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:junos="http://xml.juniper.net/junos/15.1X49/junos" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:9e1c8609-cead-4553-8a50-29c962870979">
+[msg]=> <?xml version="1.0" encoding="UTF-8"?><rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:junos="http://xml.juniper.net/junos/15.1X49/junos" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:a1982677-c0c0-4f82-8afc-0e66de3ae673">
 <load-configuration-results>
 <rpc-error>
 <error-type>protocol</error-type>
@@ -317,7 +321,8 @@ could not set log-rotate-frequency
 [_See the .log files for details_](./ios.log) 
 ```
 ############ FAILURE ############
-prepare_ios_tests : Ensure we have loopback 888 for testing/Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+[prepare_ios_tests : Ensure we have loopback 888 for testing] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
 
 [_ansible_parsed]=> True
 [stderr_lines]=> [u'show running-config', u'            ^', u"% Invalid input detected at '^' marker.", u'', u'ios01>']
@@ -335,7 +340,8 @@ ios01>
 
 
 ############ FAILURE ############
-prepare_ios_tests : Ensure we have loopback 888 for testing/Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+[prepare_ios_tests : Ensure we have loopback 888 for testing] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
 
 [_ansible_parsed]=> True
 [stderr_lines]=> [u'show running-config', u'            ^', u"% Invalid input detected at '^' marker.", u'', u'ios01>']
@@ -353,7 +359,8 @@ ios01>
 
 
 ############ FAILURE ############
-prepare_ios_tests : Ensure we have loopback 888 for testing/Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+[prepare_ios_tests : Ensure we have loopback 888 for testing] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
 
 [_ansible_parsed]=> True
 [stderr_lines]=> [u'show running-config', u'            ^', u"% Invalid input detected at '^' marker.", u'', u'ios01>']
@@ -371,7 +378,8 @@ ios01>
 
 
 ############ FAILURE ############
-prepare_ios_tests : Ensure we have loopback 888 for testing/Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+[prepare_ios_tests : Ensure we have loopback 888 for testing] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
 
 [_ansible_parsed]=> True
 [stderr_lines]=> [u'show running-config', u'            ^', u"% Invalid input detected at '^' marker.", u'', u'ios01>']
@@ -389,7 +397,8 @@ ios01>
 
 
 ############ FAILURE ############
-prepare_ios_tests : Ensure we have loopback 888 for testing/Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+[prepare_ios_tests : Ensure we have loopback 888 for testing] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
 
 [_ansible_parsed]=> True
 [stderr_lines]=> [u'show running-config', u'            ^', u"% Invalid input detected at '^' marker.", u'', u'ios01>']
@@ -407,7 +416,8 @@ ios01>
 
 
 ############ FAILURE ############
-prepare_ios_tests : Ensure we have loopback 888 for testing/Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+[prepare_ios_tests : Ensure we have loopback 888 for testing] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
 
 [_ansible_parsed]=> True
 [stderr_lines]=> [u'show running-config', u'            ^', u"% Invalid input detected at '^' marker.", u'', u'ios01>']
@@ -425,7 +435,8 @@ ios01>
 
 
 ############ FAILURE ############
-prepare_ios_tests : Ensure we have loopback 888 for testing/Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+[prepare_ios_tests : Ensure we have loopback 888 for testing] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
 
 [_ansible_parsed]=> True
 [stderr_lines]=> [u'show running-config', u'            ^', u"% Invalid input detected at '^' marker.", u'', u'ios01>']
@@ -443,7 +454,8 @@ ios01>
 
 
 ############ FAILURE ############
-prepare_ios_tests : Ensure we have loopback 888 for testing/Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+[prepare_ios_tests : Ensure we have loopback 888 for testing] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
 
 [_ansible_parsed]=> True
 [stderr_lines]=> [u'show running-config', u'            ^', u"% Invalid input detected at '^' marker.", u'', u'ios01>']
@@ -461,7 +473,8 @@ ios01>
 
 
 ############ FAILURE ############
-Has any previous test failed?/Users/dnewswan/code/ansible/test/integration/ios.yaml:102
+[Has any previous test failed?] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/ios.yaml:102
 
 [msg]=> One or more tests failed, check log for details
 [failed]=> True
@@ -477,7 +490,8 @@ Has any previous test failed?/Users/dnewswan/code/ansible/test/integration/ios.y
 [_See the .log files for details_](./iosxr.log) 
 ```
 ############ FAILURE ############
-iosxr_config : assert/Users/dnewswan/code/ansible/test/integration/targets/iosxr_config/tests/cli/toplevel_nonidempotent.yaml:26
+[iosxr_config : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/iosxr_config/tests/cli/toplevel_nonidempotent.yaml:26
 
 [_ansible_no_log]=> False
 [changed]=> False
@@ -489,7 +503,8 @@ iosxr_config : assert/Users/dnewswan/code/ansible/test/integration/targets/iosxr
 
 
 ############ FAILURE ############
-iosxr_template : configure device with config/Users/dnewswan/code/ansible/test/integration/targets/iosxr_template/tests/cli/backup.yaml:24
+[iosxr_template : configure device with config] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/iosxr_template/tests/cli/backup.yaml:24
 
 [msg]=> Unexpected failure during module execution.
 [failed]=> True
@@ -498,7 +513,8 @@ iosxr_template : configure device with config/Users/dnewswan/code/ansible/test/i
 
 
 ############ FAILURE ############
-iosxr_banner : Set login/Users/dnewswan/code/ansible/test/integration/targets/iosxr_banner/tests/cli/basic-login.yaml:8
+[iosxr_banner : Set login] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/iosxr_banner/tests/cli/basic-login.yaml:8
 
 [_ansible_parsed]=> True
 [commands]=> [u'banner login this is my login banner\nthat has a multiline\nstring']
@@ -518,18 +534,19 @@ RP/0/0/CPU0:iosxr01(config)#
 
 
 ############ FAILURE ############
-iosxr_logging : Set up host logging/Users/dnewswan/code/ansible/test/integration/targets/iosxr_logging/tests/cli/basic.yaml:2
+[iosxr_logging : Set up host logging] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/iosxr_logging/tests/cli/basic.yaml:2
 
 [_ansible_parsed]=> False
 [_ansible_no_log]=> False
 [module_stderr]=> Traceback (most recent call last):
-  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_gGC5A3/ansible_module_iosxr_logging.py", line 358, in <module>
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_jSbTeE/ansible_module_iosxr_logging.py", line 358, in <module>
     main()
-  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_gGC5A3/ansible_module_iosxr_logging.py", line 344, in main
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_jSbTeE/ansible_module_iosxr_logging.py", line 344, in main
     have = map_config_to_obj(module)
-  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_gGC5A3/ansible_module_iosxr_logging.py", line 240, in map_config_to_obj
-    if match.group(1) in dest_group:
-AttributeError: 'NoneType' object has no attribute 'group'
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_jSbTeE/ansible_module_iosxr_logging.py", line 245, in map_config_to_obj
+    obj.append({'dest': dest,
+UnboundLocalError: local variable 'dest' referenced before assignment
 
 [changed]=> False
 [module_stdout]=> 
@@ -540,7 +557,8 @@ AttributeError: 'NoneType' object has no attribute 'group'
 
 
 ############ FAILURE ############
-Has any previous test failed?/Users/dnewswan/code/ansible/test/integration/iosxr.yaml:94
+[Has any previous test failed?] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/iosxr.yaml:94
 
 [msg]=> One or more tests failed, check log for details
 [failed]=> True
@@ -556,7 +574,8 @@ Has any previous test failed?/Users/dnewswan/code/ansible/test/integration/iosxr
 [_See the .log files for details_](./nxos.log) 
 ```
 ############ FAILURE ############
-nxos_command : Run show running-config bgp - should pass/Users/dnewswan/code/ansible/test/integration/targets/nxos_command/tests/nxapi/sanity.yaml:42
+[nxos_command : Run show running-config bgp - should pass] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_command/tests/nxapi/sanity.yaml:42
 
 [status]=> -1
 [_ansible_parsed]=> True
@@ -570,7 +589,8 @@ nxos_command : Run show running-config bgp - should pass/Users/dnewswan/code/ans
 
 
 ############ FAILURE ############
-nxos_config : assert/Users/dnewswan/code/ansible/test/integration/targets/nxos_config/tests/cli/defaults.yaml:37
+[nxos_config : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_config/tests/cli/defaults.yaml:37
 
 [_ansible_no_log]=> False
 [changed]=> False
@@ -582,7 +602,8 @@ nxos_config : assert/Users/dnewswan/code/ansible/test/integration/targets/nxos_c
 
 
 ############ FAILURE ############
-nxos_mtu : assert/Users/dnewswan/code/ansible/test/integration/targets/nxos_mtu/tests/cli/set_sysmtu.yaml:26
+[nxos_mtu : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_mtu/tests/cli/set_sysmtu.yaml:26
 
 [_ansible_no_log]=> False
 [changed]=> False
@@ -594,7 +615,8 @@ nxos_mtu : assert/Users/dnewswan/code/ansible/test/integration/targets/nxos_mtu/
 
 
 ############ FAILURE ############
-nxos_system : configure name_servers/Users/dnewswan/code/ansible/test/integration/targets/nxos_system/tests/cli/set_name_servers.yaml:13
+[nxos_system : configure name_servers] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_system/tests/cli/set_name_servers.yaml:13
 
 [_ansible_parsed]=> True
 [_ansible_no_log]=> False
@@ -609,7 +631,8 @@ nxos_system : configure name_servers/Users/dnewswan/code/ansible/test/integratio
 
 
 ############ FAILURE ############
-nxos_interface : assert/Users/dnewswan/code/ansible/test/integration/targets/nxos_interface/tests/cli/set_state_absent.yaml:16
+[nxos_interface : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_interface/tests/cli/set_state_absent.yaml:16
 
 [_ansible_no_log]=> False
 [changed]=> False
@@ -621,7 +644,8 @@ nxos_interface : assert/Users/dnewswan/code/ansible/test/integration/targets/nxo
 
 
 ############ FAILURE ############
-nxos_user : Create user/Users/dnewswan/code/ansible/test/integration/targets/nxos_user/tests/cli/basic.yaml:2
+[nxos_user : Create user] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_user/tests/cli/basic.yaml:2
 
 [_ansible_parsed]=> True
 [_ansible_no_log]=> False
@@ -633,7 +657,8 @@ nxos_user : Create user/Users/dnewswan/code/ansible/test/integration/targets/nxo
 
 
 ############ FAILURE ############
-nxos_banner : assert/Users/dnewswan/code/ansible/test/integration/targets/nxos_banner/tests/cli/basic-no-exec.yaml:33
+[nxos_banner : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_banner/tests/cli/basic-no-exec.yaml:33
 
 [_ansible_no_log]=> False
 [changed]=> False
@@ -645,7 +670,8 @@ nxos_banner : assert/Users/dnewswan/code/ansible/test/integration/targets/nxos_b
 
 
 ############ FAILURE ############
-Has any previous test failed?/Users/dnewswan/code/ansible/test/integration/nxos.yaml:156
+[Has any previous test failed?] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/nxos.yaml:156
 
 [msg]=> One or more tests failed, check log for details
 [failed]=> True

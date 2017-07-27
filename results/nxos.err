@@ -1,5 +1,6 @@
 ############ FAILURE ############
-nxos_command : Run show running-config bgp - should pass/Users/dnewswan/code/ansible/test/integration/targets/nxos_command/tests/nxapi/sanity.yaml:42
+[nxos_command : Run show running-config bgp - should pass] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_command/tests/nxapi/sanity.yaml:42
 
 [status]=> -1
 [_ansible_parsed]=> True
@@ -13,7 +14,8 @@ nxos_command : Run show running-config bgp - should pass/Users/dnewswan/code/ans
 
 
 ############ FAILURE ############
-nxos_config : assert/Users/dnewswan/code/ansible/test/integration/targets/nxos_config/tests/cli/defaults.yaml:37
+[nxos_config : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_config/tests/cli/defaults.yaml:37
 
 [_ansible_no_log]=> False
 [changed]=> False
@@ -25,7 +27,8 @@ nxos_config : assert/Users/dnewswan/code/ansible/test/integration/targets/nxos_c
 
 
 ############ FAILURE ############
-nxos_mtu : assert/Users/dnewswan/code/ansible/test/integration/targets/nxos_mtu/tests/cli/set_sysmtu.yaml:26
+[nxos_mtu : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_mtu/tests/cli/set_sysmtu.yaml:26
 
 [_ansible_no_log]=> False
 [changed]=> False
@@ -37,7 +40,8 @@ nxos_mtu : assert/Users/dnewswan/code/ansible/test/integration/targets/nxos_mtu/
 
 
 ############ FAILURE ############
-nxos_system : configure name_servers/Users/dnewswan/code/ansible/test/integration/targets/nxos_system/tests/cli/set_name_servers.yaml:13
+[nxos_system : configure name_servers] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_system/tests/cli/set_name_servers.yaml:13
 
 [_ansible_parsed]=> True
 [_ansible_no_log]=> False
@@ -52,7 +56,8 @@ nxos_system : configure name_servers/Users/dnewswan/code/ansible/test/integratio
 
 
 ############ FAILURE ############
-nxos_interface : assert/Users/dnewswan/code/ansible/test/integration/targets/nxos_interface/tests/cli/set_state_absent.yaml:16
+[nxos_interface : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_interface/tests/cli/set_state_absent.yaml:16
 
 [_ansible_no_log]=> False
 [changed]=> False
@@ -64,7 +69,8 @@ nxos_interface : assert/Users/dnewswan/code/ansible/test/integration/targets/nxo
 
 
 ############ FAILURE ############
-nxos_user : Create user/Users/dnewswan/code/ansible/test/integration/targets/nxos_user/tests/cli/basic.yaml:2
+[nxos_user : Create user] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_user/tests/cli/basic.yaml:2
 
 [_ansible_parsed]=> True
 [_ansible_no_log]=> False
@@ -76,7 +82,8 @@ nxos_user : Create user/Users/dnewswan/code/ansible/test/integration/targets/nxo
 
 
 ############ FAILURE ############
-nxos_banner : assert/Users/dnewswan/code/ansible/test/integration/targets/nxos_banner/tests/cli/basic-no-exec.yaml:33
+[nxos_banner : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_banner/tests/cli/basic-no-exec.yaml:33
 
 [_ansible_no_log]=> False
 [changed]=> False
@@ -88,7 +95,8 @@ nxos_banner : assert/Users/dnewswan/code/ansible/test/integration/targets/nxos_b
 
 
 ############ FAILURE ############
-Has any previous test failed?/Users/dnewswan/code/ansible/test/integration/nxos.yaml:156
+[Has any previous test failed?] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/nxos.yaml:156
 
 [msg]=> One or more tests failed, check log for details
 [failed]=> True

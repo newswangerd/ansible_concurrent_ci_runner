@@ -1,5 +1,6 @@
 ############ FAILURE ############
-prepare_ios_tests : Ensure we have loopback 888 for testing/Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+[prepare_ios_tests : Ensure we have loopback 888 for testing] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
 
 [_ansible_parsed]=> True
 [stderr_lines]=> [u'show running-config', u'            ^', u"% Invalid input detected at '^' marker.", u'', u'ios01>']
@@ -17,7 +18,8 @@ ios01>
 
 
 ############ FAILURE ############
-prepare_ios_tests : Ensure we have loopback 888 for testing/Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+[prepare_ios_tests : Ensure we have loopback 888 for testing] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
 
 [_ansible_parsed]=> True
 [stderr_lines]=> [u'show running-config', u'            ^', u"% Invalid input detected at '^' marker.", u'', u'ios01>']
@@ -35,7 +37,8 @@ ios01>
 
 
 ############ FAILURE ############
-prepare_ios_tests : Ensure we have loopback 888 for testing/Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+[prepare_ios_tests : Ensure we have loopback 888 for testing] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
 
 [_ansible_parsed]=> True
 [stderr_lines]=> [u'show running-config', u'            ^', u"% Invalid input detected at '^' marker.", u'', u'ios01>']
@@ -53,7 +56,8 @@ ios01>
 
 
 ############ FAILURE ############
-prepare_ios_tests : Ensure we have loopback 888 for testing/Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+[prepare_ios_tests : Ensure we have loopback 888 for testing] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
 
 [_ansible_parsed]=> True
 [stderr_lines]=> [u'show running-config', u'            ^', u"% Invalid input detected at '^' marker.", u'', u'ios01>']
@@ -71,7 +75,8 @@ ios01>
 
 
 ############ FAILURE ############
-prepare_ios_tests : Ensure we have loopback 888 for testing/Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+[prepare_ios_tests : Ensure we have loopback 888 for testing] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
 
 [_ansible_parsed]=> True
 [stderr_lines]=> [u'show running-config', u'            ^', u"% Invalid input detected at '^' marker.", u'', u'ios01>']
@@ -89,7 +94,8 @@ ios01>
 
 
 ############ FAILURE ############
-prepare_ios_tests : Ensure we have loopback 888 for testing/Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+[prepare_ios_tests : Ensure we have loopback 888 for testing] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
 
 [_ansible_parsed]=> True
 [stderr_lines]=> [u'show running-config', u'            ^', u"% Invalid input detected at '^' marker.", u'', u'ios01>']
@@ -107,7 +113,8 @@ ios01>
 
 
 ############ FAILURE ############
-prepare_ios_tests : Ensure we have loopback 888 for testing/Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+[prepare_ios_tests : Ensure we have loopback 888 for testing] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
 
 [_ansible_parsed]=> True
 [stderr_lines]=> [u'show running-config', u'            ^', u"% Invalid input detected at '^' marker.", u'', u'ios01>']
@@ -125,7 +132,8 @@ ios01>
 
 
 ############ FAILURE ############
-prepare_ios_tests : Ensure we have loopback 888 for testing/Users/dnewswan/code/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
+[prepare_ios_tests : Ensure we have loopback 888 for testing] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
 
 [_ansible_parsed]=> True
 [stderr_lines]=> [u'show running-config', u'            ^', u"% Invalid input detected at '^' marker.", u'', u'ios01>']
@@ -143,7 +151,8 @@ ios01>
 
 
 ############ FAILURE ############
-Has any previous test failed?/Users/dnewswan/code/ansible/test/integration/ios.yaml:102
+[Has any previous test failed?] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/ios.yaml:102
 
 [msg]=> One or more tests failed, check log for details
 [failed]=> True
