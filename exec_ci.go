@@ -8,6 +8,7 @@ import (
   "strings"
   "io/ioutil"
   "time"
+  "flag"
 )
 
 type test struct{
@@ -18,10 +19,17 @@ type test struct{
 
 var wg sync.WaitGroup
 
-func exec_net_ci(tst_data test, integration_dir string, inv string) {
+func exec_net_ci(tst_data test, integration_dir string, inv string, limit string) {
   defer wg.Done()
 
-  fmt.Println("Starting test for: " + tst_data.name)
+  if limit != ""{
+    if limit != tst_data.name{
+      fmt.Println("Skipping: ", tst_data.name)
+      return
+    }
+  }
+
+  fmt.Println("Starting test: ", tst_data.name)
 
   start := time.Now()
   cmd_str := fmt.Sprintf("ansible-playbook -i %s -vvvv -u %s %s", inv, tst_data.user, tst_data.playbook)
@@ -100,16 +108,16 @@ func main() {
   // os.Setenv("ANSIBLE_LOG_PATH", "./log")
 
   tests := []test{
-    test {
-      name: "vyos",
-      playbook: "vyos.yaml",
-      user: "vyos",
-    },
-    test {
-      name: "eos",
-      playbook: "eos.yaml",
-      user: "admin",
-    },
+    // test {
+    //   name: "vyos",
+    //   playbook: "vyos.yaml",
+    //   user: "vyos",
+    // },
+    // test {
+    //   name: "eos",
+    //   playbook: "eos.yaml",
+    //   user: "admin",
+    // },
     test {
       name: "junos",
       playbook: "junos.yaml",
@@ -132,9 +140,14 @@ func main() {
     },
   }
 
+  var limit string;
+
+  flag.StringVar(&limit, "l", "", "limit to single test")
+  flag.Parse()
+
   wg.Add(len(tests))
   for _, tst := range tests{
-    go exec_net_ci(tst, integration_dir, inv)
+    go exec_net_ci(tst, integration_dir, inv, limit)
   }
   wg.Wait()
 

@@ -132,27 +132,8 @@ ios01>
 
 
 ############ FAILURE ############
-[prepare_ios_tests : Ensure we have loopback 888 for testing] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
-
-[_ansible_parsed]=> True
-[stderr_lines]=> [u'show running-config', u'            ^', u"% Invalid input detected at '^' marker.", u'', u'ios01>']
-[_ansible_no_log]=> False
-[changed]=> False
-[failed]=> True
-[stderr]=> show running-config
-            ^
-% Invalid input detected at '^' marker.
-
-ios01>
-[invocation]=> {u'module_args': {u'multiline_delimiter': u'@', u'authorize': None, u'force': False, u'diff_against': None, u'replace': u'line', u'running_config': None, u'save_when': u'never', u'port': None, u'before': None, u'auth_pass': None, u'parents': None, u'provider': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'authorize': None, u'ssh_keyfile': None, u'auth_pass': None, u'host': u'ios01', u'timeout': None, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'port': None, u'transport': u'cli'}, u'save': False, u'match': u'line', u'username': None, u'timeout': None, u'after': None, u'host': None, u'password': None, u'diff_ignore_lines': None, u'src': u'interface Loopback888\n description test for ansible\n shutdown\n\n', u'ssh_keyfile': None, u'lines': None, u'intended_config': None, u'defaults': False, u'backup': False}}
-[msg]=> unable to retrieve current config
-
-
-
-############ FAILURE ############
 [Has any previous test failed?] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/ios.yaml:102
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/ios.yaml:93
 
 [msg]=> One or more tests failed, check log for details
 [failed]=> True

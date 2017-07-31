@@ -2,81 +2,12 @@
 
 ## Test Summary 
 ### Passed: 
-* [eos](#eos)
 
 ### Failed: 
-* [vyos](#vyos)
 * [junos](#junos)
 * [ios](#ios)
 * [iosxr](#iosxr)
 * [nxos](#nxos)
-
-# Results 
-## vyos
-*The following tests have failed:* 
-[_See the .log files for details_](./vyos.log) 
-```
-############ FAILURE ############
-[vyos_l3_interface : Set IPv6 address] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/vyos_l3_interface/tests/cli/basic.yaml:33
-
-[_ansible_parsed]=> True
-[_ansible_no_log]=> False
-[changed]=> False
-[failed]=> True
-[invocation]=> {u'module_args': {u'username': None, u'ssh_keyfile': None, u'name': u'eth1', u'provider': None, u'state': u'present', u'purge': False, u'host': None, u'ipv4': None, u'timeout': None, u'ipv6': u'fd5d:12c9:2201:1::1/64', u'aggregate': None, u'password': None, u'port': None}}
-[msg]=> commit failed: commit
-[ interfaces ethernet eth1 address fd5d:12c9:2201:1::1/64 ]
-RTNETLINK answers: No buffer space available
-
-[[interfaces ethernet eth1]] failed
-Commit failed
-[edit]
-vyos@vyos02# 
-
-
-
-############ FAILURE ############
-[vyos_logging : assert] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/vyos_logging/tests/cli/basic.yaml:11
-
-[_ansible_no_log]=> False
-[changed]=> False
-[assertion]=> result.changed == true
-[_ansible_verbose_always]=> True
-[failed]=> True
-[evaluated_to]=> False
-
-
-
-############ FAILURE ############
-[vyos_interface : assert] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/vyos_interface/tests/cli/basic.yaml:141
-
-[_ansible_no_log]=> False
-[changed]=> False
-[assertion]=> "set interfaces ethernet eth1 description test-interface-1" in result.commands
-[_ansible_verbose_always]=> True
-[failed]=> True
-[evaluated_to]=> False
-
-
-
-############ FAILURE ############
-[Has any previous test failed?] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/vyos.yaml:121
-
-[msg]=> One or more tests failed, check log for details
-[failed]=> True
-[changed]=> False
-[_ansible_no_log]=> False
-
-
-
-```
-# Results 
-## eos
-*All tests passed!*
 
 # Results 
 ## junos
@@ -84,27 +15,51 @@ vyos@vyos02#
 [_See the .log files for details_](./junos.log) 
 ```
 ############ FAILURE ############
-[junos_config : assert] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_config/tests/netconf/multiple.yaml:20
+[junos_command : test contains operator with xml encoding] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_command/tests/netconf_xml/contains.yaml:4
 
-[msg]=> The conditional check ''host-name;' not in result.diff.prepared' failed. The error was: error while evaluating conditional ('host-name;' not in result.diff.prepared): 'dict object' has no attribute 'diff'
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
 [failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
 
 
 
 ############ FAILURE ############
-[junos_netconf : Change port] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_netconf/tests/cli/changeport.yaml:13
+[junos_config : setup] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_config/tests/netconf/backup.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+[junos_facts : Collect default facts from device] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_facts/tests/netconf/facts.yaml:5
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+[junos_netconf : Setup] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_netconf/tests/cli/changeport.yaml:5
 
 [_ansible_parsed]=> False
 [_ansible_no_log]=> False
 [module_stderr]=> Traceback (most recent call last):
-  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_E6TTtP/ansible_module_junos_netconf.py", line 214, in <module>
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_t2EJiP/ansible_module_junos_netconf.py", line 214, in <module>
     main()
-  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_E6TTtP/ansible_module_junos_netconf.py", line 202, in main
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_t2EJiP/ansible_module_junos_netconf.py", line 202, in main
     commit_configuration(module)
-  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_E6TTtP/ansible_modlib.zip/ansible/module_utils/junos.py", line 158, in commit_configuration
-  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_E6TTtP/ansible_modlib.zip/ansible/module_utils/netconf.py", line 44, in send_request
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_t2EJiP/ansible_modlib.zip/ansible/module_utils/junos.py", line 158, in commit_configuration
+  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_t2EJiP/ansible_modlib.zip/ansible/module_utils/netconf.py", line 44, in send_request
   File "src/lxml/lxml.etree.pyx", line 3228, in lxml.etree.fromstring (src/lxml/lxml.etree.c:79594)
   File "src/lxml/parser.pxi", line 1848, in lxml.etree._parseMemoryDocument (src/lxml/lxml.etree.c:119113)
   File "src/lxml/parser.pxi", line 1736, in lxml.etree._parseDoc (src/lxml/lxml.etree.c:117793)
@@ -124,103 +79,112 @@ lxml.etree.XMLSyntaxError: Extra content at the end of the document, line 2, col
 
 
 ############ FAILURE ############
-[junos_template : assert] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_template/tests/netconf/backup.yaml:31
+[junos_rpc : Execute RPC on device] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_rpc/tests/netconf/rpc.yaml:4
 
-[msg]=> The conditional check ''1.1.1.1/32' in result.diff.prepared' failed. The error was: error while evaluating conditional ('1.1.1.1/32' in result.diff.prepared): 'dict object' has no attribute 'diff'
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
 [failed]=> True
-
-
-
-############ FAILURE ############
-[junos_interface : assert] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_interface/tests/netconf/basic.yaml:145
-
-[msg]=> The conditional check ''[edit interfaces ge-0/0/1]
--   disable;' in result.diff.prepared' failed. The error was: error while evaluating conditional ('[edit interfaces ge-0/0/1]
--   disable;' in result.diff.prepared): 'dict object' has no attribute 'diff'
-[failed]=> True
-
-
-
-############ FAILURE ############
-[junos_logging : Configure logging parameters] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_logging/tests/netconf/basic.yaml:196
-
-[_ansible_parsed]=> True
-[_ansible_no_log]=> False
 [changed]=> False
-[failed]=> True
-[invocation]=> {u'module_args': {u'username': None, u'files': 40, u'ssh_keyfile': None, u'src_addr': None, u'name': None, u'facility': None, u'dest': None, u'level': None, u'host': None, u'purge': False, u'aggregate': None, u'state': u'present', u'timeout': 10, u'provider': {u'username': u'ansible', u'ssh_keyfile': None, u'host': u'vsrx01', u'timeout': None, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'port': None, u'transport': u'netconf'}, u'active': True, u'rotate_frequency': 20, u'password': None, u'port': None, u'transport': None, u'size': 65536}}
-[msg]=> <?xml version="1.0" encoding="UTF-8"?><rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:junos="http://xml.juniper.net/junos/15.1X49/junos" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:2bd276b4-7637-45db-ac94-d2aacf54ac8b">
-<load-configuration-results>
-<rpc-error>
-<error-type>protocol</error-type>
-<error-tag>operation-failed</error-tag>
-<error-severity>error</error-severity>
-<error-message>
-could not set size
-</error-message>
-</rpc-error>
-<rpc-error>
-<error-type>protocol</error-type>
-<error-tag>operation-failed</error-tag>
-<error-severity>error</error-severity>
-<error-message>
-could not set files
-</error-message>
-</rpc-error>
-<rpc-error>
-<error-type>protocol</error-type>
-<error-tag>operation-failed</error-tag>
-<error-severity>error</error-severity>
-<error-message>
-could not set log-rotate-frequency
-</error-message>
-</rpc-error>
-<ok/>
-</load-configuration-results>
-</rpc-reply>
-
-
-
-############ FAILURE ############
-[junos_user : assert] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_user/tests/netconf/basic.yaml:25
-
 [_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+[junos_vlan : setup - remove vlan] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_vlan/tests/netconf/basic.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
 [changed]=> False
-[assertion]=> '<class>read-only</class>' in config.xml
-[_ansible_verbose_always]=> True
-[failed]=> True
-[evaluated_to]=> False
+[_ansible_no_log]=> False
 
 
 
 ############ FAILURE ############
-[junos_static_route : assert] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_static_route/tests/netconf/basic.yaml:70
+[junos_interface : setup - remove interface] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_interface/tests/netconf/basic.yaml:4
 
-[msg]=> The conditional check ''inactive: route 1.1.1.0/24' in result.diff.prepared' failed. The error was: error while evaluating conditional ('inactive: route 1.1.1.0/24' in result.diff.prepared): 'dict object' has no attribute 'diff'
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
 [failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
 
 
 
 ############ FAILURE ############
-[junos_linkagg : assert] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_linkagg/tests/netconf/basic.yaml:135
+[junos_banner : setup - remove login banner] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_banner/tests/netconf/basic.yaml:4
 
-[msg]=> The conditional check ''+   disable;' in result.diff.prepared' failed. The error was: error while evaluating conditional ('+   disable;' in result.diff.prepared): 'dict object' has no attribute 'diff'
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
 [failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
 
 
 
 ############ FAILURE ############
-[junos_l3_interface : assert] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_l3_interface/tests/netconf/basic.yaml:27
+[junos_system : setup - remove hostname] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_system/tests/netconf/basic.yaml:4
 
-[msg]=> The conditional check ''+       address 1.1.1.1/32;' in result.diff.prepared' failed. The error was: error while evaluating conditional ('+       address 1.1.1.1/32;' in result.diff.prepared): 'dict object' has no attribute 'diff'
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
 [failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+[junos_logging : setup - remove file logging] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_logging/tests/netconf/basic.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+[junos_user : setup - remove user] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_user/tests/netconf/basic.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+[junos_static_route : setup - remove static route] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_static_route/tests/netconf/basic.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+[junos_linkagg : setup - remove linkagg] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_linkagg/tests/netconf/basic.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+[junos_l3_interface : setup - remove interface address] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_l3_interface/tests/netconf/basic.yaml:4
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
 
 
 
@@ -228,34 +192,10 @@ could not set log-rotate-frequency
 [junos_lldp : setup - Disable lldp and remove it's configuration] 
 /Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_lldp/tests/netconf/basic.yaml:4
 
-[_ansible_parsed]=> True
-[_ansible_no_log]=> False
-[changed]=> False
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
 [failed]=> True
-[invocation]=> {u'module_args': {u'username': None, u'ssh_keyfile': None, u'interval': None, u'state': u'absent', u'purge': False, u'host': None, u'disable': True, u'transport': None, u'timeout': 10, u'provider': {u'username': u'ansible', u'ssh_keyfile': None, u'host': u'vsrx01', u'timeout': None, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'port': None, u'transport': u'netconf'}, u'active': True, u'password': None, u'hold_multiplier': None, u'port': None, u'transmit_delay': None}}
-[msg]=> <?xml version="1.0" encoding="UTF-8"?><rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:junos="http://xml.juniper.net/junos/15.1X49/junos" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:5d92866b-f26b-474e-92ac-acd3199172e5">
-<load-configuration-results>
-<rpc-error>
-<error-type>protocol</error-type>
-<error-tag>operation-failed</error-tag>
-<error-severity>error</error-severity>
-<error-message>syntax error</error-message>
-<error-info>
-<bad-element>lldp</bad-element>
-</error-info>
-</rpc-error>
-<rpc-error>
-<error-type>protocol</error-type>
-<error-tag>operation-failed</error-tag>
-<error-severity>error</error-severity>
-<error-message>syntax error</error-message>
-<error-info>
-<bad-element>lldp</bad-element>
-</error-info>
-</rpc-error>
-<load-error-count>2</load-error-count>
-</load-configuration-results>
-</rpc-reply>
+[changed]=> False
+[_ansible_no_log]=> False
 
 
 
@@ -263,49 +203,27 @@ could not set log-rotate-frequency
 [junos_lldp_interface : setup - Remove lldp interface configuration] 
 /Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_lldp_interface/tests/netconf/basic.yaml:4
 
-[_ansible_parsed]=> True
-[_ansible_no_log]=> False
-[changed]=> False
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
 [failed]=> True
-[invocation]=> {u'module_args': {u'username': None, u'ssh_keyfile': None, u'name': u'ge-0/0/5', u'state': u'absent', u'purge': False, u'active': True, u'host': None, u'disable': True, u'timeout': 10, u'provider': {u'username': u'ansible', u'ssh_keyfile': None, u'host': u'vsrx01', u'timeout': None, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'port': None, u'transport': u'netconf'}, u'aggregate': None, u'password': None, u'port': None, u'transport': None}}
-[msg]=> <?xml version="1.0" encoding="UTF-8"?><rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:junos="http://xml.juniper.net/junos/15.1X49/junos" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:a1982677-c0c0-4f82-8afc-0e66de3ae673">
-<load-configuration-results>
-<rpc-error>
-<error-type>protocol</error-type>
-<error-tag>operation-failed</error-tag>
-<error-severity>error</error-severity>
-<error-message>syntax error</error-message>
-<error-info>
-<bad-element>lldp</bad-element>
-</error-info>
-</rpc-error>
-<rpc-error>
-<error-type>protocol</error-type>
-<error-tag>operation-failed</error-tag>
-<error-severity>error</error-severity>
-<error-message>syntax error</error-message>
-<error-info>
-<bad-element>lldp</bad-element>
-</error-info>
-</rpc-error>
-<load-error-count>2</load-error-count>
-</load-configuration-results>
-</rpc-reply>
+[changed]=> False
+[_ansible_no_log]=> False
 
 
 
 ############ FAILURE ############
-[junos_vrf : assert] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_vrf/tests/netconf/basic.yaml:23
+[junos_vrf : setup - remove vrf] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_vrf/tests/netconf/basic.yaml:4
 
-[msg]=> The conditional check ''+   test-1' in result.diff.prepared' failed. The error was: error while evaluating conditional ('+   test-1' in result.diff.prepared): 'dict object' has no attribute 'diff'
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
 [failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
 
 
 
 ############ FAILURE ############
 [Has any previous test failed?] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/junos.yaml:182
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/junos.yaml:174
 
 [msg]=> One or more tests failed, check log for details
 [failed]=> True
@@ -454,27 +372,8 @@ ios01>
 
 
 ############ FAILURE ############
-[prepare_ios_tests : Ensure we have loopback 888 for testing] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
-
-[_ansible_parsed]=> True
-[stderr_lines]=> [u'show running-config', u'            ^', u"% Invalid input detected at '^' marker.", u'', u'ios01>']
-[_ansible_no_log]=> False
-[changed]=> False
-[failed]=> True
-[stderr]=> show running-config
-            ^
-% Invalid input detected at '^' marker.
-
-ios01>
-[invocation]=> {u'module_args': {u'multiline_delimiter': u'@', u'authorize': None, u'force': False, u'diff_against': None, u'replace': u'line', u'running_config': None, u'save_when': u'never', u'port': None, u'before': None, u'auth_pass': None, u'parents': None, u'provider': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'authorize': None, u'ssh_keyfile': None, u'auth_pass': None, u'host': u'ios01', u'timeout': None, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'port': None, u'transport': u'cli'}, u'save': False, u'match': u'line', u'username': None, u'timeout': None, u'after': None, u'host': None, u'password': None, u'diff_ignore_lines': None, u'src': u'interface Loopback888\n description test for ansible\n shutdown\n\n', u'ssh_keyfile': None, u'lines': None, u'intended_config': None, u'defaults': False, u'backup': False}}
-[msg]=> unable to retrieve current config
-
-
-
-############ FAILURE ############
 [Has any previous test failed?] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/ios.yaml:102
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/ios.yaml:93
 
 [msg]=> One or more tests failed, check log for details
 [failed]=> True
@@ -503,62 +402,8 @@ ios01>
 
 
 ############ FAILURE ############
-[iosxr_template : configure device with config] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/iosxr_template/tests/cli/backup.yaml:24
-
-[msg]=> Unexpected failure during module execution.
-[failed]=> True
-[stdout]=> 
-
-
-
-############ FAILURE ############
-[iosxr_banner : Set login] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/iosxr_banner/tests/cli/basic-login.yaml:8
-
-[_ansible_parsed]=> True
-[commands]=> [u'banner login this is my login banner\nthat has a multiline\nstring']
-[_ansible_no_log]=> False
-[changed]=> False
-[failed]=> True
-[rc]=> 1
-[invocation]=> {u'module_args': {u'username': None, u'ssh_keyfile': None, u'text': u'this is my login banner\nthat has a multiline\nstring\n', u'state': u'present', u'host': None, u'timeout': None, u'provider': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'ssh_keyfile': None, u'host': u'iosxr01', u'timeout': None, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'port': None, u'transport': u'cli'}, u'password': None, u'banner': u'login', u'port': None}}
-[msg]=> banner login this is my login banner
-Enter TEXT message. End with the character 't'
-that has a multiline
-RP/0/0/CPU0:iosxr01(config)#string
-                              ^
-% Invalid input detected at '^' marker.
-RP/0/0/CPU0:iosxr01(config)#
-
-
-
-############ FAILURE ############
-[iosxr_logging : Set up host logging] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/iosxr_logging/tests/cli/basic.yaml:2
-
-[_ansible_parsed]=> False
-[_ansible_no_log]=> False
-[module_stderr]=> Traceback (most recent call last):
-  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_jSbTeE/ansible_module_iosxr_logging.py", line 358, in <module>
-    main()
-  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_jSbTeE/ansible_module_iosxr_logging.py", line 344, in main
-    have = map_config_to_obj(module)
-  File "/var/folders/ql/d9_087wj4cd10grvwzxmk4hc0000gn/T/ansible_jSbTeE/ansible_module_iosxr_logging.py", line 245, in map_config_to_obj
-    obj.append({'dest': dest,
-UnboundLocalError: local variable 'dest' referenced before assignment
-
-[changed]=> False
-[module_stdout]=> 
-[failed]=> True
-[rc]=> 0
-[msg]=> MODULE FAILURE
-
-
-
-############ FAILURE ############
 [Has any previous test failed?] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/iosxr.yaml:94
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/iosxr.yaml:85
 
 [msg]=> One or more tests failed, check log for details
 [failed]=> True
@@ -670,8 +515,80 @@ UnboundLocalError: local variable 'dest' referenced before assignment
 
 
 ############ FAILURE ############
+[nxos_vtp_password : configure vtp password] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_vtp_password/tests/nxapi/sanity.yaml:11
+
+[body]=> <html>
+<head><title>401 Authorization Required</title></head>
+<body bgcolor="white">
+<center><h1>401 Authorization Required</h1></center>
+<hr><center>nginx/1.4.5</center>
+</body>
+</html>
+
+[status]=> 401
+[content-length]=> 194
+[_ansible_no_log]=> False
+[url]=> http://nxos01:80/ins
+[changed]=> False
+[server]=> nginx/1.4.5
+[failed]=> True
+[connection]=> close
+[_ansible_parsed]=> True
+[invocation]=> {u'module_args': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'url_password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'vtp_password': None, u'ssh_keyfile': None, u'timeout': 10, u'state': u'present', u'host': u'nxos01', u'url_username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'provider': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'ssh_keyfile': None, u'host': u'nxos01', u'timeout': 60, u'use_ssl': False, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True, u'port': 80, u'transport': u'nxapi'}, u'use_ssl': False, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True, u'port': 80, u'transport': u'nxapi'}}
+[date]=> Fri, 04 Aug 2017 22:43:23 GMT
+[content-type]=> text/html
+[www-authenticate]=> Basic realm="Secure Zone"
+[msg]=> HTTP Error 401: Unauthorized
+
+
+
+############ FAILURE ############
+[nxos_vtp_version : disable feature vtp] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_vtp_version/tests/cli/sanity.yaml:17
+
+[_ansible_parsed]=> True
+[invalid_feature]=> vtp
+[_ansible_no_log]=> False
+[changed]=> False
+[failed]=> True
+[invocation]=> {u'module_args': {u'username': None, u'password': None, u'ssh_keyfile': None, u'validate_certs': None, u'feature': u'vtp', u'include_defaults': None, u'state': u'disabled', u'timeout': 10, u'provider': None, u'host': None, u'use_ssl': None, u'save': None, u'config': None, u'port': None, u'transport': u'cli'}}
+[features_currently_supported]=> {}
+[msg]=> Invalid feature name.
+
+
+
+############ FAILURE ############
+[nxos_portchannel : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_portchannel/tests/common/sanity.yaml:57
+
+[_ansible_no_log]=> False
+[changed]=> False
+[assertion]=> result.changed == false
+[_ansible_verbose_always]=> True
+[failed]=> True
+[evaluated_to]=> False
+
+
+
+############ FAILURE ############
+[nxos_portchannel : Disable feature LACP] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_portchannel/tests/common/sanity.yaml:87
+
+[_ansible_parsed]=> True
+[invalid_feature]=> lacp
+[_ansible_no_log]=> False
+[changed]=> False
+[failed]=> True
+[invocation]=> {u'module_args': {u'username': None, u'password': None, u'ssh_keyfile': None, u'validate_certs': None, u'feature': u'lacp', u'include_defaults': None, u'state': u'disabled', u'timeout': 60, u'provider': None, u'host': None, u'use_ssl': None, u'save': None, u'config': None, u'port': None, u'transport': u'cli'}}
+[features_currently_supported]=> {u'mvpn': u'disabled', u'pim': u'enabled', u'ldp': u'disabled', u'hsrp_engine': u'enabled', u'itd': u'disabled', u'scheduler': u'disabled', u'fabric_mcast': u'disabled', u'glbp': u'disabled', u'private-vlan': u'disabled', u'eth_port_sec': u'disabled', u'mvrp': u'disabled', u'pong': u'disabled', u'dot1x': u'disabled', u'ptp': u'disabled', u'lldp': u'enabled', u'mpls_te': u'disabled', u'evmed': u'disabled', u'elo': u'disabled', u'imp': u'disabled', u'vmtracker': u'disabled', u'interface-vlan': u'disabled', u'cable-management': u'disabled', u'vtp': u'enabled', u'vrrp': u'disabled', u'ldap': u'disabled', u'privilege': u'disabled', u'dhcp': u'disabled', u'sla_responder': u'disabled', u'fabric-access': u'disabled', u'pim6': u'disabled', u'bulkstat': u'disabled', u'vrrpv3': u'disabled', u'wccp': u'disabled', u'rise': u'disabled', u'l3vpn': u'disabled', u'vni': u'enabled', u'onep': u'disabled', u'hmm': u'disabled', u'nve': u'enabled', u'nxapi': u'enabled', u'rip': u'disabled', u'vpc': u'enabled', u'sftpServer': u'disabled', u'netflow': u'disabled', u'l2vpn': u'disabled', u'msdp': u'disabled', u'otv': u'disabled', u'cts': u'disabled', u'smart-channel': u'disabled', u'ngoam': u'disabled', u'isis': u'disabled', u'evc': u'disabled', u'pbr': u'disabled', u'lisp': u'disabled', u'tacacs': u'disabled', u'evb': u'disabled', u'bfd': u'disabled', u'sla_sender': u'disabled', u'ospfv3': u'disabled', u'bgp': u'disabled', u'tunnel': u'disabled', u'eigrp': u'disabled', u'vnseg_vlan': u'disabled', u'msrp': u'disabled', u'scpServer': u'enabled', u'ospf': u'enabled', u'telnetServer': u'enabled', u'sshServer': u'enabled', u'bfd_app': u'disabled'}
+[msg]=> Invalid feature name.
+
+
+
+############ FAILURE ############
 [Has any previous test failed?] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/nxos.yaml:156
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/nxos.yaml:227
 
 [msg]=> One or more tests failed, check log for details
 [failed]=> True
