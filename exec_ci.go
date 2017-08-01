@@ -120,7 +120,7 @@ func main() {
     // },
     test {
       name: "junos",
-      playbook: "junos.yaml",
+      playbook: "junos.yaml --diff",
       user: "ansible",
     },
     test {
