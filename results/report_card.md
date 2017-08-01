@@ -2,11 +2,11 @@
 
 ## Test Summary 
 ### Passed: 
+* [iosxr](#iosxr)
 
 ### Failed: 
 * [junos](#junos)
 * [ios](#ios)
-* [iosxr](#iosxr)
 * [nxos](#nxos)
 
 # Results 
@@ -246,34 +246,8 @@ could not set log-rotate-frequency
 ```
 # Results 
 ## iosxr
-*The following tests have failed:* 
-[_See the .log files for details_](./iosxr.log) 
-```
-############ FAILURE ############
-[iosxr_config : assert] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/iosxr_config/tests/cli/toplevel_nonidempotent.yaml:26
+*All tests passed!*
 
-[_ansible_no_log]=> False
-[changed]=> False
-[assertion]=> result.changed == true
-[_ansible_verbose_always]=> True
-[failed]=> True
-[evaluated_to]=> False
-
-
-
-############ FAILURE ############
-[Has any previous test failed?] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/iosxr.yaml:85
-
-[msg]=> One or more tests failed, check log for details
-[failed]=> True
-[changed]=> False
-[_ansible_no_log]=> False
-
-
-
-```
 # Results 
 ## nxos
 *The following tests have failed:* 
