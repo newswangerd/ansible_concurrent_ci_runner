@@ -64,11 +64,11 @@ func compile_report_card(tests []test){
   failed := ""
   passed := ""
 
+  report_card = report_card + "# Results \n"
   for _, tst := range tests{
     dat, _ := ioutil.ReadFile("results/" + tst.name + ".err")
-    report_card = report_card + "# Results \n"
     report_card = report_card + "## " + tst.name + "\n"
-    if len(string(dat)) < 2 {
+    if len(strings.Split(string(dat), "\n")) < 4 {
       passed = passed + "* [" + tst.name + "](#" + tst.name + ")\n"
       report_card = report_card + "*All tests passed!*" + "\n\n"
     } else {

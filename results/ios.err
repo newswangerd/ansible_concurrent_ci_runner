@@ -38,7 +38,7 @@
 
 ############ FAILURE ############
 [Has any previous test failed?] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/ios.yaml:93
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/ios.yaml:101
 
 [msg]=> One or more tests failed, check log for details
 [failed]=> True
@@ -47,3 +47,5 @@
 
 
 
+Passed: ios_interface, ios_command, ios_logging, ios_banner, ios_static_route, ios_system, 
+Failed: ios_facts, ios_user, 

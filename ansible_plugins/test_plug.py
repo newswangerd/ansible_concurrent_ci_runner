@@ -12,13 +12,26 @@ class CallbackModule(CallbackBase):
         super(CallbackModule, self).__init__(display)
         self.results = []
         self.failed_tasks = None
+        self.tests = dict()
+        self.test_name = ""
+        self.platform = ""
 
     def v2_playbook_on_stats(self, result, **kwargs):
+        passed = ""
+        failed = ""
+        for x in self.tests:
+            if self.tests[x]:
+                passed += x + ", "
+            else:
+                failed += x + ", "
+
+        self.failed_tasks.write("Passed: " + str(passed) + "\n")
+        self.failed_tasks.write("Failed: " + str(failed) + "\n")
+
         self.failed_tasks.close()
 
     def runner_on_failed(self, host, res, ignore_errors=False):
         message = ""
-
         if not ignore_errors:
             error = ""
             for i in res:
@@ -32,6 +45,10 @@ class CallbackModule(CallbackBase):
             message += error
             message += "\n\n\n"
 
+            if self.test_name in self.tests:
+                if self.tests[self.test_name]:
+                    self.tests[self.test_name] = False
+
 
         # else:
         #     message += "############ IGNORED ############"
@@ -42,9 +59,16 @@ class CallbackModule(CallbackBase):
 
 
     def v2_playbook_on_task_start(self, task, is_conditional):
+        self.test_name = task.get_name().split(":")[0].strip()
+
+        if self.test_name[:len(self.platform)] == self.platform:
+            if self.test_name not in self.tests:
+                self.tests[self.test_name] = True
+
         self._current_task = task
 
     def v2_playbook_on_play_start(self, play):
+        self.platform = str(play)
         log = os.environ['TASK_ERROR_DIR'] + "/" + str(play) + ".err"
         f = open(log, "w")
         f.write("")
