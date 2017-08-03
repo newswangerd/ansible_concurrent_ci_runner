@@ -13,11 +13,11 @@
 
 ############ FAILURE ############
 [nxos_config : assert] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_config/tests/cli/defaults.yaml:37
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_config/tests/cli/save.yaml:21
 
 [_ansible_no_log]=> False
 [changed]=> False
-[assertion]=> result.changed == false
+[assertion]=> result.changed == true
 [_ansible_verbose_always]=> True
 [failed]=> True
 [evaluated_to]=> False
@@ -25,15 +25,30 @@
 
 
 ############ FAILURE ############
-[nxos_mtu : assert] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_mtu/tests/cli/set_sysmtu.yaml:26
+[nxos_evpn_vni : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_evpn_vni/tests/nxapi/sanity.yaml:54
 
 [_ansible_no_log]=> False
 [changed]=> False
-[assertion]=> result.changed == false
+[assertion]=> result.changed == true
 [_ansible_verbose_always]=> True
 [failed]=> True
 [evaluated_to]=> False
+
+
+
+############ FAILURE ############
+[prepare_nxos_tests : Collect interface list] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_nxos_tests/tasks/main.yml:21
+
+[status]=> -1
+[_ansible_parsed]=> True
+[_ansible_no_log]=> False
+[url]=> http://nxos01:80/ins
+[changed]=> False
+[failed]=> True
+[invocation]=> {u'module_args': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'url_password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'commands': [u'show interface brief | json'], u'ssh_keyfile': None, u'url_username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'retries': 10, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'interval': 1, u'host': u'nxos01', u'transport': u'nxapi', u'timeout': 60, u'provider': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'ssh_keyfile': None, u'host': u'nxos01', u'timeout': 60, u'use_ssl': False, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True, u'port': 80, u'transport': u'nxapi'}, u'use_ssl': False, u'wait_for': None, u'validate_certs': True, u'port': 80, u'match': u'all'}}
+[msg]=> An unknown error occurred: ''
 
 
 
@@ -85,6 +100,32 @@
 
 
 ############ FAILURE ############
+[nxos_acl_interface : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_acl_interface/tests/cli/sanity.yaml:53
+
+[_ansible_no_log]=> False
+[changed]=> False
+[assertion]=> result.changed == false
+[_ansible_verbose_always]=> True
+[failed]=> True
+[evaluated_to]=> False
+
+
+
+############ FAILURE ############
+[nxos_acl_interface : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_acl_interface/tests/nxapi/sanity.yaml:53
+
+[_ansible_no_log]=> False
+[changed]=> False
+[assertion]=> result.changed == false
+[_ansible_verbose_always]=> True
+[failed]=> True
+[evaluated_to]=> False
+
+
+
+############ FAILURE ############
 [nxos_vtp_password : configure vtp password] 
 /Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_vtp_password/tests/nxapi/sanity.yaml:11
 
@@ -106,7 +147,7 @@
 [connection]=> close
 [_ansible_parsed]=> True
 [invocation]=> {u'module_args': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'url_password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'vtp_password': None, u'ssh_keyfile': None, u'timeout': 60, u'state': u'present', u'host': u'nxos01', u'url_username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'provider': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'ssh_keyfile': None, u'host': u'nxos01', u'timeout': 60, u'use_ssl': False, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True, u'port': 80, u'transport': u'nxapi'}, u'use_ssl': False, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True, u'port': 80, u'transport': u'nxapi'}}
-[date]=> Mon, 07 Aug 2017 00:20:30 GMT
+[date]=> Tue, 08 Aug 2017 01:56:15 GMT
 [content-type]=> text/html
 [www-authenticate]=> Basic realm="Secure Zone"
 [msg]=> HTTP Error 401: Unauthorized
@@ -142,21 +183,6 @@
 
 
 ############ FAILURE ############
-[nxos_switchport : Ensure these VLANs are not being tagged on the trunk] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_switchport/tests/common/sanity.yaml:89
-
-[status]=> -1
-[_ansible_parsed]=> True
-[_ansible_no_log]=> False
-[url]=> http://nxos01:80/ins
-[changed]=> False
-[failed]=> True
-[invocation]=> {u'module_args': {u'native_vlan': None, u'access_vlan': None, u'ssh_keyfile': None, u'timeout': 60, u'url_password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'host': u'nxos01', u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'state': u'absent', u'trunk_allowed_vlans': None, u'trunk_vlans': u'30-4094', u'mode': u'trunk', u'url_username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'provider': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'ssh_keyfile': None, u'host': u'nxos01', u'timeout': 60, u'use_ssl': False, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True, u'port': 80, u'transport': u'nxapi'}, u'interface': u'Ethernet2/1', u'use_ssl': False, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True, u'port': 80, u'transport': u'nxapi'}}
-[msg]=> Connection failure: timed out
-
-
-
-############ FAILURE ############
 [Has any previous test failed?] 
 /Users/dnewswan/code/concurrent_ci/ansible/test/integration/nxos.yaml:254
 
@@ -167,5 +193,5 @@
 
 
 
-Passed: nxos_acl, nxos_evpn_global, nxos_feature, nxos_acl_interface, nxos_vrrp, nxos_vtp_version, nxos_nxapi, nxos_vrf, nxos_facts, nxos_logging, nxos_vtp_domain, nxos_vxlan_vtep, nxos_vlan, nxos_user, nxos_evpn_vni, nxos_rollback, nxos_vrf_interface, 
-Failed: nxos_config, nxos_interface, nxos_command, nxos_system, nxos_vtp_password, nxos_mtu, nxos_portchannel, nxos_switchport, nxos_banner, 
+Passed: nxos_acl, nxos_evpn_global, nxos_feature, nxos_vrrp, nxos_vtp_version, nxos_nxapi, nxos_vrf, nxos_facts, nxos_logging, nxos_vtp_domain, nxos_vxlan_vtep, nxos_vlan, nxos_user, nxos_rollback, nxos_vrf_interface, nxos_switchport, 
+Failed: nxos_config, nxos_acl_interface, nxos_interface, nxos_command, nxos_system, nxos_vtp_password, nxos_evpn_vni, nxos_portchannel, nxos_banner, 

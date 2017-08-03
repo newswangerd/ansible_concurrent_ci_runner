@@ -1,14 +1,26 @@
 ############ FAILURE ############
-[junos_config : setup] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_config/tests/netconf/backup.yaml:4
+[junos_command : test contains operator with xml encoding] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_command/tests/netconf_xml/contains.yaml:4
 
 [_ansible_parsed]=> True
 [_ansible_no_log]=> False
-[err]=> [Errno 2] No such file or directory
 [changed]=> False
 [failed]=> True
-[invocation]=> {u'module_args': {u'comment': u'configured by junos_config', u'username': None, u'ssh_keyfile': None, u'rollback': None, u'timeout': None, u'confirm': 0, u'lines': [u'set system host-name vsrx01', u'delete interfaces lo0'], u'update': u'merge', u'replace': None, u'confirm_commit': False, u'zeroize': False, u'src_format': None, u'provider': {u'username': None, u'ssh_keyfile': None, u'host': u'vsrx01', u'timeout': None, u'password': None, u'port': None, u'transport': u'netconf'}, u'host': None, u'src': None, u'password': None, u'backup': False, u'port': None, u'transport': None}}
-[msg]=> unable to connect to socket
+[invocation]=> {u'module_args': {u'username': None, u'retries': 10, u'commands': [u'show version', u'show interfaces lo0'], u'ssh_keyfile': None, u'rpcs': None, u'format': u'xml', u'interval': 1, u'wait_for': [u'result[0].rpc-reply.software-information.host-name contains vsrx01', u'result[1].rpc-reply.interface-information.physical-interface.name contains lo0'], u'display': u'xml', u'host': None, u'match': u'all', u'timeout': None, u'provider': {u'username': None, u'ssh_keyfile': None, u'host': u'vsrx01', u'timeout': None, u'password': None, u'port': None, u'transport': u'netconf'}, u'password': None, u'port': None, u'transport': None}}
+[msg]=> jxmlease is required but does not appear to be installed. It can be installed using `pip install jxmlease`
+
+
+
+############ FAILURE ############
+[junos_netconf : Ensure we can communicate over 8080] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_netconf/tests/cli/changeport.yaml:35
+
+[_ansible_parsed]=> True
+[_ansible_no_log]=> False
+[changed]=> False
+[failed]=> True
+[invocation]=> {u'module_args': {u'username': None, u'retries': 10, u'commands': None, u'ssh_keyfile': None, u'rpcs': [u'get-software-information'], u'password': None, u'interval': 1, u'display': None, u'host': None, u'match': u'all', u'timeout': None, u'provider': {u'username': None, u'ssh_keyfile': None, u'host': u'vsrx01', u'timeout': None, u'password': None, u'port': 8080, u'transport': u'netconf'}, u'wait_for': None, u'port': 8080, u'transport': None}}
+[msg]=> jxmlease is required but does not appear to be installed. It can be installed using `pip install jxmlease`
 
 
 
@@ -35,7 +47,7 @@
 [changed]=> False
 [failed]=> True
 [invocation]=> {u'module_args': {u'username': None, u'ssh_keyfile': None, u'interval': None, u'state': u'absent', u'purge': False, u'host': None, u'disable': True, u'transport': None, u'timeout': None, u'provider': {u'username': None, u'ssh_keyfile': None, u'host': u'vsrx01', u'timeout': None, u'password': None, u'port': None, u'transport': u'netconf'}, u'active': True, u'password': None, u'hold_multiplier': None, u'port': None, u'transmit_delay': None}}
-[msg]=> <?xml version="1.0" encoding="UTF-8"?><rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:junos="http://xml.juniper.net/junos/15.1X49/junos" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:7a2a2c90-719c-4229-9ad0-19f73be6f407">
+[msg]=> <?xml version="1.0" encoding="UTF-8"?><rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:junos="http://xml.juniper.net/junos/15.1X49/junos" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:5fd8aabd-5858-4403-bf67-e705c564b6a3">
 <load-configuration-results>
 <rpc-error>
 <error-type>protocol</error-type>
@@ -70,7 +82,7 @@
 [changed]=> False
 [failed]=> True
 [invocation]=> {u'module_args': {u'username': None, u'ssh_keyfile': None, u'name': u'ge-0/0/5', u'state': u'absent', u'purge': False, u'active': True, u'host': None, u'disable': True, u'timeout': None, u'provider': {u'username': None, u'ssh_keyfile': None, u'host': u'vsrx01', u'timeout': None, u'password': None, u'port': None, u'transport': u'netconf'}, u'aggregate': None, u'password': None, u'port': None, u'transport': None}}
-[msg]=> <?xml version="1.0" encoding="UTF-8"?><rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:junos="http://xml.juniper.net/junos/15.1X49/junos" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:69ce1f19-52ff-4934-8776-34cc57ed389c">
+[msg]=> <?xml version="1.0" encoding="UTF-8"?><rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:junos="http://xml.juniper.net/junos/15.1X49/junos" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:2c36f326-a9bb-4336-8c6c-499b01f39f71">
 <load-configuration-results>
 <rpc-error>
 <error-type>protocol</error-type>
@@ -107,5 +119,5 @@
 
 
 
-Passed: junos_banner, junos_system, junos_l3_interface, junos_vrf, junos_netconf, junos_logging, junos_interface, junos_facts, junos_rpc, junos_static_route, junos_user, junos_command, junos_vlan, 
-Failed: junos_linkagg, junos_lldp, junos_config, junos_lldp_interface, 
+Passed: junos_banner, junos_config, junos_system, junos_l3_interface, junos_vrf, junos_logging, junos_interface, junos_facts, junos_rpc, junos_static_route, junos_user, junos_vlan, 
+Failed: junos_linkagg, junos_lldp, junos_netconf, junos_lldp_interface, junos_command, 
