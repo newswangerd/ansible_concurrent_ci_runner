@@ -15,32 +15,6 @@
 [_See the .log files for details_](./junos.log) 
 ```
 ############ FAILURE ############
-[junos_command : test contains operator with xml encoding] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_command/tests/netconf_xml/contains.yaml:4
-
-[_ansible_parsed]=> True
-[_ansible_no_log]=> False
-[changed]=> False
-[failed]=> True
-[invocation]=> {u'module_args': {u'username': None, u'retries': 10, u'commands': [u'show version', u'show interfaces lo0'], u'ssh_keyfile': None, u'rpcs': None, u'format': u'xml', u'interval': 1, u'wait_for': [u'result[0].rpc-reply.software-information.host-name contains vsrx01', u'result[1].rpc-reply.interface-information.physical-interface.name contains lo0'], u'display': u'xml', u'host': None, u'match': u'all', u'timeout': None, u'provider': {u'username': None, u'ssh_keyfile': None, u'host': u'vsrx01', u'timeout': None, u'password': None, u'port': None, u'transport': u'netconf'}, u'password': None, u'port': None, u'transport': None}}
-[msg]=> jxmlease is required but does not appear to be installed. It can be installed using `pip install jxmlease`
-
-
-
-############ FAILURE ############
-[junos_netconf : Ensure we can communicate over 8080] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_netconf/tests/cli/changeport.yaml:35
-
-[_ansible_parsed]=> True
-[_ansible_no_log]=> False
-[changed]=> False
-[failed]=> True
-[invocation]=> {u'module_args': {u'username': None, u'retries': 10, u'commands': None, u'ssh_keyfile': None, u'rpcs': [u'get-software-information'], u'password': None, u'interval': 1, u'display': None, u'host': None, u'match': u'all', u'timeout': None, u'provider': {u'username': None, u'ssh_keyfile': None, u'host': u'vsrx01', u'timeout': None, u'password': None, u'port': 8080, u'transport': u'netconf'}, u'wait_for': None, u'port': 8080, u'transport': None}}
-[msg]=> jxmlease is required but does not appear to be installed. It can be installed using `pip install jxmlease`
-
-
-
-############ FAILURE ############
 [junos_linkagg : configure linkagg] 
 /Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/junos_linkagg/tests/netconf/basic.yaml:15
 
@@ -49,7 +23,7 @@
 [err]=> [Errno 2] No such file or directory
 [changed]=> False
 [failed]=> True
-[invocation]=> {u'module_args': {u'username': None, u'ssh_keyfile': None, u'description': u'configured by junos_linkagg', u'min_links': None, u'host': None, u'bundle': u'ae0', u'collection': None, u'purge': None, u'state': u'present', u'disable': False, u'device_count': 4, u'timeout': None, u'provider': {u'username': None, u'ssh_keyfile': None, u'host': u'vsrx01', u'timeout': None, u'password': None, u'port': None, u'transport': u'netconf'}, u'active': True, u'mode': u'active', u'password': None, u'members': [u'ge-0/0/6', u'ge-0/0/7'], u'port': None, u'transport': None, u'name': u'ge-0/0/7'}}
+[invocation]=> {u'module_args': {u'username': None, u'ssh_keyfile': None, u'description': u'configured by junos_linkagg', u'provider': {u'username': None, u'ssh_keyfile': None, u'host': u'vsrx01', u'timeout': None, u'password': None, u'port': None, u'transport': u'netconf'}, u'host': None, u'device_count': 4, u'purge': False, u'aggregate': None, u'state': u'present', u'mode': u'active', u'timeout': None, u'min_links': None, u'active': True, u'password': None, u'members': [u'ge-0/0/6', u'ge-0/0/7'], u'port': None, u'transport': None, u'name': u'ae0'}}
 [msg]=> unable to connect to socket
 
 
@@ -62,8 +36,8 @@
 [_ansible_no_log]=> False
 [changed]=> False
 [failed]=> True
-[invocation]=> {u'module_args': {u'username': None, u'ssh_keyfile': None, u'interval': None, u'state': u'absent', u'purge': False, u'host': None, u'disable': True, u'transport': None, u'timeout': None, u'provider': {u'username': None, u'ssh_keyfile': None, u'host': u'vsrx01', u'timeout': None, u'password': None, u'port': None, u'transport': u'netconf'}, u'active': True, u'password': None, u'hold_multiplier': None, u'port': None, u'transmit_delay': None}}
-[msg]=> <?xml version="1.0" encoding="UTF-8"?><rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:junos="http://xml.juniper.net/junos/15.1X49/junos" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:5fd8aabd-5858-4403-bf67-e705c564b6a3">
+[invocation]=> {u'module_args': {u'username': None, u'ssh_keyfile': None, u'interval': None, u'state': u'absent', u'purge': False, u'host': None, u'transport': None, u'timeout': None, u'provider': {u'username': None, u'ssh_keyfile': None, u'host': u'vsrx01', u'timeout': None, u'password': None, u'port': None, u'transport': u'netconf'}, u'active': True, u'password': None, u'hold_multiplier': None, u'port': None, u'transmit_delay': None}}
+[msg]=> <?xml version="1.0" encoding="UTF-8"?><rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:junos="http://xml.juniper.net/junos/15.1X49/junos" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:f9729b9b-d132-4b73-832d-d29e8cb15c08">
 <load-configuration-results>
 <rpc-error>
 <error-type>protocol</error-type>
@@ -97,8 +71,8 @@
 [_ansible_no_log]=> False
 [changed]=> False
 [failed]=> True
-[invocation]=> {u'module_args': {u'username': None, u'ssh_keyfile': None, u'name': u'ge-0/0/5', u'state': u'absent', u'purge': False, u'active': True, u'host': None, u'disable': True, u'timeout': None, u'provider': {u'username': None, u'ssh_keyfile': None, u'host': u'vsrx01', u'timeout': None, u'password': None, u'port': None, u'transport': u'netconf'}, u'aggregate': None, u'password': None, u'port': None, u'transport': None}}
-[msg]=> <?xml version="1.0" encoding="UTF-8"?><rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:junos="http://xml.juniper.net/junos/15.1X49/junos" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:2c36f326-a9bb-4336-8c6c-499b01f39f71">
+[invocation]=> {u'module_args': {u'username': None, u'ssh_keyfile': None, u'name': u'ge-0/0/5', u'state': u'absent', u'purge': False, u'active': True, u'host': None, u'timeout': None, u'provider': {u'username': None, u'ssh_keyfile': None, u'host': u'vsrx01', u'timeout': None, u'password': None, u'port': None, u'transport': u'netconf'}, u'aggregate': None, u'password': None, u'port': None, u'transport': None}}
+[msg]=> <?xml version="1.0" encoding="UTF-8"?><rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:junos="http://xml.juniper.net/junos/15.1X49/junos" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:762f0f96-315d-444e-be8c-906ac4cd97e5">
 <load-configuration-results>
 <rpc-error>
 <error-type>protocol</error-type>
@@ -135,8 +109,8 @@
 
 
 
-Passed: junos_banner, junos_config, junos_system, junos_l3_interface, junos_vrf, junos_logging, junos_interface, junos_facts, junos_rpc, junos_static_route, junos_user, junos_vlan, 
-Failed: junos_linkagg, junos_lldp, junos_netconf, junos_lldp_interface, junos_command, 
+Passed: junos_banner, junos_config, junos_system, junos_l3_interface, junos_vrf, junos_netconf, junos_logging, junos_interface, junos_facts, junos_rpc, junos_static_route, junos_user, junos_command, junos_vlan, 
+Failed: junos_linkagg, junos_lldp, junos_lldp_interface, 
 ```
 ## ios
 *The following tests have failed:* 
@@ -154,16 +128,13 @@ Failed: junos_linkagg, junos_lldp, junos_netconf, junos_lldp_interface, junos_co
 
 
 ############ FAILURE ############
-[ios_facts : test getting all facts] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/ios_facts/tests/cli/all_facts.yaml:5
+[prepare_ios_tests : Ensure we have loopback 888 for testing] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
 
-[_ansible_parsed]=> True
-[_ansible_no_log]=> False
-[err]=> [Errno 2] No such file or directory
-[changed]=> False
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
 [failed]=> True
-[invocation]=> {u'module_args': {u'username': None, u'authorize': None, u'ssh_keyfile': None, u'auth_pass': None, u'host': None, u'gather_subset': [u'all'], u'timeout': None, u'provider': None, u'password': None, u'port': None}}
-[msg]=> unable to connect to socket
+[changed]=> False
+[_ansible_no_log]=> False
 
 
 
@@ -191,24 +162,37 @@ Failed: junos_linkagg, junos_lldp, junos_netconf, junos_lldp_interface, junos_co
 
 
 
-Passed: ios_interface, ios_command, ios_logging, ios_banner, ios_static_route, ios_system, 
-Failed: ios_facts, ios_user, 
+Passed: ios_interface, ios_banner, ios_command, ios_logging, ios_static_route, ios_facts, 
+Failed: ios_user, 
 ```
 ## iosxr
 *The following tests have failed:* 
 [_See the .log files for details_](./iosxr.log) 
 ```
 ############ FAILURE ############
-[iosxr_banner : Set motd] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/iosxr_banner/tests/cli/basic-motd.yaml:8
+[iosxr_config : configure top level command] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/iosxr_config/tests/cli/toplevel_nonidempotent.yaml:9
 
 [_ansible_parsed]=> True
 [_ansible_no_log]=> False
 [err]=> [Errno 2] No such file or directory
 [changed]=> False
 [failed]=> True
-[invocation]=> {u'module_args': {u'username': None, u'ssh_keyfile': None, u'text': u'this is my motd banner\nthat has a multiline\nstring\n', u'state': u'present', u'host': None, u'timeout': None, u'provider': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'ssh_keyfile': None, u'host': u'iosxr01', u'timeout': None, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'port': None, u'transport': u'cli'}, u'password': None, u'banner': u'motd', u'port': None}}
+[invocation]=> {u'module_args': {u'comment': u'configured by iosxr_config', u'username': None, u'commands': [u'banner motd "hello world"', u'hostname foo'], u'ssh_keyfile': None, u'force': False, u'src': None, u'admin': False, u'backup': False, u'after': None, u'lines': [u'banner motd "hello world"', u'hostname foo'], u'replace': u'line', u'host': None, u'parents': None, u'timeout': None, u'provider': None, u'password': None, u'config': None, u'port': None, u'match': u'strict', u'before': None}}
 [msg]=> unable to connect to socket
+
+
+
+############ FAILURE ############
+[iosxr_interface : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/iosxr_interface/tests/cli/basic.yaml:233
+
+[_ansible_no_log]=> False
+[changed]=> False
+[assertion]=> result.changed == true
+[_ansible_verbose_always]=> True
+[failed]=> True
+[evaluated_to]=> False
 
 
 
@@ -223,8 +207,8 @@ Failed: ios_facts, ios_user,
 
 
 
-Passed: iosxr_user, iosxr_interface, iosxr_logging, iosxr_facts, iosxr_system, iosxr_config, iosxr_command, 
-Failed: iosxr_banner, 
+Passed: iosxr_user, iosxr_logging, iosxr_facts, iosxr_system, iosxr_command, iosxr_banner, 
+Failed: iosxr_interface, iosxr_config, 
 ```
 ## nxos
 *The following tests have failed:* 
@@ -257,21 +241,23 @@ Failed: iosxr_banner,
 
 
 ############ FAILURE ############
-[nxos_evpn_vni : assert] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_evpn_vni/tests/nxapi/sanity.yaml:54
+[nxos_evpn_vni : Enable nv overlay evpn] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_evpn_vni/tests/nxapi/sanity.yaml:18
 
+[status]=> -1
+[_ansible_parsed]=> True
 [_ansible_no_log]=> False
+[url]=> http://nxos01:80/ins
 [changed]=> False
-[assertion]=> result.changed == true
-[_ansible_verbose_always]=> True
 [failed]=> True
-[evaluated_to]=> False
+[invocation]=> {u'module_args': {u'force': False, u'diff_against': None, u'replace': u'line', u'running_config': None, u'use_ssl': False, u'port': 80, u'transport': u'nxapi', u'before': None, u'parents': None, u'provider': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'ssh_keyfile': None, u'host': u'nxos01', u'timeout': 60, u'use_ssl': False, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True, u'port': 80, u'transport': u'nxapi'}, u'save': False, u'match': u'none', u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'timeout': 60, u'src': None, u'after': None, u'host': u'nxos01', u'ssh_keyfile': None, u'defaults': False, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'diff_ignore_lines': None, u'url_password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'save_when': u'never', u'backup': False, u'lines': [u'nv overlay evpn'], u'intended_config': None, u'url_username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True}}
+[msg]=> An unknown error occurred: ''
 
 
 
 ############ FAILURE ############
 [prepare_nxos_tests : Collect interface list] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_nxos_tests/tasks/main.yml:21
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_nxos_tests/tasks/main.yml:39
 
 [status]=> -1
 [_ansible_parsed]=> True
@@ -280,41 +266,49 @@ Failed: iosxr_banner,
 [changed]=> False
 [failed]=> True
 [invocation]=> {u'module_args': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'url_password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'commands': [u'show interface brief | json'], u'ssh_keyfile': None, u'url_username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'retries': 10, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'interval': 1, u'host': u'nxos01', u'transport': u'nxapi', u'timeout': 60, u'provider': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'ssh_keyfile': None, u'host': u'nxos01', u'timeout': 60, u'use_ssl': False, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True, u'port': 80, u'transport': u'nxapi'}, u'use_ssl': False, u'wait_for': None, u'validate_certs': True, u'port': 80, u'match': u'all'}}
-[msg]=> An unknown error occurred: ''
+[msg]=> Request failed: <urlopen error [Errno 60] Operation timed out>
 
 
 
 ############ FAILURE ############
-[nxos_system : configure name_servers] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_system/tests/cli/set_name_servers.yaml:13
+[nxos_feature : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_feature/tests/nxapi/configure.yaml:28
+
+[_ansible_no_log]=> False
+[changed]=> False
+[assertion]=> result.changed == false
+[_ansible_verbose_always]=> True
+[failed]=> True
+[evaluated_to]=> False
+
+
+
+############ FAILURE ############
+[nxos_mtu : assert] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_mtu/tests/cli/set_sysmtu.yaml:26
+
+[_ansible_no_log]=> False
+[changed]=> False
+[assertion]=> result.changed == false
+[_ansible_verbose_always]=> True
+[failed]=> True
+[evaluated_to]=> False
+
+
+
+############ FAILURE ############
+[nxos_system : configure domain_list] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_system/tests/cli/set_domain_list.yaml:12
 
 [_ansible_parsed]=> True
 [_ansible_no_log]=> False
 [changed]=> False
 [failed]=> True
-[invocation]=> {u'module_args': {u'username': None, u'ssh_keyfile': None, u'lookup_source': None, u'domain_search': None, u'hostname': None, u'system_mtu': None, u'domain_name': None, u'name_servers': [u'1.1.1.1', u'2.2.2.2', u'3.3.3.3'], u'host': None, u'state': u'present', u'timeout': None, u'provider': None, u'domain_lookup': None, u'use_ssl': None, u'password': None, u'validate_certs': None, u'port': None, u'transport': u'cli'}}
-[msg]=> no ip name-server use-vrf
-                                  ^
-% Invalid ip address at '^' marker.
-nxos01(config)# 
-
-
-
-############ FAILURE ############
-[nxos_interface : setup] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_interface/tests/nxapi/set_state_present.yaml:4
-
-[_ansible_parsed]=> True
-[code]=> 400
-[clierror]=> Error: Invalid range: loopback1
-
-[_ansible_no_log]=> False
-[url]=> http://nxos01:80/ins
-[changed]=> False
-[failed]=> True
-[invocation]=> {u'module_args': {u'force': False, u'diff_against': None, u'replace': u'line', u'running_config': None, u'use_ssl': False, u'port': 80, u'transport': u'nxapi', u'before': None, u'parents': None, u'provider': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'ssh_keyfile': None, u'host': u'nxos01', u'timeout': 60, u'use_ssl': False, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True, u'port': 80, u'transport': u'nxapi'}, u'save': False, u'match': u'line', u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'timeout': 60, u'src': None, u'after': None, u'host': u'nxos01', u'ssh_keyfile': None, u'defaults': False, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'diff_ignore_lines': None, u'url_password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'save_when': u'never', u'backup': False, u'lines': [u'no interface Loopback1'], u'intended_config': None, u'url_username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True}}
-[output]=> {u'msg': u'CLI execution error', u'code': u'400', u'clierror': u'Error: Invalid range: loopback1\n'}
-[msg]=> CLI execution error
+[invocation]=> {u'module_args': {u'username': None, u'ssh_keyfile': None, u'lookup_source': None, u'domain_search': [u'ansible.com', u'redhat.com'], u'hostname': None, u'system_mtu': None, u'domain_name': None, u'domain_lookup': None, u'host': None, u'state': u'present', u'timeout': None, u'provider': None, u'name_servers': None, u'use_ssl': None, u'password': None, u'validate_certs': None, u'port': None, u'transport': u'cli'}}
+[msg]=> ip domain-list redhat.com
+           ^
+% Invalid command at '^' marker.
+nxos01# 
 
 
 
@@ -332,70 +326,33 @@ Failed: iosxr_banner,
 
 
 ############ FAILURE ############
-[nxos_acl_interface : assert] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_acl_interface/tests/cli/sanity.yaml:53
+[nxos_vrf_interface : Remove Idempotence] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_vrf_interface/tests/common/sanity.yaml:47
 
-[_ansible_no_log]=> False
-[changed]=> False
-[assertion]=> result.changed == false
-[_ansible_verbose_always]=> True
-[failed]=> True
-[evaluated_to]=> False
-
-
-
-############ FAILURE ############
-[nxos_acl_interface : assert] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_acl_interface/tests/nxapi/sanity.yaml:53
-
-[_ansible_no_log]=> False
-[changed]=> False
-[assertion]=> result.changed == false
-[_ansible_verbose_always]=> True
-[failed]=> True
-[evaluated_to]=> False
-
-
-
-############ FAILURE ############
-[nxos_vtp_password : configure vtp password] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_vtp_password/tests/nxapi/sanity.yaml:11
-
-[body]=> <html>
-<head><title>401 Authorization Required</title></head>
-<body bgcolor="white">
-<center><h1>401 Authorization Required</h1></center>
-<hr><center>nginx/1.4.5</center>
-</body>
-</html>
-
-[status]=> 401
-[content-length]=> 194
+[status]=> -1
+[_ansible_parsed]=> True
 [_ansible_no_log]=> False
 [url]=> http://nxos01:80/ins
 [changed]=> False
-[server]=> nginx/1.4.5
 [failed]=> True
-[connection]=> close
-[_ansible_parsed]=> True
-[invocation]=> {u'module_args': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'url_password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'vtp_password': None, u'ssh_keyfile': None, u'timeout': 60, u'state': u'present', u'host': u'nxos01', u'url_username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'provider': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'ssh_keyfile': None, u'host': u'nxos01', u'timeout': 60, u'use_ssl': False, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True, u'port': 80, u'transport': u'nxapi'}, u'use_ssl': False, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True, u'port': 80, u'transport': u'nxapi'}}
-[date]=> Tue, 08 Aug 2017 01:56:15 GMT
-[content-type]=> text/html
-[www-authenticate]=> Basic realm="Secure Zone"
-[msg]=> HTTP Error 401: Unauthorized
+[invocation]=> {u'module_args': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'url_password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'ssh_keyfile': None, u'timeout': 60, u'state': u'absent', u'host': u'nxos01', u'vrf': u'ntc', u'url_username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'provider': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'ssh_keyfile': None, u'host': u'nxos01', u'timeout': 60, u'use_ssl': False, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True, u'port': 80, u'transport': u'nxapi'}, u'interface': u'Ethernet2/1', u'use_ssl': False, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True, u'port': 80, u'transport': u'nxapi'}}
+[msg]=> Connection failure: timed out
 
 
 
 ############ FAILURE ############
-[nxos_portchannel : assert] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_portchannel/tests/common/sanity.yaml:57
+[nxos_portchannel : Check Idempotence] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_portchannel/tests/common/sanity.yaml:53
 
+[_ansible_parsed]=> True
 [_ansible_no_log]=> False
 [changed]=> False
-[assertion]=> result.changed == false
-[_ansible_verbose_always]=> True
 [failed]=> True
-[evaluated_to]=> False
+[invocation]=> {u'module_args': {u'username': None, u'force': u'true', u'ssh_keyfile': None, u'group': u'99', u'timeout': 60, u'validate_certs': None, u'password': None, u'provider': None, u'host': None, u'include_defaults': u'False', u'state': u'present', u'mode': u'active', u'members': [u'Ethernet2/1', u'Ethernet2/2'], u'min_links': None, u'use_ssl': None, u'save': False, u'config': None, u'port': None, u'transport': u'cli'}}
+[msg]=> interface Ethernet2/2
+          ^
+% Invalid command at '^' marker.
+nxos01# 
 
 
 
@@ -409,14 +366,40 @@ Failed: iosxr_banner,
 [changed]=> False
 [failed]=> True
 [invocation]=> {u'module_args': {u'username': None, u'password': None, u'ssh_keyfile': None, u'validate_certs': None, u'feature': u'lacp', u'include_defaults': None, u'state': u'disabled', u'timeout': 60, u'provider': None, u'host': None, u'use_ssl': None, u'save': None, u'config': None, u'port': None, u'transport': u'cli'}}
-[features_currently_supported]=> {u'mvpn': u'disabled', u'pim': u'enabled', u'ldp': u'disabled', u'hsrp_engine': u'enabled', u'itd': u'disabled', u'scheduler': u'disabled', u'fabric_mcast': u'disabled', u'glbp': u'disabled', u'private-vlan': u'disabled', u'eth_port_sec': u'disabled', u'mvrp': u'disabled', u'pong': u'disabled', u'dot1x': u'disabled', u'ptp': u'disabled', u'lldp': u'disabled', u'mpls_te': u'disabled', u'evmed': u'disabled', u'elo': u'disabled', u'imp': u'disabled', u'vmtracker': u'disabled', u'interface-vlan': u'disabled', u'cable-management': u'disabled', u'vtp': u'disabled', u'vrrp': u'disabled', u'ldap': u'disabled', u'privilege': u'disabled', u'dhcp': u'disabled', u'sla_responder': u'disabled', u'fabric-access': u'enabled', u'pim6': u'disabled', u'bulkstat': u'disabled', u'vrrpv3': u'disabled', u'wccp': u'disabled', u'rise': u'disabled', u'l3vpn': u'disabled', u'vni': u'enabled', u'onep': u'disabled', u'hmm': u'disabled', u'nve': u'enabled', u'nxapi': u'enabled', u'rip': u'disabled', u'vpc': u'enabled', u'sftpServer': u'disabled', u'netflow': u'disabled', u'l2vpn': u'disabled', u'msdp': u'disabled', u'otv': u'disabled', u'cts': u'disabled', u'smart-channel': u'disabled', u'ngoam': u'disabled', u'isis': u'disabled', u'evc': u'disabled', u'pbr': u'disabled', u'lisp': u'disabled', u'tacacs': u'disabled', u'evb': u'disabled', u'bfd': u'disabled', u'sla_sender': u'disabled', u'ospfv3': u'disabled', u'bgp': u'disabled', u'tunnel': u'disabled', u'eigrp': u'disabled', u'vnseg_vlan': u'disabled', u'msrp': u'disabled', u'scpServer': u'enabled', u'ospf': u'enabled', u'telnetServer': u'enabled', u'sshServer': u'enabled', u'bfd_app': u'disabled'}
+[features_currently_supported]=> {u'mvpn': u'disabled', u'pim': u'disabled', u'ldp': u'disabled', u'hsrp_engine': u'disabled', u'itd': u'disabled', u'scheduler': u'disabled', u'fabric_mcast': u'disabled', u'glbp': u'disabled', u'private-vlan': u'disabled', u'eth_port_sec': u'disabled', u'mvrp': u'disabled', u'pong': u'disabled', u'dot1x': u'disabled', u'ptp': u'disabled', u'lldp': u'disabled', u'mpls_te': u'disabled', u'evmed': u'disabled', u'elo': u'disabled', u'imp': u'disabled', u'vmtracker': u'disabled', u'interface-vlan': u'disabled', u'cable-management': u'disabled', u'vtp': u'disabled', u'vrrp': u'disabled', u'ldap': u'disabled', u'privilege': u'disabled', u'dhcp': u'disabled', u'sla_responder': u'disabled', u'fabric-access': u'disabled', u'pim6': u'disabled', u'bulkstat': u'disabled', u'vrrpv3': u'disabled', u'wccp': u'disabled', u'rise': u'disabled', u'l3vpn': u'disabled', u'vni': u'disabled', u'onep': u'disabled', u'hmm': u'enabled', u'nve': u'enabled', u'nxapi': u'enabled', u'rip': u'enabled', u'vpc': u'enabled', u'sftpServer': u'disabled', u'netflow': u'disabled', u'l2vpn': u'disabled', u'msdp': u'disabled', u'otv': u'disabled', u'cts': u'disabled', u'smart-channel': u'disabled', u'ngoam': u'disabled', u'isis': u'enabled', u'evc': u'disabled', u'pbr': u'disabled', u'lisp': u'disabled', u'tacacs': u'disabled', u'evb': u'disabled', u'bfd': u'disabled', u'sla_sender': u'disabled', u'ospfv3': u'enabled', u'bgp': u'enabled', u'tunnel': u'disabled', u'eigrp': u'enabled', u'vnseg_vlan': u'disabled', u'msrp': u'disabled', u'scpServer': u'enabled', u'ospf': u'disabled', u'telnetServer': u'enabled', u'sshServer': u'enabled', u'bfd_app': u'disabled'}
 [msg]=> Invalid feature name.
 
 
 
 ############ FAILURE ############
+[prepare_nxos_tests : Gather platform info] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_nxos_tests/tasks/main.yml:58
+
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
+[failed]=> True
+[changed]=> False
+[_ansible_no_log]=> False
+
+
+
+############ FAILURE ############
+[nxos_switchport : tag vlan Idempotence] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/nxos_switchport/tests/common/sanity.yaml:83
+
+[status]=> -1
+[_ansible_parsed]=> True
+[_ansible_no_log]=> False
+[url]=> http://nxos01:80/ins
+[changed]=> False
+[failed]=> True
+[invocation]=> {u'module_args': {u'native_vlan': u'10', u'access_vlan': None, u'ssh_keyfile': None, u'timeout': 60, u'url_password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'host': u'nxos01', u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'state': u'present', u'trunk_allowed_vlans': None, u'trunk_vlans': u'2-50', u'mode': u'trunk', u'url_username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'provider': {u'username': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'ssh_keyfile': None, u'host': u'nxos01', u'timeout': 60, u'use_ssl': False, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True, u'port': 80, u'transport': u'nxapi'}, u'interface': u'Ethernet2/1', u'use_ssl': False, u'password': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'validate_certs': True, u'port': 80, u'transport': u'nxapi'}}
+[msg]=> An unknown error occurred: ''
+
+
+
+############ FAILURE ############
 [Has any previous test failed?] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/nxos.yaml:254
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/nxos.yaml:293
 
 [msg]=> One or more tests failed, check log for details
 [failed]=> True
@@ -425,6 +408,6 @@ Failed: iosxr_banner,
 
 
 
-Passed: nxos_acl, nxos_evpn_global, nxos_feature, nxos_vrrp, nxos_vtp_version, nxos_nxapi, nxos_vrf, nxos_facts, nxos_logging, nxos_vtp_domain, nxos_vxlan_vtep, nxos_vlan, nxos_user, nxos_rollback, nxos_vrf_interface, nxos_switchport, 
-Failed: nxos_config, nxos_acl_interface, nxos_interface, nxos_command, nxos_system, nxos_vtp_password, nxos_evpn_vni, nxos_portchannel, nxos_banner, 
+Passed: nxos_acl, nxos_bgp, nxos_acl_interface, nxos_interface, nxos_vrrp, nxos_vtp_version, nxos_vrf, nxos_facts, nxos_bgp_neighbor, nxos_bgp_af, nxos_logging, nxos_vtp_domain, nxos_vtp_password, nxos_vxlan_vtep, nxos_interface_ospf, nxos_user, nxos_rollback, nxos_ospf, nxos_nxapi, 
+Failed: nxos_config, nxos_feature, nxos_switchport, nxos_command, nxos_system, nxos_mtu, nxos_evpn_vni, nxos_vrf_interface, nxos_portchannel, nxos_banner, 
 ```

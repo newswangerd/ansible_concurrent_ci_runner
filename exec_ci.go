@@ -36,7 +36,7 @@ func exec_net_ci(tst_data test, integration_dir string, inv string, limit string
 
   command := strings.Split(cmd_str, " ")
   cmd := exec.Command(command[0], command[1:]...)
-	cmd.Dir = integration_dir
+  cmd.Dir = integration_dir
   out, err := cmd.CombinedOutput()
 
   elapsed := time.Since(start)
@@ -92,20 +92,21 @@ func compile_report_card(tests []test){
 func main() {
   // CONFIGURE FILE PATHS
   integration_dir := "/Users/dnewswan/code/concurrent_ci/ansible/test/integration/"
-	exec_ci_dir := "/Users/dnewswan/code/concurrent_ci/"
+  exec_ci_dir := "/Users/dnewswan/code/concurrent_ci/"
   inv  := "#inventory.with_pass"
 
-	// Configure environment (this shouldn't have to be updated on an individual basis)
+  // Configure environment (this shouldn't have to be updated on an individual basis)
   os.Setenv("ANSIBLE_ROLES_PATH", integration_dir + "targets/")
   os.Setenv("ANSIBLE_CALLBACK_PLUGINS", exec_ci_dir + "ansible_plugins")
   os.Setenv("ANSIBLE_CALLBACK_WHITELIST", "test_plug")
   os.Setenv("TASK_ERROR_DIR", exec_ci_dir+"/results/")
 
   // These should help avoid most 'unable to open shell problems'
-	os.Setenv("ANSIBLE_CONNECT_TIMEOUT", "60")
-	os.Setenv("ANSIBLE_TIMEOUT", "60")
+  os.Setenv("ANSIBLE_CONNECT_TIMEOUT", "60")
+  os.Setenv("ANSIBLE_TIMEOUT", "60")
   os.Setenv("ANSIBLE_HOST_KEY_CHECKING", "false")
-  // os.Setenv("ANSIBLE_LOG_PATH", exec_ci_dir + "log")
+  os.Setenv("ANSIBLE_LOG_PATH", exec_ci_dir + "log")
+  os.Setenv("ANSIBLE_COMMAND_TIMEOUT", "60")
 
   tests := []test{
     // test {

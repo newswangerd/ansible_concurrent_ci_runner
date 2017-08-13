@@ -10,16 +10,13 @@
 
 
 ############ FAILURE ############
-[ios_facts : test getting all facts] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/ios_facts/tests/cli/all_facts.yaml:5
+[prepare_ios_tests : Ensure we have loopback 888 for testing] 
+/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/prepare_ios_tests/tasks/main.yml:3
 
-[_ansible_parsed]=> True
-[_ansible_no_log]=> False
-[err]=> [Errno 2] No such file or directory
-[changed]=> False
+[msg]=> unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell
 [failed]=> True
-[invocation]=> {u'module_args': {u'username': None, u'authorize': None, u'ssh_keyfile': None, u'auth_pass': None, u'host': None, u'gather_subset': [u'all'], u'timeout': None, u'provider': None, u'password': None, u'port': None}}
-[msg]=> unable to connect to socket
+[changed]=> False
+[_ansible_no_log]=> False
 
 
 
@@ -47,5 +44,5 @@
 
 
 
-Passed: ios_interface, ios_command, ios_logging, ios_banner, ios_static_route, ios_system, 
-Failed: ios_facts, ios_user, 
+Passed: ios_interface, ios_banner, ios_command, ios_logging, ios_static_route, ios_facts, 
+Failed: ios_user, 
