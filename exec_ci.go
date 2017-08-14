@@ -105,8 +105,9 @@ func main() {
   os.Setenv("ANSIBLE_CONNECT_TIMEOUT", "60")
   os.Setenv("ANSIBLE_TIMEOUT", "60")
   os.Setenv("ANSIBLE_HOST_KEY_CHECKING", "false")
-  os.Setenv("ANSIBLE_LOG_PATH", exec_ci_dir + "log")
   os.Setenv("ANSIBLE_COMMAND_TIMEOUT", "60")
+
+  // os.Setenv("ANSIBLE_LOG_PATH", exec_ci_dir + "log")
 
   tests := []test{
     // test {

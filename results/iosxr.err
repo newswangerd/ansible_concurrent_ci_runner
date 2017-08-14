@@ -1,18 +1,4 @@
 ############ FAILURE ############
-[iosxr_config : configure top level command] 
-/Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/iosxr_config/tests/cli/toplevel_nonidempotent.yaml:9
-
-[_ansible_parsed]=> True
-[_ansible_no_log]=> False
-[err]=> [Errno 2] No such file or directory
-[changed]=> False
-[failed]=> True
-[invocation]=> {u'module_args': {u'comment': u'configured by iosxr_config', u'username': None, u'commands': [u'banner motd "hello world"', u'hostname foo'], u'ssh_keyfile': None, u'force': False, u'src': None, u'admin': False, u'backup': False, u'after': None, u'lines': [u'banner motd "hello world"', u'hostname foo'], u'replace': u'line', u'host': None, u'parents': None, u'timeout': None, u'provider': None, u'password': None, u'config': None, u'port': None, u'match': u'strict', u'before': None}}
-[msg]=> unable to connect to socket
-
-
-
-############ FAILURE ############
 [iosxr_interface : assert] 
 /Users/dnewswan/code/concurrent_ci/ansible/test/integration/targets/iosxr_interface/tests/cli/basic.yaml:233
 
@@ -36,5 +22,5 @@
 
 
 
-Passed: iosxr_user, iosxr_logging, iosxr_facts, iosxr_system, iosxr_command, iosxr_banner, 
-Failed: iosxr_interface, iosxr_config, 
+Passed: iosxr_user, iosxr_logging, iosxr_facts, iosxr_system, iosxr_config, iosxr_command, iosxr_banner, 
+Failed: iosxr_interface, 
